@@ -25,7 +25,7 @@ class Logo extends React.Component {
 
   render(){
     return (
-      <Link className="nav-logo" to='/'>
+      <Link className="nav-logo" to='/home'>
       DEV KAVIAN 
       </Link>
     )

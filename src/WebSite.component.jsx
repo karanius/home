@@ -49,7 +49,7 @@ class WebSite extends React.Component {
         <NavBar />
         <div id="route-container" style={{height: `${this.webPageHeightAdjuster()}px` }}>
           <Switch>
-            <Route exact path='/' component={HomePage} />
+            <Route exact path='/home' component={HomePage} />
             <Route path='/about' component={AboutPage} />
             <Route path='/portfolio' component={PortfolioPage} />
             <Route path='/contact' component={ContactPage} />
