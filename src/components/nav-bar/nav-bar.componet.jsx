@@ -13,12 +13,12 @@ class NavBar extends React.Component {
   componentDidMount(){
     const {setBurgerSate} = this.props;
     
-    if (window.innerWidth <= 550) {
+    if (window.innerWidth <= 638) {
       setBurgerSate( true )
     }
 
     window.addEventListener('resize', (e)=>{
-      if (e.target.innerWidth >= 550) {
+      if (e.target.innerWidth >= 638) {
         setBurgerSate( null )
 
       } else {

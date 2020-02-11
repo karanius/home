@@ -17,7 +17,6 @@ class DropNav extends React.Component {
         endSpeechBubbleAnimation(null)
         endCharacterAnimation(null)
         setCharacterPositionLeft(-50)
-        
       })
     })
   }
@@ -35,18 +34,19 @@ class DropNav extends React.Component {
   render(){
     return(
       <div className="drop-nav" style={{top:`${this.openClose(this.props.burgerOpen)}px`}}>
-        <Link className="nav-link" to='/about'>ABOUT</Link>
+        <Link className="nav-link" to='/competencies'>COMPETENCIES</Link>
+        <span>|</span>
         <Link className="nav-link" to='/portfolio'>PORTFOLIO</Link>
+        <span>|</span>
         <Link className="nav-link" to='/contact'>CONTACT</Link>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({navBar , animation}) => {
+const mapStateToProps = ({navBar}) => {
   return {
     burgerOpen: navBar.burgerOpen,
-    speechBubbleIsActive: animation.speechBubbleIsActive
   }
 }
 

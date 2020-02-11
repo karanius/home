@@ -6,7 +6,7 @@ import {Switch , Route} from 'react-router-dom';
 
 import NavBar from './components/nav-bar/nav-bar.componet';
 import HomePage from './pages/home-page/home-page.component';
-import AboutPage from './pages/about-page/about.component';
+import Competencies from './pages/competencies-page/competencies.component'
 import PortfolioPage from './pages/portfolio-page/portfolio.component';
 import ContactPage from './pages/contact-page/contact-page.component';
 
@@ -50,7 +50,7 @@ class WebSite extends React.Component {
         <div id="route-container" style={{height: `${this.webPageHeightAdjuster()}px` }}>
           <Switch>
             <Route exact path='/home' component={HomePage} />
-            <Route path='/about' component={AboutPage} />
+            <Route path='/competencies' component={Competencies} />
             <Route path='/portfolio' component={PortfolioPage} />
             <Route path='/contact' component={ContactPage} />
           </Switch>

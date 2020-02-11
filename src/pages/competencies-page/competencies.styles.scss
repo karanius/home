@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+.comp-main-container{
+  // background-color: rosybrown;
+}
+
+.first-section{
+  // background-color: powderblue;
+  height: 70vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+
+
+
+.left-bracket{
+  font-size: 9rem;
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  right: 100px;
+  opacity: 0;
+  
+}
+
+.left-bracket-container{
+  position: relative;
+  // top: 12.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.middle-slash{
+  font-size: 7rem;
+  font-family: 'Roboto', sans-serif;
+  opacity: 0;
+}
+
+.middle-slash-container{
+  display: flex;
+  align-items: center;
+}
+
+
+
+.right-bracket{
+  font-size: 9rem;
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  opacity: 0;
+  left: 100px;
+}
+
+.right-bracket-container{
+  position: relative;
+  // top: 12.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.dev-kavian{
+  text-align: center;
+  font-size: 100px;
+  position: absolute;
+  margin-top: 10rem;
+  animation: appear 1s;
+}
+
+@keyframes appear {
+  from {
+    display: none;
+    opacity: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+  }
+}
+
+
+.disappear {
+  animation: appear 1s reverse;
+}
