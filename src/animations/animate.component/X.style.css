@@ -1,5 +1,7 @@
 .x-container{
   position: relative;
+  overflow-x: hidden;
+  height: 100%;
 }
 
 .svg-line{
