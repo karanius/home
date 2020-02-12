@@ -1,5 +1,16 @@
-// @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|PT+Sans+Narrow&display=swap');
+
+@keyframes test {
+  0%{
+    border: 1px solid rgba(167, 167, 167, 0);
+  }
+  80%{
+    border: 1px solid rgba(167, 167, 167, 0);
+  }
+  100% {
+    border: 1px solid rgb(167, 167, 167);
+  }
+}
 
 @keyframes rotate {
   from {
@@ -25,7 +36,7 @@
   from {
     width: 0;
     height: 0;
-    transform: translate(0,-100px);
+    transform: translate(0,-80px);
   }
   to {
     width: 190px;
@@ -37,7 +48,7 @@
 @keyframes fullStackDeveloperIntro {
   from {
     opacity: 0;
-    transform: translate(0 , -15px);
+    transform: translate(-30px , -100px);
   }
   to {
     opacity: 1;
@@ -51,25 +62,22 @@
 
 .comp-main-container{
   position: relative;
-  background: rgb(100, 75, 99);
   width: 100vw;
-  // height: 200vh; maybe i wont need it?
+
+  background-image: linear-gradient(rgb(255, 255, 121), rgb(255, 170, 170));
 
   .firstCard{
     position: relative;
-    background-color: rgb(88, 192, 240);
 
     width: 100%;
     height: 85vh;
   
 
     .gear-container{
-      // background-color: rgb(255, 126, 126);
       width: 100vw;
       height: 30%;
       
       .gear-holder{
-        // background-color: rgb(126, 255, 165);
         display: flex;
         flex-direction: row;
         width: 190px;
@@ -84,7 +92,7 @@
         display: flex;
         align-items: flex-end;
         .left-gear{
-          animation: rotate 1.4s infinite;
+          animation: rotate 2s infinite;
         }
       }
       .gear-holder-middle{
@@ -122,85 +130,27 @@
         }
       }
     }
-
-
-
-
-
-
-
     
     .dev-kavian{
+      font-family: 'PT Sans Narrow', sans-serif;
       position: absolute;
-      // margin-top: 8rem;
       font-size: 5rem;
       opacity: 0;
       text-align: center;
     }
 
 
-    .developer-logo-container{
-      height: 37%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-
-      .left-bracket-container{
-        position: relative;
-        width: 100%;
-        height: 100%;
-
-        .left-bracket{
-          position: absolute;
-          font-size: 9rem;
-          font-family: 'Open Sans Condensed', sans-serif;
-          // font-family: 'Roboto', sans-serif;
-          opacity: 0;
-          right: 95px;
-        }
-      }
-
-      .middle-slash-container{
-        display: flex;
-        // align-items: center;
-        align-items: flex-end;
-        
-        .middle-slash{
-          font-size: 7rem;
-          font-family: 'Open Sans Condensed', sans-serif;
-          // font-family: 'Roboto', sans-serif;
-          opacity: 0;
-        }
-      }
-
-      .right-bracket-container{
-        position: relative;
-        width: 100%;
-        height: 100%;
-        
-        .right-bracket{
-          position: absolute;
-          font-size: 9rem;
-          font-family: 'Open Sans Condensed', sans-serif;
-          // font-family: 'Roboto', sans-serif;
-          opacity: 0;
-          left: 95px;
-        }
-      }
-    }
-
-
 
     .msg-container{
-      // background-color: rosybrown;
       height: 60%;
+      display: flex;
+      justify-content: center;
 
       .msg-title-container{
-        // background-color: royalblue;
         height: 20%;
         
         .msg-title{
-          // background-color: salmon;
+          font-family: 'Open Sans Condensed', sans-serif;
           height: 100%;
           display: flex;
           flex-direction: column;
@@ -214,10 +164,74 @@
           text-align: center;
           margin: 1rem;
           
-
           .list{
-            padding: 1.3rem;
+            color: black;
+            width: 18rem;
+            padding: 2rem;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid rgb(167, 167, 167);
+            animation: test 3s;
 
+            .front-end-logo{
+              // font-size: 3rem;
+              // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+              // display: flex;
+              // justify-content: center;
+              // align-items: center;
+              
+
+              .developer-logo-container{
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  // height: 37%;
+          
+                    .left-bracket-container{
+                  //     position: relative;
+                  //     width: 100%;
+                  //     height: 100%;
+              
+                  //     .left-bracket{
+                  //       position: absolute;
+                  //       font-size: 9rem;
+                  //       font-family: 'Open Sans Condensed', sans-serif;
+                  //       // font-family: 'Roboto', sans-serif;
+                  //       opacity: 0;
+                  //       right: 95px;
+                  //     }
+                    }
+              
+              
+                    .middle-slash-container{
+                  //     display: flex;
+                  //     // align-items: center;
+                  //     align-items: flex-end;
+                      
+                  //     .middle-slash{
+                  //       font-size: 7rem;
+                  //       font-family: 'Open Sans Condensed', sans-serif;
+                  //       // font-family: 'Roboto', sans-serif;
+                  //       opacity: 0;
+                  //     }
+                    }
+              
+                    .right-bracket-container{
+                  //     position: relative;
+                  //     width: 100%;
+                  //     height: 100%;
+                      
+                  //     .right-bracket{
+                  //       position: absolute;
+                  //       font-size: 9rem;
+                  //       font-family: 'Open Sans Condensed', sans-serif;
+                  //       // font-family: 'Roboto', sans-serif;
+                  //       opacity: 0;
+                  //       left: 95px;
+                  //     }
+                    }
+              }
+            }
 
             & > h3{
               margin-bottom: 0.5rem;
@@ -229,11 +243,9 @@
 
 
       .skill-container{
-        // background-color: seagreen;
         height: 80%;
         .skill-logos{
           text-align: center;
-          // background-color: slateblue;
           height: 33.33%;
           display: flex;
           align-items: center;

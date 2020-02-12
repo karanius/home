@@ -28,7 +28,8 @@ class Competencies extends React.Component {
         top = top + 10
         setTimeout(()=>requestAnimationFrame(scrollDown),30)
       }else {
-        this.setState({initialScrollExecuted: true}, ()=>{console.log(this.state.initialScrollExecuted)});
+        this.setState({initialScrollExecuted: true});
+        cancelAnimationFrame(requestId)
       }
     }
     requestId = requestAnimationFrame(scrollDown)
@@ -52,7 +53,7 @@ class Competencies extends React.Component {
       //.gear-holder - top postion:
         document.querySelector('.gear-holder').style.top = 75 + 'px';
       //.gear-holder - left postion:
-        document.querySelector('.gear-holder').style.left =  (window.innerWidth / 4) + "px";
+        document.querySelector('.gear-holder').style.left =  (window.innerWidth / 2) - (document.querySelector(".gear-holder").offsetWidth / 2 ) + "px";
       // .dev-kavian - height position
         document.querySelector('.dev-kavian').style.top =  ((document.querySelector('.gear-holder').offsetTop) + ((document.querySelector('.gear-holder').offsetHeight - document.querySelector('.dev-kavian').offsetHeight ) / 2 ) ) + 'px'
         //.dev-kavian - left position
@@ -88,7 +89,7 @@ class Competencies extends React.Component {
               if (pos <= listOfFirstElem.length - 1) {
                 listOfFirstElem[pos].classList.remove("hide");
                 pos = pos + 1
-                setTimeout(()=>{requestAnimationFrame(firstLoad)},800)
+                setTimeout(()=>{requestAnimationFrame(firstLoad)},200)
               } else {
                 console.log('done')
                 this.setState({initialScrollExecuted:null})
@@ -162,28 +163,32 @@ class Competencies extends React.Component {
               </h1>
               <ul className="list-container">
                 <li className="list">
-                  <h3 className="firstLoad first-card-intro hide" >Front-End Design</h3> <p className=" firstLoad first-card-intro hide">(To Make It Look Good, And User Friendly)</p>
+                  <span className="front-end-logo">
+                    {/* {`</>`} */}
+                      {/* <div className="developer-logo-container">
+                      <div className="left-bracket-container">
+                          <div className="left-bracket">{`<`}</div>
+                      </div>
+
+                      <div className="middle-slash-container">
+                        <div className="middle-slash">{`/`}</div>
+                      </div>
+
+                      <div className="right-bracket-container"> 
+                        <div className="right-bracket">{'>'}</div>
+                      </div>
+                    </div> */}
+
+                  </span>
+                  <h3 className="firstLoad first-card-intro hide" >Front-End Design</h3> <p className=" firstLoad first-card-intro hide">To Make It Look Good, And User Friendly</p>
                 </li>
                 <li className="list">
-                  <h3 className="firstLoad first-card-intro hide">Back-End Design</h3> <p className="firstLoad first-card-intro hide">(To Make It Function WEll, With Out Aheadaches )</p>
+                  <h3 className="firstLoad first-card-intro hide">Back-End Design</h3> <p className="firstLoad first-card-intro hide">To Make It Function WEll, With Out Aheadaches</p>
                 </li>
               </ul>
             </div>
 
 
-            {/* <div className="developer-logo-container">
-            <div className="left-bracket-container">
-                <div className="left-bracket">{`<`}</div>
-            </div>
-
-            <div className="middle-slash-container">
-              <div className="middle-slash">{`/`}</div>
-            </div>
-
-            <div className="right-bracket-container"> 
-              <div className="right-bracket">{'>'}</div>
-            </div>
-          </div> */}
 
 
             <div className="skill-container">
