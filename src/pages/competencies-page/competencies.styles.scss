@@ -49,7 +49,7 @@
     width: 190px;
     height: 120px;
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translate(0%, 0);
   }
 }
 
@@ -82,16 +82,19 @@
 
 .comp-main-container{
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  overflow-x: scroll;
+
   
   .firstCard{
     background-image: linear-gradient(rgb(255, 221, 108), rgb(255, 164, 142));
     width: 100%;
-    height: 100vh;
+    height: 800px;
 
     .gear-container{
       // background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
       width: 100vw;
       height: 30%;
@@ -103,7 +106,7 @@
         position: absolute;
         display: flex;
         flex-direction: row;
-        transform: translate(-50%, 0);
+        // transform: translate(-50%, 0);
         animation: gearIntro 1s;
       }
       
@@ -214,57 +217,6 @@
               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
               padding-bottom: 25px;
               animation: comeIn 0.3s; 
-
-              // .developer-logo-container{
-              //     display: flex;
-              //     flex-direction: row;
-              //     justify-content: center;
-                  // height: 37%;
-          
-                    // .left-bracket-container{
-                  //     position: relative;
-                  //     width: 100%;
-                  //     height: 100%;
-              
-                  //     .left-bracket{
-                  //       position: absolute;
-                  //       font-size: 9rem;
-                  //       font-family: 'Open Sans Condensed', sans-serif;
-                  //       // font-family: 'Roboto', sans-serif;
-                  //       opacity: 0;
-                  //       right: 95px;
-                  //     }
-                    // }
-              
-              
-                    // .middle-slash-container{
-                  //     display: flex;
-                  //     // align-items: center;
-                  //     align-items: flex-end;
-                      
-                  //     .middle-slash{
-                  //       font-size: 7rem;
-                  //       font-family: 'Open Sans Condensed', sans-serif;
-                  //       // font-family: 'Roboto', sans-serif;
-                  //       opacity: 0;
-                  //     }
-                    // }
-              
-                    // .right-bracket-container{
-                  //     position: relative;
-                  //     width: 100%;
-                  //     height: 100%;
-                      
-                  //     .right-bracket{
-                  //       position: absolute;
-                  //       font-size: 9rem;
-                  //       font-family: 'Open Sans Condensed', sans-serif;
-                  //       // font-family: 'Roboto', sans-serif;
-                  //       opacity: 0;
-                  //       left: 95px;
-                  //     }
-                    // }
-              // }
             }
 
             & > h3{
@@ -334,103 +286,3 @@
 .testHeight{
   background-color: powderblue;
 }
-
-
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-
-// @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-
-// .comp-main-container{
-  // position: relative;
-  // background: purple;
-// }
-
-
-// .first-section{
-//   background-color: rgb(77, 201, 223);
-  // width: 100vw;
-  // height: 90vh;
-// }
-
-// .dev-kavian{
-  // // text-align: center;
-  // // font-size: 5rem;
-  // position: absolute;
-  // margin-top: 8rem;
-// }
-
-
-// .front-bracket-container{
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: center;
-  // height: 50%;
-// }
-
-
-// .left-bracket-container{
-  // position: relative;
-  // width: 100%;
-  // height: 100%;
-// }
-
-// .middle-slash-container{
-  // display: flex;
-  // align-items: center;
-// }
-
-// .right-bracket-container{
-  // position: relative;
-  // width: 100%;
-  // height: 100%;
-// }
-
-
-
-// .left-bracket{
-  // font-size: 9rem;
-  // font-family: 'Roboto', sans-serif;
-  // position: absolute;
-  // right: 100px;
-  // opacity: 0;
-  
-// }
-
-// .middle-slash{
-  // font-size: 7rem;
-  // font-family: 'Roboto', sans-serif;
-  // opacity: 0;
-
-// }
-
-// .right-bracket{
-  // font-size: 9rem;
-  // font-family: 'Roboto', sans-serif;
-  // position: absolute;
-  // opacity: 0;
-  // left: 100px;
-// }
-
-
-
-// .msg-container{
-  // width: 100vw;
-  // background: purple;
-  // position: relative;
-// }
-
-
-
-
-// .msg-title{
-  // position: absolute;
-  // animation: slideDown 3s;
-// }
