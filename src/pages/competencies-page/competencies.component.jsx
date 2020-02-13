@@ -93,7 +93,7 @@ class Competencies extends React.Component {
                 console.log('done')
                 this.setState({initialScrollExecuted:null});
                   document.querySelectorAll('.title-logo').forEach(el => {
-                    setTimeout(()=>{el.classList.remove('hide')},900)
+                    setTimeout(()=>{el.classList.remove('hide')},700)
                   })
                 cancelAnimationFrame(requestId)
               }
@@ -150,7 +150,7 @@ class Competencies extends React.Component {
           <div className="msg-container">
             <div className="msg-title-container">
               <h1 className="msg-title firstLoad first-card-intro hide">
-                Full-Stack Developer
+                I Am: <br/>Full-Stack
               </h1>
               <ul className="list-container">
                 <li className="list">
@@ -173,9 +173,20 @@ class Competencies extends React.Component {
 
             <div className="second-card">
               
-              <h1 className="second-section-title"> 
-                Tech Stack
-              </h1>
+              <div>
+                <h1 className="tech-stack-title"> 
+                  Tech Stack :
+                </h1>
+                <div className="tech-stack-logos-container">
+                asd
+                  <div className="tech-stack-logos">asd</div>
+                  <div className="tech-stack-logos">asd</div>
+                  <div className="tech-stack-logos">asd</div>
+                  <div className="tech-stack-logos">asd</div>
+                  
+                </div>
+
+              </div>
 
 
             </div>
