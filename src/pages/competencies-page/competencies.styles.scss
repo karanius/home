@@ -39,13 +39,17 @@
   0% {
     width: 0;
     height: 0;
-    transform: translate(0,-80px);
+    opacity: 0;
+    transform: translate(0,-100%);
   }
-
+50%{
+  transform: translate(-25%,0);
+}
   100% {
     width: 190px;
     height: 120px;
-    transform: translate(0,0);
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 }
 
@@ -79,28 +83,28 @@
 .comp-main-container{
   position: relative;
   width: 100vw;
-
+  height: 100vh;
   
   .firstCard{
-    background-image: linear-gradient(rgb(255, 255, 125), rgb(255, 137, 137));
-
-    
+    background-image: linear-gradient(rgb(255, 221, 108), rgb(255, 164, 142));
     width: 100%;
-    height: 95vh;
-    
-    
+    height: 100vh;
+
     .gear-container{
+      // background-color: red;
       position: relative;
       width: 100vw;
       height: 30%;
       
       .gear-holder{
+        width: 190px;
+        height: 120px;
+        // background-color: green;
         position: absolute;
         display: flex;
         flex-direction: row;
-        width: 190px;
-        height: 120px;
-        animation: gearIntro 0.5s;
+        transform: translate(-50%, 0);
+        animation: gearIntro 1s;
       }
       
       .gear-holder-left{
@@ -149,10 +153,11 @@
     }
     
     .dev-kavian{
-      font-family: 'PT Sans Narrow', sans-serif;
+      // font-family: 'PT Sans Narrow', sans-serif;
+      font-family: 'Raleway', sans-serif;
+
       position: absolute;
       font-size: 5rem;
-      opacity: 0;
       text-align: center;
 
     }
@@ -160,7 +165,6 @@
 
 
     .msg-container{
-      height: 60%;
       display: flex;
       justify-content: center;
 
@@ -169,22 +173,24 @@
         
         .msg-title{
           text-align: center;
-          font-family: 'Open Sans Condensed', sans-serif;
+          // font-family: 'Open Sans Condensed', sans-serif;
+          font-family: 'Raleway', sans-serif;
           letter-spacing: 3px;
           height: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: flex-end;
-          margin-bottom: 0px;
           padding-bottom: 15px;
+          text-shadow: 1px 1px 1px rgb(134, 134, 134);
+
         }
         
         .list-container{
           list-style: none;
           text-align: center;
           margin: 1rem;
-          
+
           .list{
             color: black;
             width: 18rem;
@@ -197,12 +203,12 @@
 
             &>h3{
               margin-bottom: 15px;
-              color: rgb(146, 146, 146);
-              -webkit-text-stroke: 0.5px rgb(87, 87, 87);
+              text-shadow: 1px 1px 1px rgb(134, 134, 134);
             }
 
 
             .title-logo{
+              text-shadow: 3px 4px 3px #868686;
               color: rgb(49, 49, 49);
               font-size: 3rem;
               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -286,25 +292,37 @@
 
 
 .second-card{
-  background-image: linear-gradient( rgb(255, 137, 137) , rgb(164, 125, 255));
-  padding-top: 40px;
+  // background-image: linear-gradient(rgb(255, 164, 142), rgb(255, 221, 108));
   height: 95vh;
+  background-color: green;
   .tech-stack-title{
     text-align: center;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 1800;
-    
-    background-color: blue;
+    text-shadow: 1px 2px 3px rgb(141, 141, 141);
   }
   .tech-stack-logos-container{
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: 100%;
+
     background-color: red;
-    .tech-stack-logos{
+    .tech-stack-logo{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 250px;
+      height: 500px;
+      display: flex;
+
       background-color: purple;
+      &>img{
+        padding: 7px;
+      }
     }
   }
 }
@@ -334,6 +352,7 @@
   // position: relative;
   // background: purple;
 // }
+
 
 // .first-section{
 //   background-color: rgb(77, 201, 223);

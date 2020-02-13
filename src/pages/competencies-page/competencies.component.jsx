@@ -2,8 +2,20 @@
 import React from 'react';
 import './competencies.styles.scss';
 
-import gearSVG from '../../animations/svgs/gear.svg'
-import gear2SVG from '../../animations/svgs/gear2.svg'
+import gearSVG from '../../animations/svgs/gear.svg';
+import gear2SVG from '../../animations/svgs/gear2.svg';
+
+import htmlSVG from '../../animations/svgs/html5.svg';
+import cssSVG from '../../animations/svgs/css3.svg';
+import sassSVG from '../../animations/svgs/sass.svg';
+import bootstrapSVG from '../../animations/svgs/bootstrap.svg';
+import jsSVG from '../../animations/svgs/js.svg';
+import jsuqerySVG from '../../animations/svgs/jquery.svg'
+import nodeSVG from '../../animations/svgs/node.svg';
+import reactSVG from '../../animations/svgs/react.svg';
+import gitSVG from '../../animations/svgs/git.svg';
+import mysqlSVG from '../../animations/svgs/mysql.svg'
+import mongoSVG from '../../animations/svgs/mongo.svg'
 
 class Competencies extends React.Component {
 
@@ -20,7 +32,7 @@ class Competencies extends React.Component {
     let top = 0;
     const scrollDown = async () => {
       console.log('~~')
-      if (top <= 95) {
+      if (top <= 100) {
         window.scrollTo({
           top: top ,
           behavior:"smooth"
@@ -53,7 +65,8 @@ class Competencies extends React.Component {
       //.gear-holder - top postion:
         document.querySelector('.gear-holder').style.top = 75 + 'px';
       //.gear-holder - left postion:
-        document.querySelector('.gear-holder').style.left =  ( (window.innerWidth / 2) - (document.querySelector(".gear-holder").offsetWidth  / 2 )) + "px";
+        document.querySelector('.gear-holder').style.left =  ( (window.innerWidth / 2) ) + "px";
+        // - (document.querySelector(".gear-holder").offsetWidth  / 2 )
       // .dev-kavian - height position
         document.querySelector('.dev-kavian').style.top =  ((document.querySelector('.gear-holder').offsetTop) + ((document.querySelector('.gear-holder').offsetHeight - document.querySelector('.dev-kavian').offsetHeight ) / 2 ) ) + 'px'
         //.dev-kavian - left position
@@ -74,10 +87,12 @@ class Competencies extends React.Component {
             document.querySelector('.dev-kavian').style.opacity =  `${1 / ((distanceFromTop ) + 1) - 0.05}`;
           //  .gear-holder - opacity
             document.querySelector('.gear-holder').style.opacity = distanceFromTop / 100 ;
-        
+
         if (distanceFromTop < 100) {
           //initialise section :
           if (this.state.initialScrollExecuted){
+            this.setState({initialScrollExecuted:null});
+
             setTimeout(()=>{document.querySelector('.dev-kavian').classList.remove("hide")},500)
 
             let requestId;
@@ -90,8 +105,7 @@ class Competencies extends React.Component {
                 pos = pos + 1
                 setTimeout(()=>{requestAnimationFrame(firstLoad)},200)
               } else {
-                console.log('done')
-                this.setState({initialScrollExecuted:null});
+                console.log('firstLoad: done')
                   document.querySelectorAll('.title-logo').forEach(el => {
                     setTimeout(()=>{el.classList.remove('hide')},700)
                   })
@@ -168,28 +182,39 @@ class Competencies extends React.Component {
               </ul>
             </div>
           </div>
+
+
         </div>
 
 
-            <div className="second-card">
-              
-              <div>
-                <h1 className="tech-stack-title"> 
-                  Tech Stack :
-                </h1>
-                <div className="tech-stack-logos-container">
-                asd
-                  <div className="tech-stack-logos">asd</div>
-                  <div className="tech-stack-logos">asd</div>
-                  <div className="tech-stack-logos">asd</div>
-                  <div className="tech-stack-logos">asd</div>
-                  
-                </div>
+        <div className="second-card">
+          <div>
+            <h1 className="tech-stack-title"> 
+              Tech Stack :
+            </h1>
+            <div className="tech-stack-logos-container">
+              <div className="tech-stack-logo">
+                <img alt='HTML: Hyper Text Markup Language Version 5' title='HTML: Hyper Text Markup Language Version 5' src={htmlSVG} />
+                <img alt='CSS: Cascading Style Sheets Version 3' title='CSS: Cascading Style Sheets Version 3' src={cssSVG} />
+                <img alt='Sass: Syntactically Awesome Style Sheets' title='Sass: Syntactically Awesome Style Sheets' src={sassSVG} />
+                <img alt='Bootstrap: a front end library' title='Bootstrap: a front end library' src={bootstrapSVG} />
+                <img alt='JS: Javascript' title='JS: Javascript' src={jsSVG} />
+                <img alt='jQuery: javascript framework' title='jQuery: javascript framework' src={jsuqerySVG} />
+                <img alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
+                <img alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
+                <img alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
+                <img alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
+                <img alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
+                <p>and more</p>
 
               </div>
-
-
+              
             </div>
+
+          </div>
+
+
+        </div>
 
 
 
