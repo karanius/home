@@ -20,7 +20,7 @@ class Competencies extends React.Component {
     let top = 0;
     const scrollDown = async () => {
       console.log('~~')
-      if (top <= 100) {
+      if (top <= 95) {
         window.scrollTo({
           top: top ,
           behavior:"smooth"
@@ -53,12 +53,11 @@ class Competencies extends React.Component {
       //.gear-holder - top postion:
         document.querySelector('.gear-holder').style.top = 75 + 'px';
       //.gear-holder - left postion:
-        document.querySelector('.gear-holder').style.left =  (window.innerWidth / 2) - (document.querySelector(".gear-holder").offsetWidth / 2 ) + "px";
+        document.querySelector('.gear-holder').style.left =  ( (window.innerWidth / 2) - (document.querySelector(".gear-holder").offsetWidth  / 2 )) + "px";
       // .dev-kavian - height position
         document.querySelector('.dev-kavian').style.top =  ((document.querySelector('.gear-holder').offsetTop) + ((document.querySelector('.gear-holder').offsetHeight - document.querySelector('.dev-kavian').offsetHeight ) / 2 ) ) + 'px'
         //.dev-kavian - left position
         document.querySelector('.dev-kavian').style.left = ((window.innerWidth / 2) - (document.querySelector('.dev-kavian').offsetWidth / 2) ) + 'px'
-
 
         //right bracket - top postion
         // document.querySelector('.right-bracket').style.top = ( 73 + document.querySelector('.middle-slash').offsetTop - (document.querySelector('.middle-slash').offsetHeight / 2)) - ((document.querySelector('.right-bracket').offsetHeight - document.querySelector('.middle-slash').offsetHeight) / 2) + 'px';
@@ -92,7 +91,10 @@ class Competencies extends React.Component {
                 setTimeout(()=>{requestAnimationFrame(firstLoad)},200)
               } else {
                 console.log('done')
-                this.setState({initialScrollExecuted:null})
+                this.setState({initialScrollExecuted:null});
+                  document.querySelectorAll('.title-logo').forEach(el => {
+                    setTimeout(()=>{el.classList.remove('hide')},900)
+                  })
                 cancelAnimationFrame(requestId)
               }
             }
@@ -110,17 +112,6 @@ class Competencies extends React.Component {
           // document.querySelector('.left-bracket').style.transform = `translate(${distanceFromTop}px,0)`;
           // document.querySelector('.right-bracket').style.transform = `translate(-${distanceFromTop}px,0)`;
       }     
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -163,31 +154,31 @@ class Competencies extends React.Component {
               </h1>
               <ul className="list-container">
                 <li className="list">
-                  <span className="front-end-logo">
-                    {/* {`</>`} */}
-                      {/* <div className="developer-logo-container">
-                      <div className="left-bracket-container">
-                          <div className="left-bracket">{`<`}</div>
-                      </div>
-
-                      <div className="middle-slash-container">
-                        <div className="middle-slash">{`/`}</div>
-                      </div>
-
-                      <div className="right-bracket-container"> 
-                        <div className="right-bracket">{'>'}</div>
-                      </div>
-                    </div> */}
-
-                  </span>
-                  <h3 className="firstLoad first-card-intro hide" >Front-End Design</h3> <p className=" firstLoad first-card-intro hide">To Make It Look Good, And User Friendly</p>
+                  <p className="title-logo hide">
+                    {`</>`}
+                  </p>
+                  <h3 className="firstLoad first-card-intro hide" >Front-End Design</h3> <p className=" firstLoad first-card-intro hide">To Make It Look Good.<br/>User Friendly.</p>
                 </li>
                 <li className="list">
-                  <h3 className="firstLoad first-card-intro hide">Back-End Design</h3> <p className="firstLoad first-card-intro hide">To Make It Function WEll, With Out Aheadaches</p>
+                  <p className="title-logo hide">
+                    {`{ }`}
+                  </p>
+                  <h3 className="firstLoad first-card-intro hide">Back-End Design</h3> <p className="firstLoad first-card-intro hide">To Make It Function.<br/>No Aheadaches.</p>
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
 
+
+            <div className="second-card">
+              
+              <h1 className="second-section-title"> 
+                Tech Stack
+              </h1>
+
+
+            </div>
 
 
 
@@ -199,14 +190,7 @@ class Competencies extends React.Component {
 
             </div>
 
-       
-          </div>
 
-
-
-
-
-        </div>
 
 
         
@@ -232,6 +216,19 @@ export default Competencies;
 
 
 
+{/* <div className="developer-logo-container">
+<div className="left-bracket-container">
+    <div className="left-bracket">{`<`}</div>
+</div>
+
+<div className="middle-slash-container">
+  <div className="middle-slash">{`/`}</div>
+</div>
+
+<div className="right-bracket-container"> 
+  <div className="right-bracket">{'>'}</div>
+</div>
+</div> */}
 
 
 
