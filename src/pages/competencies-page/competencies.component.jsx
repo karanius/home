@@ -5,6 +5,8 @@ import './competencies.styles.scss';
 import gearSVG from '../../animations/svgs/gear.svg';
 import gear2SVG from '../../animations/svgs/gear2.svg';
 
+import tieSVG from '../../animations/svgs/tie.svg'
+
 import htmlSVG from '../../animations/svgs/html5.svg';
 import cssSVG from '../../animations/svgs/css3.svg';
 import sassSVG from '../../animations/svgs/sass.svg';
@@ -130,7 +132,7 @@ class Competencies extends React.Component {
           <div className="msg-container">
             <div className="msg-title-container">
               <h1 className="msg-title firstLoad first-card-intro hide">
-                I Am: <br/>Full-Stack
+                I am: <br/>Full-Stack
               </h1>
               <ul className="list-container">
                 <li className="list">
@@ -141,7 +143,7 @@ class Competencies extends React.Component {
                 </li>
                 <li className="list">
                   <p className="title-logo hide">
-                    {`{ }`}
+                    { `{ ` } <img width='15' alt='tie' src={tieSVG} /> { ` }`}
                   </p>
                   <h3 className="firstLoad first-card-intro hide">Back-End Design</h3> <p className="firstLoad first-card-intro hide">To Make It Function.<br/>No Aheadaches.</p>
                 </li>
@@ -156,7 +158,7 @@ class Competencies extends React.Component {
         <div className="second-card">
           <div>
             <h1 className="tech-stack-title"> 
-              Tech Stack :
+            I am <br/> Proficient In:
             </h1>
             <div className="tech-stack-logos-container">
               <div className="tech-stack-logo">
