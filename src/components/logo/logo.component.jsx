@@ -3,9 +3,16 @@ import './logo.styles.scss'
 import {Link} from 'react-router-dom';
 
 
+import {connect} from 'react-redux';
+import {endCharAnimationComp} from '../../redux/animation/animation.action'
+
+
 class Logo extends React.Component {
+
+
   
   componentDidMount(){
+    const {endCharAnimationComp} = this.props
     const logo = document.querySelector('.nav-logo');
 
     logo.addEventListener('mouseenter', e=>{
@@ -16,6 +23,9 @@ class Logo extends React.Component {
       this.fireworks('leave')
     })
     
+    document.querySelector('.nav-logo').addEventListener('click',e=>{
+        endCharAnimationComp(null)
+    })
   }
 
   fireworks = (msg) => {
@@ -32,4 +42,10 @@ class Logo extends React.Component {
   }
 }
 
-export default (Logo);
+const mapDistpatchToProps = dispatch => {
+  return {
+    endCharAnimationComp: state => dispatch(endCharAnimationComp(state))
+  }
+}
+
+export default connect(null,mapDistpatchToProps)(Logo);

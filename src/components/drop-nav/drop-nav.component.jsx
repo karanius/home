@@ -5,18 +5,19 @@ import './drop-nav.styles.scss';
 import {Link} from 'react-router-dom'
 
 import {connect} from 'react-redux';
-import {setCharacterPositionLeft,endCharacterAnimation,endSpeechBubbleAnimation} from '../../redux/animation/animation.action';
+import {setCharacterPositionLeft,endCharacterAnimation,endSpeechBubbleAnimation , endCharAnimationComp} from '../../redux/animation/animation.action';
 
 class DropNav extends React.Component {
 
   componentDidMount(){
-    const {setCharacterPositionLeft, endSpeechBubbleAnimation, endCharacterAnimation} = this.props;
+    const {setCharacterPositionLeft, endSpeechBubbleAnimation, endCharacterAnimation , endCharAnimationComp} = this.props;
 
     document.querySelectorAll('.nav-link').forEach(elem=>{
       elem.addEventListener('click',e=>{
         endSpeechBubbleAnimation(null)
         endCharacterAnimation(null)
         setCharacterPositionLeft(-50)
+        endCharAnimationComp(null)
       })
     })
   }
@@ -54,7 +55,8 @@ const mapDispatchToProps = dispatch => {
   return {
     endSpeechBubbleAnimation: state => dispatch(endSpeechBubbleAnimation(state)),
     endCharacterAnimation: state => dispatch(endCharacterAnimation(state)),
-    setCharacterPositionLeft: state => dispatch(setCharacterPositionLeft(state))
+    setCharacterPositionLeft: state => dispatch(setCharacterPositionLeft(state)),
+    endCharAnimationComp: state => dispatch(endCharAnimationComp(state))
   }
 }
 

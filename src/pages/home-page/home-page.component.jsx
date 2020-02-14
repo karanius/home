@@ -4,7 +4,9 @@ import X from '../../animations/animate.component/X.component';
 
 
 
-const HomePage = () => {
+const HomePage = (props) => {
+
+
     return(
         <div className="home-page" >
           <X />

@@ -17,17 +17,19 @@ class SpeechBubble extends React.Component {
   
   componentDidMount(){
     this.adjusterFunction()
-
   }
+
 
   adjusterFunction = () => {
     const {speechBubbleIsActive , endSpeechBubbleAnimation} = this.props;
     if (speechBubbleIsActive){
+      console.log(speechBubbleIsActive)
+
       let reqI;
    
       const adjust = () => {
         console.log('running')
-        if (speechBubbleIsActive && document.querySelector('.character-position')){
+        if (speechBubbleIsActive && document.querySelector('.character-position') && document.querySelector('.show') ){
             document.querySelector('.show').style.top = `${document.querySelector('.character-position').offsetTop - 100}px`;
             document.querySelector('.show').style.left =  `${document.querySelector('.character-position').offsetLeft - 200}px`;
             setTimeout(()=>{requestAnimationFrame(adjust)},500)

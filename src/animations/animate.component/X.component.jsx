@@ -4,11 +4,11 @@ import './X.style.css'
 
 import SpeachBubble from '../assets.component/speech-bubble/speech-bubble.component';
 import {connect} from 'react-redux';
-import {startCharacterAnimation, setCharacterPositionLeft, startSpeechBubbleAnimation , setCharacterDirectionAnimation } from '../../redux/animation/animation.action';
+import {endSpeechBubbleAnimation ,startCharacterAnimation, setCharacterPositionLeft, startSpeechBubbleAnimation , setCharacterDirectionAnimation } from '../../redux/animation/animation.action';
 
 class X extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
 
     this.state ={
       pageCenterX: window.innerWidth/2,
@@ -18,6 +18,7 @@ class X extends React.Component {
   }
 
   componentDidMount(){
+    
     const {stage} = this.state
     //character's "pre" stage
     if (stage === 1){
@@ -31,6 +32,7 @@ class X extends React.Component {
     })
     this.animate(stage)
   }
+
 
   animate = (stage) => {
     //other stages are for later - just focus on stage 1
@@ -78,7 +80,6 @@ class X extends React.Component {
   render(){
     const { pageBottomY , stage} = this.state;
     const {speechBubbleIsActive , characterLeft} = this.props;
-
     return(
       <div className="x-container">
 
@@ -119,7 +120,8 @@ const mapDispatchToProps = dispatch => {
     startSpeechBubbleAnimation: state => dispatch(startSpeechBubbleAnimation(state)),
     setCharacterDirectionAnimation: state => dispatch(setCharacterDirectionAnimation(state)),
     setCharacterPositionLeft: state => dispatch(setCharacterPositionLeft(state)),
-    startCharacterAnimation: state => dispatch(startCharacterAnimation(state))
+    startCharacterAnimation: state => dispatch(startCharacterAnimation(state)),
+    endSpeechBubbleAnimation: state => dispatch(endSpeechBubbleAnimation(state))
   }
 }
 

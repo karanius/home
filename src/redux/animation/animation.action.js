@@ -41,3 +41,20 @@ export const endCharacterAnimation = state => {
     payload: state
   }
 }
+
+export const startCharAnimationComp = state => ({
+  type: AnimationActionTypes.START_CHAR_ANIM_COMP,
+  payload: state
+})
+
+export const endCharAnimationComp = state => ({
+  type: AnimationActionTypes.END_CHAR_ANIM_COMP,
+  payload: state
+})
+
+export const setCharacterPositionLeftComp = state => {
+  return {
+    type: AnimationActionTypes.SET_CHAR_POS_LEFT_COMP,
+    payload: state
+  }
+}

@@ -2,18 +2,19 @@ import React from 'react';
 import './nav-links.styles.scss'
 import {Link} from 'react-router-dom';
 
-import {endSpeechBubbleAnimation , endCharacterAnimation , setCharacterPositionLeft} from '../../redux/animation/animation.action'
+import {endSpeechBubbleAnimation , endCharacterAnimation , setCharacterPositionLeft , endCharAnimationComp} from '../../redux/animation/animation.action'
 import {connect} from 'react-redux';
 
 class NavLinks extends React.Component {
 
   componentDidMount(){
-    const {endSpeechBubbleAnimation , endCharacterAnimation , setCharacterPositionLeft} = this.props
+    const {endSpeechBubbleAnimation , endCharacterAnimation , setCharacterPositionLeft, endCharAnimationComp} = this.props
     document.querySelectorAll('.nav-link').forEach(elem=>{
       elem.addEventListener('click',e=>{
         endSpeechBubbleAnimation(null)
         endCharacterAnimation(null)
         setCharacterPositionLeft(-50)
+        endCharAnimationComp(null)
       })
     })
   }
@@ -33,7 +34,8 @@ const mapDispatchToProps = dispatch =>{
   return{
     setCharacterPositionLeft: state => dispatch(setCharacterPositionLeft(state)),
     endSpeechBubbleAnimation: state => dispatch(endSpeechBubbleAnimation(state)),
-    endCharacterAnimation: state => dispatch(endCharacterAnimation(state))
+    endCharacterAnimation: state => dispatch(endCharacterAnimation(state)),
+    endCharAnimationComp: state => dispatch(endCharAnimationComp(state))
   }
 }
 

@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import './competencies.styles.scss';
 
@@ -18,6 +19,11 @@ import reactSVG from '../../animations/svgs/react.svg';
 import gitSVG from '../../animations/svgs/git.svg';
 import mysqlSVG from '../../animations/svgs/mysql.svg'
 import mongoSVG from '../../animations/svgs/mongo.svg'
+
+import Character from '../../animations/assets.component/character/character.component';
+import {setCharacterPositionLeftComp , endCharAnimationComp , startCharAnimationComp ,setCharacterDirectionAnimation} from '../../redux/animation/animation.action';
+import {connect} from 'react-redux'
+
 
 class Competencies extends React.Component {
 
@@ -51,30 +57,92 @@ class Competencies extends React.Component {
 
 
   componentWillUnmount(){
+    this.props.endCharAnimationComp(null)
     window.removeEventListener('scroll', this.scrollAnimationFunciton);
   }
 
   componentDidMount(){
-    this.initialIntroScrol();
+    window.secondLoad = 0;
+    this.props.startCharAnimationComp(true);
     window.addEventListener('scroll', this.scrollAnimationFunciton);
+    this.initialIntroScrol();
+    this.moonWalk()
+
+  }
+
+  moonWalk = () => {
+    const {setCharacterDirection, characterDirection ,setCharacterPositionLeftComp } = this.props;
+
+    const distanceEnd = document.querySelector('.dev-kavian-name').offsetWidth + document.querySelector('.dev-kavian-name').offsetLeft - 60;
+    const distanceStart = document.querySelector('.dev-kavian-name').offsetLeft;      
+    let charCurrentPosition = document.querySelector('.character-position').offsetLeft
+
+
+    characterDirection === 'right' ? 
+      setTimeout(()=>{
+        setCharacterDirection('left') 
+        setCharacterPositionLeftComp(distanceStart)
+      },0)
+       : 
+       setTimeout(()=>{
+        setCharacterDirection('right');
+        setCharacterPositionLeftComp(distanceEnd)
+      },0)
+            
+    const steps = (timestamp) =>{
+      if (this.props.characterIsActiveComp) {
+        charCurrentPosition = document.querySelector('.character-position').offsetLeft;
+        if (characterDirection === 'right') {
+          if (charCurrentPosition <= distanceEnd){
+            // keep walking 
+            setCharacterPositionLeftComp(this.props.characterLeftComp + 5)
+            setTimeout(()=>{requestAnimationFrame(steps)},80);
+          } else {
+            // end the requestAnimationFrame and call moonwalk
+            cancelAnimationFrame(compReqID)
+            this.moonWalk()
+          }
+        } else if (characterDirection === 'left') {
+          if (charCurrentPosition >= distanceStart){
+            setCharacterPositionLeftComp(this.props.characterLeftComp - 5)
+            setTimeout(()=>{requestAnimationFrame(steps)},80);
+          } else {
+            cancelAnimationFrame(compReqID)
+            this.moonWalk()
+          }
+        }
+      } else {
+        cancelAnimationFrame(compReqID)
+      }
+    }
+    
+    const compReqID = requestAnimationFrame(steps)
   }
 
   scrollAnimationFunciton = (e) => {
     const distanceFromTop = window.scrollY;
-    console.log(distanceFromTop)
+    const windowHeight = window.innerHeight;
+    const windowBottom = distanceFromTop + windowHeight;
+
+
+    const dev_kavian_elem = document.querySelector('.dev-kavian');
 
         //logic section:
         // .dev-kavian - opacity
-        document.querySelector('.dev-kavian').style.opacity =  `${1 / ((distanceFromTop ) + 1) - 0.05}`;
+        dev_kavian_elem.style.opacity =  `${ (1 / ((distanceFromTop - 10 ) + 1) < 0) ? 1 : (1 / ((distanceFromTop - 10 ) + 1)) }`;
+        if (Number(dev_kavian_elem.style.opacity) < 0.03) { 
+          dev_kavian_elem.style.opacity = 0 
+        }
         //  .gear-holder - opacity
-        document.querySelector('.gear-holder').style.opacity = distanceFromTop / 100 ;
+        document.querySelector('.gear-holder').style.opacity = (distanceFromTop - 10) / 100 ;
         
+
         if (distanceFromTop < 100) {
           //initialise section :
-          if (this.state.initialScrollExecuted){
+          if (this.state.initialScrollExecuted === true){
             this.setState({initialScrollExecuted:null});
             
-            setTimeout(()=>{document.querySelector('.dev-kavian').classList.remove("hide")},500)
+            setTimeout(()=>{dev_kavian_elem.classList.remove("hide")},500)
             
             let requestId;
             let listOfFirstElem = document.querySelectorAll('.firstLoad');
@@ -87,19 +155,50 @@ class Competencies extends React.Component {
                 setTimeout(()=>{requestAnimationFrame(firstLoad)},200)
               } else {
                 console.log('firstLoad: done')
+                this.setState({initialScrollExecuted:"readyForSecond"});
                 document.querySelectorAll('.title-logo').forEach(el => {
                   setTimeout(()=>{el.classList.remove('hide')},700)
                 })
                 cancelAnimationFrame(requestId)
               }
             }
-            requestId = requestAnimationFrame(firstLoad)
+            requestId = requestAnimationFrame(firstLoad);
           }
-        }     
-      } 
+        }  
+
+
+      if(this.state.initialScrollExecuted === "readyForSecond"){
+        console.log('here')
+        const offsetAdjuster = document.querySelector('.comp-main-container').offsetTop;
+        const elemList = document.querySelectorAll('.secondLoad');
+        const listLength = elemList.length;
+        if ( listLength - 1 >= window.secondLoad){
+          elemList.forEach(elem=>{
+            const elementHeightAdjuster = (Math.floor(elem.offsetHeight / 3));
+            const heightOfElemFromTop = elem.offsetTop + offsetAdjuster + elementHeightAdjuster ;
+            if ((windowBottom >= heightOfElemFromTop) && (elem.classList.contains('notLoaded')) ) {
+              if (elem.classList.contains('right')){
+                elem.classList.remove('notLoaded' , "is-hiding")
+                elem.style.animation = "logoIntroRight 0.7s ease-in-out"
+              } else if (elem.classList.contains('left')){
+                elem.classList.remove('notLoaded' , "is-hiding")
+                elem.style.animation = "logoIntroLeft 1s ease-in-out"
+              } else {
+                elem.classList.remove('notLoaded' , "is-hiding")
+                elem.style.animation = "fullStackDeveloperIntro 0.5s ease-in-out"
+              }
+              window.secondLoad = window.secondLoad + 1
+            } 
+          })
+        } else {
+          this.setState({initialScrollExecuted:'done'})
+        }
+      }
+    } 
 
 
   render(){
+    const {characterLeftComp} = this.props;
     return(
       <div className="comp-main-container">
 
@@ -108,7 +207,15 @@ class Competencies extends React.Component {
 
           <div className="gear-container">
             <div className="dev-kavian" >
-              DEV KAVIAN
+              <div className='character-container'>
+                <div className='character-position' style={{
+                  left: `${characterLeftComp}px`,
+                  position:"absolute"
+                }}>
+                  <Character />
+                </div>
+              </div>
+              <p className="dev-kavian-name" >DEV KAVIAN</p>
             </div>
             <div className="gear-holder">
               <div className="gear-holder-left">
@@ -154,52 +261,32 @@ class Competencies extends React.Component {
 
         </div>
 
-
         <div className="second-card">
-          <div>
-            <h1 className="tech-stack-title"> 
-            I am <br/> Proficient In:
+            <h1 className=" tech-stack-title"> 
+              <p className="is-hiding notLoaded secondLoad">I am <br/> Proficient In:</p>
             </h1>
             <div className="tech-stack-logos-container">
               <div className="tech-stack-logo">
-                <img alt='HTML: Hyper Text Markup Language Version 5' title='HTML: Hyper Text Markup Language Version 5' src={htmlSVG} />
-                <img alt='CSS: Cascading Style Sheets Version 3' title='CSS: Cascading Style Sheets Version 3' src={cssSVG} />
-                <img alt='Sass: Syntactically Awesome Style Sheets' title='Sass: Syntactically Awesome Style Sheets' src={sassSVG} />
-                <img alt='Bootstrap: a front end library' title='Bootstrap: a front end library' src={bootstrapSVG} />
-                <img alt='JS: Javascript' title='JS: Javascript' src={jsSVG} />
-                <img alt='jQuery: javascript framework' title='jQuery: javascript framework' src={jsuqerySVG} />
-                <img alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
-                <img alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
-                <img alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
-                <img alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
-                <img alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
-                <p>and more</p>
+                <img className="is-hiding notLoaded secondLoad left" alt='HTML: Hyper Text Markup Language Version 5' title='HTML: Hyper Text Markup Language Version 5' src={htmlSVG} />
+                <img className="is-hiding notLoaded secondLoad right" alt='CSS: Cascading Style Sheets Version 3' title='CSS: Cascading Style Sheets Version 3' src={cssSVG} />
+                <img className="is-hiding notLoaded secondLoad left" alt='Sass: Syntactically Awesome Style Sheets' title='Sass: Syntactically Awesome Style Sheets' src={sassSVG} />
+                <img className="is-hiding notLoaded secondLoad right" alt='Bootstrap: a front end library' title='Bootstrap: a front end library' src={bootstrapSVG} />
+                <img className="is-hiding notLoaded secondLoad left" alt='JS: Javascript' title='JS: Javascript' src={jsSVG} />
+                <img className="is-hiding notLoaded secondLoad right" alt='jQuery: javascript framework' title='jQuery: javascript framework' src={jsuqerySVG} />
+                <img className="is-hiding notLoaded secondLoad left" alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
+                <img className="is-hiding notLoaded secondLoad right" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
+                <img className="is-hiding notLoaded secondLoad left" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
+                <img className="is-hiding notLoaded secondLoad right" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
+                <img className="is-hiding notLoaded secondLoad left" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
+                <p className="is-hiding notLoaded secondLoad right and-more" >and more</p>
 
               </div>
               
             </div>
 
-          </div>
 
 
         </div>
-
-
-
-            <div className="skill-container">
-
-              <div className="skill-logos">
-                {/* html - css - sass  - bootstrap - js - node - python - express - mongodb - jquery - react - react-redux - react-router - git */}
-              </div>
-
-            </div>
-
-
-
-
-        
-        <div className="testHeight" style={{height:"2000px"}}></div>
-
 
 
 
@@ -208,4 +295,21 @@ class Competencies extends React.Component {
   }
 }
 
-export default Competencies;
+const mapDispatchToProps = dispatch => {
+  return {
+    setCharacterDirection: state => dispatch(setCharacterDirectionAnimation(state)),
+    setCharacterPositionLeftComp: state => dispatch(setCharacterPositionLeftComp(state)),
+    startCharAnimationComp: state => dispatch(startCharAnimationComp(state)),
+    endCharAnimationComp: state => dispatch(endCharAnimationComp(state))
+  }
+}
+
+const mapStateToProps = ({animation}) => {
+  return {
+    characterDirection: animation.characterDirection,
+    characterLeftComp: animation.characterLeftComp,
+    characterIsActiveComp: animation.characterIsActiveComp,
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Competencies);
