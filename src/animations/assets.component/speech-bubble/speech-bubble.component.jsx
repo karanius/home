@@ -23,8 +23,7 @@ class SpeechBubble extends React.Component {
   adjusterFunction = () => {
     const {speechBubbleIsActive , endSpeechBubbleAnimation} = this.props;
     if (speechBubbleIsActive){
-      console.log(speechBubbleIsActive)
-
+      
       let reqI;
    
       const adjust = () => {

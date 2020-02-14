@@ -49,7 +49,7 @@
     width: 190px;
     height: 120px;
     opacity: 1;
-    transform: translate(0%, 0);
+    transform: translate(0%, 30px);
   }
 }
 
@@ -110,7 +110,6 @@
     height: 776px;
 
     .gear-container{
-      // background-color: red;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -121,12 +120,11 @@
       .gear-holder{
         width: 190px;
         height: 120px;
-        // background-color: green;
         position: absolute;
         display: flex;
         flex-direction: row;
-        // transform: translate(-50%, 0);
         animation: gearIntro 1s;
+        transform: translate(0%, 30px);
       }
       
       .gear-holder-left{
@@ -177,7 +175,9 @@
 
     .dev-kavian{
       margin-top: 20px;
+      top: 10px;
       position: absolute;
+      transform: scale(0.7);
       
       .character-container{
         height: 50px;
@@ -212,7 +212,9 @@
       margin-top: 25px;
 
       .msg-title-container{
-        height: 20%;
+        // background: red;
+        
+        height: 100px;
         
         .msg-title{
           text-align: center;
