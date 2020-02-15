@@ -2,16 +2,19 @@
 
 @keyframes borderBoxShadow {
   0%{
+    background-color: #ffffff00;
     border: 1px solid rgba(167, 167, 167, 0);
     box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0);
   }
-  80%{
+  95%{
     border: 1px solid rgba(167, 167, 167, 0);
     box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0);
+    background-color: #ffffff00;
   }
   100% {
     border: 1px solid rgb(167, 167, 167);
     box-shadow: 0 3px 15px -5px black;
+    background-color: #ffffff24;
   }
 }
 
@@ -103,6 +106,17 @@
 .comp-main-container{
   position: relative;
   overflow-x: scroll;
+
+  .comp-footer{
+    text-align: center;
+    color: rgb(243, 253, 218);
+    background-color: rgb(180, 80, 130);
+    height: 70px;
+    border-top: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   .firstCard{
     background-image: linear-gradient(#ffdd6c, #ffab6f);
@@ -180,7 +194,7 @@
       transform: scale(0.7);
       
       .character-container{
-        height: 50px;
+        height: 65px;
         position: relative;
       }
 
@@ -237,6 +251,7 @@
           margin: 1rem;
 
           .list{
+            background-color: #ffffff24;
             color: black;
             width: 18rem;
             padding: 2rem;
@@ -277,6 +292,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          
         }
       }
     }
@@ -288,6 +304,7 @@
 .second-card{
   margin-top: 0;
   padding-top: 0;
+  padding-bottom: 50px;
   background-image: linear-gradient(#ffab6f,#ffdd6c );
 
   &>h1{

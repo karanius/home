@@ -4,7 +4,7 @@ import './X.style.css'
 
 import SpeachBubble from '../assets.component/speech-bubble/speech-bubble.component';
 import {connect} from 'react-redux';
-import {endSpeechBubbleAnimation ,startCharacterAnimation, setCharacterPositionLeft, startSpeechBubbleAnimation , setCharacterDirectionAnimation } from '../../redux/animation/animation.action';
+import { startCharacterAnimation, setCharacterPositionLeft, startSpeechBubbleAnimation , setCharacterDirectionAnimation } from '../../redux/animation/animation.action';
 
 class X extends React.Component {
   constructor(props){
@@ -12,8 +12,9 @@ class X extends React.Component {
 
     this.state ={
       pageCenterX: window.innerWidth/2,
-      pageBottomY: window.innerHeight-200,
+      pageBottomY: window.innerHeight-250,
       stage: 1,
+      speechMsg:['Hi! 👋' , 2000 , 'My name is Kavian 😊' , 4000 ,  ' and I do the "dev" thing! ❤️' , 4000 , "Welcome to my website! 🙌" , 3000 , 'Hope you 👍 it!' , 3000 , "I 🛠️ it myself!! ...using the ⚛️ library" , 3000 , "I love ⚛️" , 4000 , "Please check out the rest of my website." , 5000 ]
     }
   }
 
@@ -27,7 +28,7 @@ class X extends React.Component {
     window.addEventListener('resize', e=>{
       this.setState({
         pageCenterX: window.innerWidth/2,
-        pageBottomY: window.innerHeight-200
+        pageBottomY: window.innerHeight-250
       })
     })
     this.animate(stage)
@@ -78,14 +79,14 @@ class X extends React.Component {
   }
 
   render(){
-    const { pageBottomY , stage} = this.state;
-    const {speechBubbleIsActive , characterLeft} = this.props;
+    const { pageBottomY , stage, speechMsg} = this.state;
+    const {speechBubbleIsActive , characterLeft, characterDirection} = this.props;
     return(
       <div className="x-container">
 
         {
           speechBubbleIsActive ? 
-          <SpeachBubble left={characterLeft} stage={stage}  /> : 
+          <SpeachBubble isActive={speechBubbleIsActive} top={100} left={characterLeft} stage={stage} steps={speechMsg} /> : 
           null
         }
 
@@ -95,7 +96,7 @@ class X extends React.Component {
           left: `${characterLeft}px`,
           position: 'absolute'
         }}>
-          <Character />
+          <Character characterDirection={characterDirection} />
         </div>
 
         </div>
@@ -121,7 +122,6 @@ const mapDispatchToProps = dispatch => {
     setCharacterDirectionAnimation: state => dispatch(setCharacterDirectionAnimation(state)),
     setCharacterPositionLeft: state => dispatch(setCharacterPositionLeft(state)),
     startCharacterAnimation: state => dispatch(startCharacterAnimation(state)),
-    endSpeechBubbleAnimation: state => dispatch(endSpeechBubbleAnimation(state))
   }
 }
 

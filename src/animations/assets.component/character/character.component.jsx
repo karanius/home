@@ -1,8 +1,6 @@
 import React from 'react';
 import './character.styles.css'
 
-import {connect} from 'react-redux';
-
 
 class Character extends React.Component {
 
@@ -19,10 +17,4 @@ class Character extends React.Component {
 
 }
 
-const mapStateToProps = ({animation}) => {
-  return{
-    characterDirection: animation.characterDirection,
-  }
-}
-
-export default connect(mapStateToProps,null)(Character);
+export default (Character);

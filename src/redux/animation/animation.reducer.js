@@ -9,7 +9,8 @@ const INITAL_STATE = {
   characterLeft: -50,
 
   characterIsActiveComp: null,
-  characterLeftComp: 0
+  characterLeftComp: 0,
+  characterDirectionComp: 'left',
 }
 
 const animationReducer = (state = INITAL_STATE , action) => {
@@ -58,6 +59,11 @@ const animationReducer = (state = INITAL_STATE , action) => {
       return{
         ...state,
         characterLeftComp: action.payload
+      }
+    case AnimationActionTypes.SET_CHAR_DIRECTION_COPM:
+      return {
+        ...state,
+        characterDirectionComp: action.payload
       }
     default:
       return state

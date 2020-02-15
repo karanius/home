@@ -21,7 +21,8 @@ import mysqlSVG from '../../animations/svgs/mysql.svg'
 import mongoSVG from '../../animations/svgs/mongo.svg'
 
 import Character from '../../animations/assets.component/character/character.component';
-import {setCharacterPositionLeftComp , endCharAnimationComp , startCharAnimationComp ,setCharacterDirectionAnimation} from '../../redux/animation/animation.action';
+import SpeechBubble from '../../animations/assets.component/speech-bubble/speech-bubble.component'
+import {startSpeechBubbleAnimation,setCharacterPositionLeftComp , endCharAnimationComp , startCharAnimationComp ,setCharacterDirectionAnimationComp} from '../../redux/animation/animation.action';
 import {connect} from 'react-redux'
 
 
@@ -32,6 +33,7 @@ class Competencies extends React.Component {
 
     this.state={
         initialScrollExecuted: null,
+        speechMsg: [ 'look at me!' , 2000 , 'I can do the Moonwalk' , 3000 , ' 🤩' , 3000  ] ,
     }
   }
 
@@ -63,22 +65,23 @@ class Competencies extends React.Component {
 
   componentDidMount(){
     window.secondLoad = 0;
+    this.props.startSpeechBubbleAnimation(true);
     this.props.startCharAnimationComp(true);
     window.addEventListener('scroll', this.scrollAnimationFunciton);
     this.initialIntroScrol();
     this.moonWalk()
-
+    
   }
-
+  
   moonWalk = () => {
-    const {setCharacterDirection, characterDirection ,setCharacterPositionLeftComp } = this.props;
 
+    const {setCharacterDirection, characterDirectionComp ,setCharacterPositionLeftComp } = this.props;
+    
     const distanceEnd = document.querySelector('.dev-kavian-name').offsetWidth + document.querySelector('.dev-kavian-name').offsetLeft - 60;
     const distanceStart = document.querySelector('.dev-kavian-name').offsetLeft;      
     let charCurrentPosition = document.querySelector('.character-position').offsetLeft
 
-
-    characterDirection === 'right' ? 
+    characterDirectionComp === 'right' ? 
       setTimeout(()=>{
         setCharacterDirection('left') 
         setCharacterPositionLeftComp(distanceStart)
@@ -92,17 +95,15 @@ class Competencies extends React.Component {
     const steps = (timestamp) =>{
       if (this.props.characterIsActiveComp) {
         charCurrentPosition = document.querySelector('.character-position').offsetLeft;
-        if (characterDirection === 'right') {
+        if (characterDirectionComp === 'right') {
           if (charCurrentPosition <= distanceEnd){
-            // keep walking 
             setCharacterPositionLeftComp(this.props.characterLeftComp + 5)
             setTimeout(()=>{requestAnimationFrame(steps)},80);
           } else {
-            // end the requestAnimationFrame and call moonwalk
             cancelAnimationFrame(compReqID)
             this.moonWalk()
           }
-        } else if (characterDirection === 'left') {
+        } else if (characterDirectionComp === 'left') {
           if (charCurrentPosition >= distanceStart){
             setCharacterPositionLeftComp(this.props.characterLeftComp - 5)
             setTimeout(()=>{requestAnimationFrame(steps)},80);
@@ -157,7 +158,7 @@ class Competencies extends React.Component {
                 console.log('firstLoad: done')
                 this.setState({initialScrollExecuted:"readyForSecond"});
                 document.querySelectorAll('.title-logo').forEach(el => {
-                  setTimeout(()=>{el.classList.remove('hide')},700)
+                  setTimeout(()=>{el.classList.remove('hide')},500)
                 })
                 cancelAnimationFrame(requestId)
               }
@@ -168,7 +169,6 @@ class Competencies extends React.Component {
 
 
       if(this.state.initialScrollExecuted === "readyForSecond"){
-        console.log('here')
         const offsetAdjuster = document.querySelector('.comp-main-container').offsetTop;
         const elemList = document.querySelectorAll('.secondLoad');
         const listLength = elemList.length;
@@ -198,21 +198,19 @@ class Competencies extends React.Component {
 
 
   render(){
-    const {characterLeftComp} = this.props;
+    const {characterLeftComp,characterDirectionComp,speechBubbleIsActive} = this.props;
     return(
       <div className="comp-main-container">
-
         <div className="firstCard">
-            
-
           <div className="gear-container">
             <div className="dev-kavian" >
               <div className='character-container'>
+                {speechBubbleIsActive ? <SpeechBubble isActive={speechBubbleIsActive} top={40} scale={0.7} left={characterLeftComp} stage={1} steps={this.state.speechMsg}/> : null}
                 <div className='character-position' style={{
                   left: `${characterLeftComp}px`,
                   position:"absolute"
                 }}>
-                  <Character />
+                  <Character characterDirection={characterDirectionComp}/>
                 </div>
               </div>
               <p className="dev-kavian-name" >DEV KAVIAN</p>
@@ -263,7 +261,7 @@ class Competencies extends React.Component {
 
         <div className="second-card">
             <h1 className=" tech-stack-title"> 
-              <p className="is-hiding notLoaded secondLoad" style={{paddingTop: '20px'}}>I am <br/> Proficient In:</p>
+              <p className="is-hiding notLoaded secondLoad " style={{paddingTop: '20px'}}>I am <br/> Proficient In:</p>
             </h1>
             <div className="tech-stack-logos-container">
               <div className="tech-stack-logo">
@@ -288,6 +286,10 @@ class Competencies extends React.Component {
 
         </div>
 
+        <footer className='comp-footer'>
+          Built By Dev Kavian<br/> 2020
+        </footer>
+
 
 
       </div>
@@ -297,18 +299,20 @@ class Competencies extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setCharacterDirection: state => dispatch(setCharacterDirectionAnimation(state)),
+    setCharacterDirection: state => dispatch(setCharacterDirectionAnimationComp(state)),
     setCharacterPositionLeftComp: state => dispatch(setCharacterPositionLeftComp(state)),
     startCharAnimationComp: state => dispatch(startCharAnimationComp(state)),
-    endCharAnimationComp: state => dispatch(endCharAnimationComp(state))
+    endCharAnimationComp: state => dispatch(endCharAnimationComp(state)),
+    startSpeechBubbleAnimation: state => dispatch(startSpeechBubbleAnimation(state)),
   }
 }
 
 const mapStateToProps = ({animation}) => {
   return {
-    characterDirection: animation.characterDirection,
+    characterDirectionComp: animation.characterDirectionComp,
     characterLeftComp: animation.characterLeftComp,
     characterIsActiveComp: animation.characterIsActiveComp,
+    speechBubbleIsActive: animation.speechBubbleIsActive
   }
 }
 

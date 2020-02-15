@@ -3,15 +3,16 @@ import './nav-links.styles.scss'
 import {Link} from 'react-router-dom';
 
 import {endSpeechBubbleAnimation , endCharacterAnimation , setCharacterPositionLeft , endCharAnimationComp} from '../../redux/animation/animation.action'
+import {isBurgerOpen} from '../../redux/nav-bar/nav-bar.actions'
 import {connect} from 'react-redux';
 
 class NavLinks extends React.Component {
 
   componentDidMount(){
-    const {endSpeechBubbleAnimation , endCharacterAnimation , setCharacterPositionLeft, endCharAnimationComp} = this.props
+    const {isBurgerOpen, endSpeechBubbleAnimation , endCharacterAnimation , setCharacterPositionLeft, endCharAnimationComp} = this.props
     document.querySelectorAll('.nav-link').forEach(elem=>{
       elem.addEventListener('click',e=>{
-        console.log(elem.innerText.toLowerCase())
+        isBurgerOpen(null);
         if (elem.innerText.toLowerCase() === 'competencies'){
           endSpeechBubbleAnimation(null)
           endCharacterAnimation(null)
@@ -47,7 +48,8 @@ const mapDispatchToProps = dispatch =>{
     setCharacterPositionLeft: state => dispatch(setCharacterPositionLeft(state)),
     endSpeechBubbleAnimation: state => dispatch(endSpeechBubbleAnimation(state)),
     endCharacterAnimation: state => dispatch(endCharacterAnimation(state)),
-    endCharAnimationComp: state => dispatch(endCharAnimationComp(state))
+    endCharAnimationComp: state => dispatch(endCharAnimationComp(state)),
+    isBurgerOpen: state => dispatch(isBurgerOpen(null))
   }
 }
 

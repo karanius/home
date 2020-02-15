@@ -58,3 +58,10 @@ export const setCharacterPositionLeftComp = state => {
     payload: state
   }
 }
+
+export const setCharacterDirectionAnimationComp = state => {
+  return{
+    type: AnimationActionTypes.SET_CHAR_DIRECTION_COPM,
+    payload: state
+  }
+}
