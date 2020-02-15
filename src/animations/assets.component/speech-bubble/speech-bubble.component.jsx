@@ -31,8 +31,8 @@ class SpeechBubble extends React.Component {
       
       if (isActive){
         const adjust = () => {
-          // console.log("top",top)
-          // console.log("isActive",isActive)
+          console.log("top",top)
+          console.log("speech bubble is active:",isActive)
           // console.log('running')
           if (document.querySelector('.character-position') && document.querySelector('.show') ){
             document.querySelector('.show').style.top = `${document.querySelector('.character-position').offsetTop - top }px`;
