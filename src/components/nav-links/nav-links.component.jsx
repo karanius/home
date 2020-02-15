@@ -11,10 +11,22 @@ class NavLinks extends React.Component {
     const {endSpeechBubbleAnimation , endCharacterAnimation , setCharacterPositionLeft, endCharAnimationComp} = this.props
     document.querySelectorAll('.nav-link').forEach(elem=>{
       elem.addEventListener('click',e=>{
-        endSpeechBubbleAnimation(null)
-        endCharacterAnimation(null)
-        setCharacterPositionLeft(-50)
-        endCharAnimationComp(null)
+        console.log(elem.innerText.toLowerCase())
+        if (elem.innerText.toLowerCase() === 'competencies'){
+          endSpeechBubbleAnimation(null)
+          endCharacterAnimation(null)
+          setCharacterPositionLeft(-50)
+        }else if (elem.innerText.toLowerCase() === 'portfolio') {
+          endSpeechBubbleAnimation(null)
+          endCharacterAnimation(null)
+          setCharacterPositionLeft(-50)
+          endCharAnimationComp(null)
+        } else if (elem.innerText.toLowerCase() === "contact") {
+          endSpeechBubbleAnimation(null)
+          endCharacterAnimation(null)
+          setCharacterPositionLeft(-50)
+          endCharAnimationComp(null)
+        }
       })
     })
   }

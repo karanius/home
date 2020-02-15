@@ -263,7 +263,7 @@ class Competencies extends React.Component {
 
         <div className="second-card">
             <h1 className=" tech-stack-title"> 
-              <p className="is-hiding notLoaded secondLoad">I am <br/> Proficient In:</p>
+              <p className="is-hiding notLoaded secondLoad" style={{paddingTop: '20px'}}>I am <br/> Proficient In:</p>
             </h1>
             <div className="tech-stack-logos-container">
               <div className="tech-stack-logo">
