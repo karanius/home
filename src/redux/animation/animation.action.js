@@ -80,3 +80,10 @@ export const setCharacterDirectionAnimationComp = state => {
     payload: state
   }
 }
+
+export const setSpeechBubbleTopPosition = state => {
+  return {
+    type: AnimationActionTypes.SET_SPEECH_BUBB_TOP_POS,
+    payload: state
+  }
+}

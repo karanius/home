@@ -4,7 +4,7 @@ import './X.style.css'
 
 import SpeachBubble from '../assets.component/speech-bubble/speech-bubble.component';
 import {connect} from 'react-redux';
-import { startCharacterAnimation, setCharacterPositionLeft, startSpeechBubbleAnimation , setCharacterDirectionAnimation } from '../../redux/animation/animation.action';
+import { setSpeechBubbleTopPosition, startCharacterAnimation, setCharacterPositionLeft, startSpeechBubbleAnimation , setCharacterDirectionAnimation } from '../../redux/animation/animation.action';
 
 class X extends React.Component {
   constructor(props){
@@ -19,7 +19,7 @@ class X extends React.Component {
   }
 
   componentDidMount(){
-    
+    this.props.setSpeechBubbleTopPosition(100)
     const {stage} = this.state
     //character's "pre" stage
     if (stage === 1){
@@ -80,13 +80,14 @@ class X extends React.Component {
 
   render(){
     const { pageBottomY , stage, speechMsg} = this.state;
-    const {speechBubbleIsActive , characterLeft, characterDirection} = this.props;
+    const {speechBubbleTopPos,speechBubbleIsActive , characterLeft, characterDirection} = this.props;
+
     return(
       <div className="x-container">
 
         {
           speechBubbleIsActive ? 
-          <SpeachBubble isActive={speechBubbleIsActive} top={100} left={characterLeft} stage={stage} steps={speechMsg} /> : 
+          <SpeachBubble isActive={speechBubbleIsActive} top={speechBubbleTopPos} left={characterLeft} stage={stage} steps={speechMsg} /> : 
           null
         }
 
@@ -112,7 +113,8 @@ const mapStateToProps = ({ animation })=> {
     speechBubbleIsActive: animation.speechBubbleIsActive,
     characterIsActive: animation.characterIsActive,
     characterDirection: animation.characterDirection,
-    characterLeft: animation.characterLeft
+    characterLeft: animation.characterLeft,
+    speechBubbleTopPos: animation.speechBubbleTopPos
   }
 }
 
@@ -122,6 +124,7 @@ const mapDispatchToProps = dispatch => {
     setCharacterDirectionAnimation: state => dispatch(setCharacterDirectionAnimation(state)),
     setCharacterPositionLeft: state => dispatch(setCharacterPositionLeft(state)),
     startCharacterAnimation: state => dispatch(startCharacterAnimation(state)),
+    setSpeechBubbleTopPosition: state => dispatch(setSpeechBubbleTopPosition(state))
   }
 }
 

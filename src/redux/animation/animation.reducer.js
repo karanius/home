@@ -3,6 +3,7 @@ import {AnimationActionTypes} from './animation.types';
 const INITAL_STATE = {
   speechBubbleIsActive: null,
   speechBubbleIsActiveComp: null,
+  speechBubbleTopPos: 0,
   
   //below is for CHARACTER
   characterIsActive: null,
@@ -16,6 +17,11 @@ const INITAL_STATE = {
 
 const animationReducer = (state = INITAL_STATE , action) => {
   switch (action.type){
+    case AnimationActionTypes.SET_SPEECH_BUBB_TOP_POS:
+      return{
+        ...state,
+        speechBubbleTopPos: action.payload
+      }
     case AnimationActionTypes.SET_CHARACTER_POSITION_LEFT:
       return{
         ...state,

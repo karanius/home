@@ -11,47 +11,53 @@ class SpeechBubble extends React.Component {
     
     this.state = {
       stage: this.props.stage,
-      steps: this.props.steps
       
     }
   }
   
+  componentWillUnmount(){
+    this.adjusterFunction(false)
+  }
+
   componentDidMount(){
-    this.adjusterFunction()
+    this.adjusterFunction(true)
   }
 
 
-  adjusterFunction = () => {
-    const {isActive , endSpeechBubbleAnimation , top} = this.props;
-    
+  adjusterFunction = (x) => {
     let reqI;
-    if (isActive){
-      const adjust = () => {
-        console.log("top",top)
-        console.log("isActive",isActive)
-        console.log('running')
-        if (isActive && document.querySelector('.character-position') && document.querySelector('.show') ){
-          document.querySelector('.show').style.top = `${document.querySelector('.character-position').offsetTop - top }px`;
-          document.querySelector('.show').style.left =  `${document.querySelector('.character-position').offsetLeft - 200}px`;
-          setTimeout(()=>{requestAnimationFrame(adjust)},500)
-        } else {
-          cancelAnimationFrame(reqI);
-          endSpeechBubbleAnimation(null);
-        }
-      }
-      reqI = requestAnimationFrame(adjust)
+    if (x) {
+      const {isActive , top} = this.props;
       
+      if (isActive){
+        const adjust = () => {
+          // console.log("top",top)
+          // console.log("isActive",isActive)
+          // console.log('running')
+          if (document.querySelector('.character-position') && document.querySelector('.show') ){
+            document.querySelector('.show').style.top = `${document.querySelector('.character-position').offsetTop - top }px`;
+            document.querySelector('.show').style.left =  `${document.querySelector('.character-position').offsetLeft - 200}px`;
+            setTimeout(()=>{requestAnimationFrame(adjust)},500)
+          } else {
+            cancelAnimationFrame(reqI);
+          }
+        }
+        reqI = requestAnimationFrame(adjust)
+        
+      } else {
+        cancelAnimationFrame(reqI);
+        console.log('speechBubbleIs NOT Active')
+      }
     } else {
       cancelAnimationFrame(reqI);
-      console.log('speechBubbleIs NOT Active')
     }
+    // cancelAnimationFrame(reqI);
   }
 
 
   render(){
     
-    const { stage , steps} = this.state;
-    const {isActive , scale} = this.props;
+    const {isActive , scale, steps} = this.props;
 
     // if (stage === 1) {
       return (
