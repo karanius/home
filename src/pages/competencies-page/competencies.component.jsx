@@ -22,7 +22,7 @@ import mongoSVG from '../../animations/svgs/mongo.svg'
 
 import Character from '../../animations/assets.component/character/character.component';
 import SpeechBubble from '../../animations/assets.component/speech-bubble/speech-bubble.component'
-import {startSpeechBubbleAnimation,setCharacterPositionLeftComp , endCharAnimationComp , startCharAnimationComp ,setCharacterDirectionAnimationComp} from '../../redux/animation/animation.action';
+import {startSpeechBubbleAnimationComp,setCharacterPositionLeftComp , endCharAnimationComp , startCharAnimationComp ,setCharacterDirectionAnimationComp} from '../../redux/animation/animation.action';
 import {connect} from 'react-redux'
 
 
@@ -34,6 +34,7 @@ class Competencies extends React.Component {
     this.state={
         initialScrollExecuted: null,
         speechMsg: [ 'look at me!' , 2000 , 'I can do the Moonwalk' , 3000 , ' 🤩' , 3000  ] ,
+        top: 10
     }
   }
 
@@ -65,7 +66,7 @@ class Competencies extends React.Component {
 
   componentDidMount(){
     window.secondLoad = 0;
-    this.props.startSpeechBubbleAnimation(true);
+    this.props.startSpeechBubbleAnimationComp(true);
     this.props.startCharAnimationComp(true);
     window.addEventListener('scroll', this.scrollAnimationFunciton);
     this.initialIntroScrol();
@@ -155,7 +156,6 @@ class Competencies extends React.Component {
                 pos = pos + 1
                 setTimeout(()=>{requestAnimationFrame(firstLoad)},200)
               } else {
-                console.log('firstLoad: done')
                 this.setState({initialScrollExecuted:"readyForSecond"});
                 document.querySelectorAll('.title-logo').forEach(el => {
                   setTimeout(()=>{el.classList.remove('hide')},500)
@@ -198,14 +198,14 @@ class Competencies extends React.Component {
 
 
   render(){
-    const {characterLeftComp,characterDirectionComp,speechBubbleIsActive} = this.props;
+    const {characterLeftComp,characterDirectionComp,speechBubbleIsActiveComp} = this.props;
     return(
       <div className="comp-main-container">
         <div className="firstCard">
           <div className="gear-container">
             <div className="dev-kavian" >
               <div className='character-container'>
-                {speechBubbleIsActive ? <SpeechBubble isActive={speechBubbleIsActive} top={40} scale={0.7} left={characterLeftComp} stage={1} steps={this.state.speechMsg}/> : null}
+                {speechBubbleIsActiveComp ? <SpeechBubble isActive={speechBubbleIsActiveComp} top={this.state.top} scale={0.75} left={characterLeftComp} stage={1} steps={this.state.speechMsg}/> : null}
                 <div className='character-position' style={{
                   left: `${characterLeftComp}px`,
                   position:"absolute"
@@ -303,7 +303,7 @@ const mapDispatchToProps = dispatch => {
     setCharacterPositionLeftComp: state => dispatch(setCharacterPositionLeftComp(state)),
     startCharAnimationComp: state => dispatch(startCharAnimationComp(state)),
     endCharAnimationComp: state => dispatch(endCharAnimationComp(state)),
-    startSpeechBubbleAnimation: state => dispatch(startSpeechBubbleAnimation(state)),
+    startSpeechBubbleAnimationComp: state => dispatch(startSpeechBubbleAnimationComp(state)),
   }
 }
 
@@ -312,7 +312,7 @@ const mapStateToProps = ({animation}) => {
     characterDirectionComp: animation.characterDirectionComp,
     characterLeftComp: animation.characterLeftComp,
     characterIsActiveComp: animation.characterIsActiveComp,
-    speechBubbleIsActive: animation.speechBubbleIsActive
+    speechBubbleIsActiveComp: animation.speechBubbleIsActiveComp
   }
 }
 

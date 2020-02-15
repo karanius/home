@@ -5,7 +5,7 @@ import './drop-nav.styles.scss';
 import {Link} from 'react-router-dom'
 
 import {connect} from 'react-redux';
-import {setCharacterPositionLeft,endCharacterAnimation,endSpeechBubbleAnimation , endCharAnimationComp} from '../../redux/animation/animation.action';
+import {endSpeechBubbleAnimationComp,setCharacterPositionLeft,endCharacterAnimation,endSpeechBubbleAnimation , endCharAnimationComp} from '../../redux/animation/animation.action';
 import {isBurgerOpen} from '../../redux/nav-bar/nav-bar.actions'
 
 class DropNav extends React.Component {
@@ -18,24 +18,21 @@ class DropNav extends React.Component {
   }
 
   componentDidMount(){
-    const {isBurgerOpen,setCharacterPositionLeft, endSpeechBubbleAnimation, endCharacterAnimation , endCharAnimationComp} = this.props;
+    const {endSpeechBubbleAnimationComp,isBurgerOpen,setCharacterPositionLeft, endSpeechBubbleAnimation, endCharacterAnimation , endCharAnimationComp} = this.props;
 
     document.querySelectorAll('.nav-link').forEach(elem=>{
       elem.addEventListener('click',e=>{
         isBurgerOpen(null);
+        endSpeechBubbleAnimation(null)
+        endCharacterAnimation(null)
+        setCharacterPositionLeft(-50)
         if (elem.innerText.toLowerCase() === 'competencies'){
-          endSpeechBubbleAnimation(null)
           endCharacterAnimation(null)
-          setCharacterPositionLeft(-50)
         }else if (elem.innerText.toLowerCase() === 'portfolio') {
-          endSpeechBubbleAnimation(null)
-          endCharacterAnimation(null)
-          setCharacterPositionLeft(-50)
+          endSpeechBubbleAnimationComp(null)
           endCharAnimationComp(null)
         } else if (elem.innerText.toLowerCase() === "contact") {
-          endSpeechBubbleAnimation(null)
-          endCharacterAnimation(null)
-          setCharacterPositionLeft(-50)
+          endSpeechBubbleAnimationComp(null)
           endCharAnimationComp(null)
         }
       })
@@ -101,7 +98,8 @@ const mapDispatchToProps = dispatch => {
     endCharacterAnimation: state => dispatch(endCharacterAnimation(state)),
     setCharacterPositionLeft: state => dispatch(setCharacterPositionLeft(state)),
     endCharAnimationComp: state => dispatch(endCharAnimationComp(state)),
-    isBurgerOpen: state => dispatch(isBurgerOpen(state))
+    isBurgerOpen: state => dispatch(isBurgerOpen(state)),
+    endSpeechBubbleAnimationComp: state => dispatch(endSpeechBubbleAnimationComp(state))
   }
 }
 

@@ -23,24 +23,26 @@ class SpeechBubble extends React.Component {
 
   adjusterFunction = () => {
     const {isActive , endSpeechBubbleAnimation , top} = this.props;
+    
+    let reqI;
     if (isActive){
-      
-      let reqI;
-   
       const adjust = () => {
+        console.log("top",top)
+        console.log("isActive",isActive)
         console.log('running')
         if (isActive && document.querySelector('.character-position') && document.querySelector('.show') ){
-            document.querySelector('.show').style.top = `${document.querySelector('.character-position').offsetTop - top }px`;
-            document.querySelector('.show').style.left =  `${document.querySelector('.character-position').offsetLeft - 200}px`;
-            setTimeout(()=>{requestAnimationFrame(adjust)},500)
+          document.querySelector('.show').style.top = `${document.querySelector('.character-position').offsetTop - top }px`;
+          document.querySelector('.show').style.left =  `${document.querySelector('.character-position').offsetLeft - 200}px`;
+          setTimeout(()=>{requestAnimationFrame(adjust)},500)
         } else {
           cancelAnimationFrame(reqI);
-          endSpeechBubbleAnimation(null)
+          endSpeechBubbleAnimation(null);
         }
       }
-
       reqI = requestAnimationFrame(adjust)
+      
     } else {
+      cancelAnimationFrame(reqI);
       console.log('speechBubbleIs NOT Active')
     }
   }
@@ -51,7 +53,7 @@ class SpeechBubble extends React.Component {
     const { stage , steps} = this.state;
     const {isActive , scale} = this.props;
 
-    if (stage === 1) {
+    // if (stage === 1) {
       return (
 
           <div className={`${isActive ? 'show' : null}`} style={{
@@ -59,7 +61,7 @@ class SpeechBubble extends React.Component {
           }} >
 
             <div className="speech-bubble" >
-              <div className="msg-itself" style={{}}> 
+              <div className="msg-itself"> 
                 <Typer steps={steps} /> 
               </div>
             </div>
@@ -67,7 +69,7 @@ class SpeechBubble extends React.Component {
           </div>
 
       )
-    }
+    // }
   }
 }
 

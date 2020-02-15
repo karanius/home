@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 
 import {connect} from 'react-redux';
-import {endCharAnimationComp} from '../../redux/animation/animation.action';
+import {endSpeechBubbleAnimationComp,endCharAnimationComp} from '../../redux/animation/animation.action';
 import {isBurgerOpen} from '../../redux/nav-bar/nav-bar.actions';
 
 
@@ -13,7 +13,7 @@ class Logo extends React.Component {
 
   
   componentDidMount(){
-    const {endCharAnimationComp, isBurgerOpen} = this.props
+    const {endSpeechBubbleAnimationComp, endCharAnimationComp, isBurgerOpen} = this.props
     const logo = document.querySelector('.nav-logo');
 
     logo.addEventListener('mouseenter', e=>{
@@ -25,8 +25,9 @@ class Logo extends React.Component {
     })
     
     document.querySelector('.nav-logo').addEventListener('click',e=>{
-        endCharAnimationComp(null)
-        isBurgerOpen(null)
+      endSpeechBubbleAnimationComp(null)
+        endCharAnimationComp(null);
+        isBurgerOpen(null);
     })
   }
 
@@ -47,7 +48,8 @@ class Logo extends React.Component {
 const mapDistpatchToProps = dispatch => {
   return {
     endCharAnimationComp: state => dispatch(endCharAnimationComp(state)),
-    isBurgerOpen: state => dispatch(isBurgerOpen(state))
+    isBurgerOpen: state => dispatch(isBurgerOpen(state)),
+    endSpeechBubbleAnimationComp: state => dispatch(endSpeechBubbleAnimationComp(state))
   }
 }
 

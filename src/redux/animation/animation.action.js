@@ -21,6 +21,21 @@ export const startSpeechBubbleAnimation = state => {
   }
 }
 
+export const endSpeechBubbleAnimationComp = state => {
+  return {
+    type: AnimationActionTypes.END_SPEECH_BUBBLE_ANIMATION_COMP,
+    payload: state
+  }
+}
+
+export const startSpeechBubbleAnimationComp = state => {
+  return{
+    type: AnimationActionTypes.START_SPEECH_BUBBLE_ANIMATION_COMP,
+    payload: state
+  }
+}
+
+
 export const setCharacterDirectionAnimation = state => {
   return{
     type: AnimationActionTypes.SET_CHARACTER_DIRECTION_ANIMATION,
