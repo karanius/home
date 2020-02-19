@@ -142,11 +142,11 @@ const Competencies = () => {
 
   const scrollAnimationFunciton = (e) => {
     const distanceFromTop = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const windowBottom = distanceFromTop + windowHeight;
+    // const windowHeight = window.innerHeight;
+    // const windowBottom = distanceFromTop + windowHeight;
     
     const dev_kavian_elem = document.querySelector('.dev-kavian');
-
+    const gear_elem = document.querySelector('.gear-holder');
     //logic section:
     // .dev-kavian - opacity
     dev_kavian_elem.style.opacity =  `${ (1 / ((distanceFromTop - 10 ) + 1) < 0) ? 1 : (1 / ((distanceFromTop - 10 ) + 1)) }`;
@@ -154,7 +154,15 @@ const Competencies = () => {
       dev_kavian_elem.style.opacity = 0 
     }
     //  .gear-holder - opacity
-    document.querySelector('.gear-holder').style.opacity = (distanceFromTop + 10) / 100 ;
+    gear_elem.style.opacity = (distanceFromTop + 10) / 100 ;
+    // console.log(distanceFromTop)
+    if (distanceFromTop >= 300) {
+      dev_kavian_elem.style.display = 'none'
+      gear_elem.style.display = 'none'
+    } else {
+      dev_kavian_elem.style.display = 'block'
+      gear_elem.style.display = null
+    }
 
     // if (distanceFromTop < 100) {
     //   //initialise section :
