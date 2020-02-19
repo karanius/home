@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=News+Cycle&display=swap');
 
-  .show{
+
+
+.show{
     left: -900px;
     min-width: 299px;
     position: absolute;
@@ -21,15 +24,18 @@
     
   
     .msg-itself{
+      font-family: 'News Cycle', sans-serif;
+
+
       display: flex;
       justify-content: center;
       align-items: center;
 
-      background: rgb(255, 243, 229);
+      background: rgb(255, 250, 244);
       border-radius: 35px ;
       border: 0.1rem dotted black;
       max-width: 300px;
-      padding: 20px;
+      padding: 15px;
       word-wrap: break-word;
       overflow-wrap: break-word;
 

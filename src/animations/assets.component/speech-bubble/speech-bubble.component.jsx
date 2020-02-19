@@ -6,10 +6,7 @@ import Typer from '../Typer/Typer.component';
 const SpeechBubble = (props) => {
 
   useEffect(()=>{
-    adjusterFunction()
-  },[])
-
-  const adjusterFunction = () => {
+    let unmounted = false;
     let reqI;
       const {isActive , top} = props;
       if (isActive){
@@ -17,7 +14,9 @@ const SpeechBubble = (props) => {
           if (document.querySelector('.character-position') && document.querySelector('.show') ){
             document.querySelector('.show').style.top = `${document.querySelector('.character-position').offsetTop - top }px`;
             document.querySelector('.show').style.left =  `${document.querySelector('.character-position').offsetLeft - 200}px`;
-            setTimeout(()=>{requestAnimationFrame(adjust)},500)
+            if (!unmounted){
+              setTimeout(()=>{requestAnimationFrame(adjust)},500)
+            }
           } else {
             cancelAnimationFrame(reqI);
           }
@@ -27,7 +26,12 @@ const SpeechBubble = (props) => {
       } else {
         cancelAnimationFrame(reqI);
       } 
-  }
+
+      return ()=>{
+        unmounted = true;
+      }
+  },[])
+
 
     return (
         <div className={`${props.isActive ? 'show' : null}`} style={{

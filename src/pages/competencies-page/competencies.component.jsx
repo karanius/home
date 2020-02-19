@@ -40,7 +40,7 @@ const Competencies = () => {
 
   useEffect(()=>{
     window.scrollTo({
-      top: 1 ,
+      top: 3 ,
       behavior:"smooth"
     })
     setInitialScrollHappened(true);
@@ -266,7 +266,7 @@ const Competencies = () => {
           <div className="firstCard">
 
                 <h1 className="msg-title">
-                  Full-Stack
+                  FULLSTACK
                 </h1>
               
                 <ul className="list-container">
@@ -298,7 +298,7 @@ const Competencies = () => {
 
 
         <div className="second-card">
-            <p className="skill-title">Skills</p>
+            <p className="skill-title">SKILLS</p>
             <div className="skill-logos-container">
               <img className="" alt='HTML: Hyper Text Markup Language Version 5' title='HTML: Hyper Text Markup Language Version 5' src={htmlSVG} />
               <img className="" alt='CSS: Cascading Style Sheets Version 3' title='CSS: Cascading Style Sheets Version 3' src={cssSVG} />
@@ -311,7 +311,7 @@ const Competencies = () => {
               <img className="" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
               <img className="" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
               <img className="" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
-              <p className="" >and more</p>
+              <p className="and-more" >and more</p>
             </div>
         </div>
 

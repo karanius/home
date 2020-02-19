@@ -18,6 +18,10 @@ const X = () => {
 
   
   useEffect(()=>{
+    window.scrollTo({
+      top: 0 ,
+      behavior:"smooth"
+    })
     const adjustCharPos = () =>{
       setPageCenterX(window.innerWidth/2)
       setPageBottomY(window.innerHeight-250)
