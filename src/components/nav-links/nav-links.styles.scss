@@ -1,18 +1,14 @@
 .nav-items{
-    height: 70px;
-    width: 400px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  
-    .nav-link{
-      display: flex;
-      align-items: center;
-      height: 70px;
-      color:rgb(112, 112, 112);
-      text-decoration: none;
-      &:hover{
-        color:black;
-      }
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .nav-link{
+    color:rgb(112, 112, 112);
+    text-decoration: none;
+    &:hover{
+      color:black;
     }
   }
+}

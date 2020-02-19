@@ -1,11 +1,15 @@
-import {NavBarActionTypes} from './nav-bar.types';
+import {NavbarActionTypes} from './nav-bar.types'
 
-export const setBurgerSate = state => ({
-  type: NavBarActionTypes.SET_BURGER_STATE,
-  payload: state
-})
+export const setDropNavStatus = state => {
+  return {
+    type: NavbarActionTypes.SET_DROPNAV_STATUS,
+    payload: state
+  }
+}
 
-export const isBurgerOpen = state => ({
-  type: NavBarActionTypes.IS_BURGER_OPEN,
-  payload: state
-})
+export const openCloseDropNav = state => {
+  return {
+    type: NavbarActionTypes.DROP_NAV_IS_OPEN,
+    payload: state
+  }
+}

@@ -2,55 +2,44 @@ import React from 'react';
 import './logo.styles.scss'
 import {Link} from 'react-router-dom';
 
-
 import {connect} from 'react-redux';
-import {endSpeechBubbleAnimationComp,endCharAnimationComp} from '../../redux/animation/animation.action';
-import {isBurgerOpen} from '../../redux/nav-bar/nav-bar.actions';
+import {openCloseDropNav} from '../../redux/nav-bar/nav-bar.actions'
 
 
 class Logo extends React.Component {
 
-
-  
   componentDidMount(){
-    const {endSpeechBubbleAnimationComp, endCharAnimationComp, isBurgerOpen} = this.props
-    const logo = document.querySelector('.nav-logo');
-
-    logo.addEventListener('mouseenter', e=>{
-      this.fireworks('enter');
-    })
-    
-    logo.addEventListener('mouseleave', e=>{
-      this.fireworks('leave')
-    })
-    
-    document.querySelector('.nav-logo').addEventListener('click',e=>{
-      endSpeechBubbleAnimationComp(null)
-        endCharAnimationComp(null);
-        isBurgerOpen(null);
+    document.querySelectorAll('.nav-logo').forEach(elem=>{
+      elem.addEventListener('click', this.close)
     })
   }
 
-  fireworks = (msg) => {
-    //fireworks code goes here
-    console.log(msg)
+  componentWillUnmount(){
+    document.querySelectorAll('.nav-logo').forEach(elem=>{
+      elem.removeEventListener('click', this.close)
+    })
+  }
+
+  close = () => {
+    this.props.openCloseDropNav(false);
   }
 
   render(){
     return (
       <Link className="nav-logo" to='/home'>
-      DEV KAVIAN 
+        DEV KAVIAN 
       </Link>
     )
   }
 }
 
-const mapDistpatchToProps = dispatch => {
+
+
+const mapDispatchToProps = dispatch => {
   return {
-    endCharAnimationComp: state => dispatch(endCharAnimationComp(state)),
-    isBurgerOpen: state => dispatch(isBurgerOpen(state)),
-    endSpeechBubbleAnimationComp: state => dispatch(endSpeechBubbleAnimationComp(state))
+    openCloseDropNav: state => dispatch(openCloseDropNav(state))
   }
 }
 
-export default connect(null,mapDistpatchToProps)(Logo);
+
+export default connect(null,mapDispatchToProps)(Logo);

@@ -1,4 +1,4 @@
-export const NavBarActionTypes = {
-  SET_BURGER_STATE : "SET_BURGER_STATE",
-  IS_BURGER_OPEN : "IS_BURGER_OPEN"
-};
+export const NavbarActionTypes = {
+  SET_DROPNAV_STATUS: "SET_DROPNAV_STATUS",
+  DROP_NAV_IS_OPEN:"DROP_NAV_IS_OPEN"
+}

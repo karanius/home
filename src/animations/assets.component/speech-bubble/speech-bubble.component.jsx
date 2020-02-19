@@ -1,39 +1,19 @@
-import React from 'react';
+import React ,{ useEffect} from 'react';
 import './speech-bubble.styles.scss';
 import Typer from '../Typer/Typer.component';
 
-import {connect} from 'react-redux';
-import {endSpeechBubbleAnimation } from '../../../redux/animation/animation.action';
 
-class SpeechBubble extends React.Component {
-  constructor(props){
-    super(props)
-    
-    this.state = {
-      stage: this.props.stage,
-      
-    }
-  }
-  
-  componentWillUnmount(){
-    this.adjusterFunction(false)
-  }
+const SpeechBubble = (props) => {
 
-  componentDidMount(){
-    this.adjusterFunction(true)
-  }
+  useEffect(()=>{
+    adjusterFunction()
+  },[])
 
-
-  adjusterFunction = (x) => {
+  const adjusterFunction = () => {
     let reqI;
-    if (x) {
-      const {isActive , top} = this.props;
-      
+      const {isActive , top} = props;
       if (isActive){
         const adjust = () => {
-          console.log("top",top)
-          console.log("speech bubble is active:",isActive)
-          // console.log('running')
           if (document.querySelector('.character-position') && document.querySelector('.show') ){
             document.querySelector('.show').style.top = `${document.querySelector('.character-position').offsetTop - top }px`;
             document.querySelector('.show').style.left =  `${document.querySelector('.character-position').offsetLeft - 200}px`;
@@ -46,46 +26,22 @@ class SpeechBubble extends React.Component {
         
       } else {
         cancelAnimationFrame(reqI);
-        console.log('speechBubbleIs NOT Active')
-      }
-    } else {
-      cancelAnimationFrame(reqI);
-    }
-    // cancelAnimationFrame(reqI);
+      } 
   }
 
-
-  render(){
-    
-    const {isActive , scale, steps} = this.props;
-
-    // if (stage === 1) {
-      return (
-
-          <div className={`${isActive ? 'show' : null}`} style={{
-            transform: `scale(${scale})`
-          }} >
-
-            <div className="speech-bubble" >
-              <div className="msg-itself"> 
-                <Typer steps={steps} /> 
-              </div>
+    return (
+        <div className={`${props.isActive ? 'show' : null}`} style={{
+          transform: `scale(${props.scale})`,
+        }} >
+          <div className="speech-bubble" >
+            <div className="msg-itself" style={{
+              fontSize: `${ props.fontSize ? props.fontSize : null }rem`
+            }}> 
+              <Typer steps={props.steps} /> 
             </div>
-
           </div>
-
-      )
-    // }
-  }
+        </div>
+    )
 }
 
-
-
-
-const mapDispatchToProps = dispatch => {
-  return{
-    endSpeechBubbleAnimation: state => dispatch(endSpeechBubbleAnimation(state)),
-  }
-}
-
-export default connect(null,mapDispatchToProps)(SpeechBubble);
+export default (SpeechBubble);

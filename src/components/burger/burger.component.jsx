@@ -1,29 +1,29 @@
 import React from 'react';
 import './burger.styles.scss'
 
-import {connect} from 'react-redux'; 
-
-import {isBurgerOpen} from '../../redux/nav-bar/nav-bar.actions'
+import {openCloseDropNav} from '../../redux/nav-bar/nav-bar.actions'
+import {connect} from 'react-redux';
 
 class Burger extends React.Component {
 
-  componentDidMount(){
-    const burgerButton = document.getElementById("burger-button");
-    
-    burgerButton.addEventListener('click', (e)=>{
-      const {burgerOpen , isBurgerOpen} = this.props
-      if (burgerOpen === null ) {
-        isBurgerOpen(true)
-      } else if (burgerOpen === true ){
-        isBurgerOpen(null)
+  dropLinkWillOpenClose = (e) => {
+      if (this.props.dropNavIsOpen) {
+        this.props.openCloseDropNav(false)
+      } else {
+        this.props.openCloseDropNav(true)
       }
-    })
   }
 
+  componentDidMount(){
+    document.querySelector('#burger-button').addEventListener('click', this.dropLinkWillOpenClose )
+  }
+  componentWillUnmount () {
+    document.querySelector('#burger-button').removeEventListener('click', this.dropLinkWillOpenClose )
+  }
 
   render(){
     return (
-      <div id="burger-button" className={`burger`}>
+      <div id="burger-button" className="burger">
         <div className="burger-line"></div>
         <div className="burger-line"></div>
         <div className="burger-line"></div>
@@ -35,13 +35,16 @@ class Burger extends React.Component {
 
 const mapStateToProps = ({navBar}) => {
   return{
-    burgerOpen: navBar.burgerOpen
+    dropNavIsOpen: navBar.dropNavIsOpen
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  isBurgerOpen: state => dispatch(isBurgerOpen(state))
-})
+const mapDispatchToProps = dispatch => {
+  return {
+    openCloseDropNav: state => dispatch(openCloseDropNav(state))
+  }
+}
+
 
 
 export default connect(mapStateToProps,mapDispatchToProps)(Burger);
