@@ -1,0 +1,12 @@
+.cards-container-warapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .cards-container{
+    max-width: 1090px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}

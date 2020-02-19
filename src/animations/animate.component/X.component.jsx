@@ -5,9 +5,9 @@ import SpeachBubble from '../assets.component/speech-bubble/speech-bubble.compon
 
 const X = () => {
 
-  const [bubbleTopPos,setBubbleTopPos] = useState(100);
+  const [bubbleTopPos] = useState(100);
   const [bubbleIsActive,setBubbleIsActive] = useState(false);
-  const [speechMsg,setSpeechMsg] = useState(['Hi! 👋' , 2000 , 'My name is Kavian 😊' , 4000 ,  ' and I do the "dev" thing! ❤️' , 4000 , "Welcome to my website! 🙌" , 3000 , 'Hope you 👍 it!' , 3000 , "I 🛠️ it myself!! ...using the ⚛️ library" , 3000 , "I love ⚛️" , 4000 , "Please check out the rest of my website." , 5000 ]);
+  const [speechMsg] = useState(['Hi! 👋' , 2000 , 'My name is Kavian 😊' , 4000 ,  ' and I do the "dev" thing! ❤️' , 4000 , "Welcome to my website! 🙌" , 3000 , 'Hope you 👍 it!' , 3000 , "I 🛠️ it myself!! ...using the ⚛️ library" , 3000 , "I love ⚛️" , 4000 , "Please check out the rest of my website." , 5000 ]);
 
   const [charDirection, setCharDirection] = useState('right');
   const [charLeftPos,setCharLeftPos] = useState(-50);

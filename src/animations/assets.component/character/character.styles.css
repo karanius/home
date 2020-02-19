@@ -5,6 +5,7 @@
 }
 
 .character{
+  z-index: 10;
   position: relative;
   width: calc(4.79rem * var(--pixel-size));
   height: calc(6.4rem * var(--pixel-size));

@@ -20,27 +20,27 @@ import mongoSVG from '../../animations/svgs/mongo.svg'
 
 import Character from '../../animations/assets.component/character/character.component';
 import SpeechBubble from '../../animations/assets.component/speech-bubble/speech-bubble.component'
-import Parallax from '../../components/parallax/parallax.component';
+// import Parallax from '../../components/parallax/parallax.component';
 
 const Competencies = () => {
 
-  const [bubbleIsActive,setBubbleIsActive] = useState(true);
-  const [bubbleTopPos,setBubbleTopPos] = useState(0);
-  const [speechMsg,setSpeechMsg] = useState([ 'look at me!' , 2000 , 'I can do the Moonwalk' , 3000 , ' 🤩' , 3000  ]);
+  const [bubbleIsActive] = useState(true);
+  const [bubbleTopPos] = useState(0);
+  const [speechMsg] = useState([ 'look at me!' , 2000 , 'I can do the Moonwalk' , 3000 , ' 🤩' , 3000  ]);
 
   const [charLeftPos,setCharLeftPos] = useState(-50);
   const [charDirection, setCharDirection] = useState('right');
-  const [charIsActive,setCharIsActive] = useState(true);
+  // const [charIsActive,setCharIsActive] = useState(true);
   const [charSwitchesDirection, setCharSwitchesDirection ] = useState(true);
 
   const [initialScrollHappened , setInitialScrollHappened ] = useState(false);
 
-  const [secondLoad,setSecondLoad] = useState(0);
+  // const [secondLoad,setSecondLoad] = useState(0);
 
 
   useEffect(()=>{
     window.scrollTo({
-      top: 3 ,
+      top: 65 ,
       behavior:"smooth"
     })
     setInitialScrollHappened(true);
@@ -254,14 +254,12 @@ const Competencies = () => {
             </div>
           </div>
           
-        <div className="parallax">
         <div className="clip-background-color">
           <div className="path-clip-border">
             <div className="path-clip"></div>
           </div>
         </div>
 
-              {/* <Parallax /> */}
 
           <div className="firstCard">
 
@@ -294,7 +292,6 @@ const Competencies = () => {
             <div className="path-clip-two"></div>
           </div>
         </div>
-        </div>
 
 
         <div className="second-card">
@@ -315,7 +312,6 @@ const Competencies = () => {
             </div>
         </div>
 
-        {/* <div style={{height:2000}}></div> */}
 
         <footer className='comp-footer'>
           Built By Dev Kavian<br/> 2020
