@@ -7,7 +7,7 @@ const X = () => {
 
   const [bubbleTopPos] = useState(100);
   const [bubbleIsActive,setBubbleIsActive] = useState(false);
-  const [speechMsg] = useState(['Hi! 👋' , 2000 , 'My name is Kavian 😊' , 4000 ,  ' and I do the "dev" thing! ❤️' , 4000 , "Welcome to my website! 🙌" , 3000 , 'Hope you 👍 it!' , 3000 , "I 🛠️ it myself!! ...using the ⚛️ library" , 3000 , "I love ⚛️" , 4000 , "Please check out the rest of my website." , 5000 ]);
+  const [speechMsg , setSpeechMsg] = useState(["Hold on..." , 1000 , "Almost there..." , 1000]);
 
   const [charDirection, setCharDirection] = useState('right');
   const [charLeftPos,setCharLeftPos] = useState(-50);
@@ -16,7 +16,9 @@ const X = () => {
   const [pageCenterX,setPageCenterX] = useState(window.innerWidth/2);
   const [pageBottomY,setPageBottomY] = useState(window.innerHeight-250);
 
-  
+  const [halfWayReached , setHalfWayReached] = useState(false);
+  const [midMsgSpoken , setMidMsgSpoken] = useState(false);
+
   useEffect(()=>{
     window.scrollTo({
       top: 0 ,
@@ -36,6 +38,7 @@ const X = () => {
 
   useEffect(()=>{
     let unmounted = false;
+    
 
     const walk =() => {
       if (!unmounted){
@@ -47,7 +50,19 @@ const X = () => {
     if (charIsActive){
       if (charLeftPos < pageCenterX){
         setTimeout(walk,100)
+        if (pageCenterX >= 365) {
+          if (charLeftPos > (pageCenterX / 2)){
+            if (!halfWayReached){
+              setBubbleIsActive(true);
+              setHalfWayReached(true)
+            } else if (!midMsgSpoken) {
+              setMidMsgSpoken(true)
+              setTimeout(()=>setBubbleIsActive(false),2400)
+            }
+          }
+        }
       } else {
+        setSpeechMsg(['Hi! 👋' , 2000 , 'My name is Kavian 😊' , 4000 ,  ' and I do the "dev" thing! ❤️' , 4000 , "Welcome to my website! 🙌" , 3000 , 'Hope you 👍 it!' , 3000 , "I 🛠️ it myself!! ...using the ⚛️ library" , 3000 , "I love ⚛️" , 4000 , "Please check out the rest of my website." , 5000 ])
         setCharIsActive(false);
         setCharDirection('stand')
         setBubbleIsActive(true);
@@ -66,8 +81,8 @@ const X = () => {
             bubbleIsActive ? 
             <SpeachBubble 
               isActive={bubbleIsActive} 
-              top={bubbleTopPos} 
-              left={charLeftPos} 
+              top={bubbleTopPos - 50} 
+              left={charLeftPos + 30} 
               steps={speechMsg}               
             /> : 
             null

@@ -280,13 +280,13 @@ const Competencies = () => {
                     <p className="title-logo">
                       {`</>`}
                     </p>
-                    <h3 className="title-msg" >Front-End</h3> <p className=" title-description">To Make It Look Good.<br/>User Friendly.</p>
+                    <h3 className="title-msg" >Front-End</h3> <p className=" title-description">To Make It Look Good And<br/>User Friendly.</p>
                   </li>
                   <li className="list">
                     <p className="title-logo">
                       { `{ ` } <img width='15' alt='tie' src={tieSVG} /> { ` }`}
                     </p>
-                    <h3 className="title-msg">Back-End</h3> <p className="title-description">To Make It Function.<br/>No Aheadaches.</p>
+                    <h3 className="title-msg">Back-End</h3> <p className="title-description">To Make It Function With<br/>No Headaches.</p>
                   </li>
                 </ul> 
 
@@ -312,7 +312,7 @@ const Competencies = () => {
               <img className="" alt='JS: Javascript' title='JS: Javascript' src={jsSVG} />
               <img className="" alt='jQuery: javascript framework' title='jQuery: javascript framework' src={jsuqerySVG} />
               <img className="" alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
-              <img className="" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
+              <img className="react" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
               <img className="" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
               <img className="" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
               <img className="" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
@@ -322,7 +322,7 @@ const Competencies = () => {
 
 
         <footer className='comp-footer'>
-          Built By Dev Kavian<br/> 2020
+          <b>Built By</b> &nbsp; Dev Kavian &nbsp; <span className="footer-year">2020</span>
         </footer>
 
 

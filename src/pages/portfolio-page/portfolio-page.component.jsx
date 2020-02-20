@@ -28,7 +28,7 @@ const PortfolioPage = () => {
         </div>
 
         <div className="bottom-port">
-        All The Projects Listed Here Are Build By Kavian Darvish Under The Open Source Licenses. You May Use The Code As You Please. Enjoy.
+        All The Projects Listed Here Are Built By Kavian Darvish Under The Open Source Licenses. You May Use The Code As You Please. Enjoy.
         </div>
         <footer className='comp-footer'>
           Built By Dev Kavian<br/> 2020
