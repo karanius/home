@@ -28,10 +28,10 @@ const PortfolioPage = () => {
         </div>
 
         <div className="bottom-port">
-        All The Projects Listed Here Are Built By Kavian Darvish Under The Open Source Licenses. You May Use The Code As You Please. Enjoy.
+        All the projects listed here are built by <a className='link-port' href='https://github.com/karanius'>Kavian Darvish</a> under the open source licenses. you may use the code as you please. Enjoy.
         </div>
         <footer className='comp-footer'>
-          Built By Dev Kavian<br/> 2020
+          <b>Built By</b> &nbsp; <a className='link-footer' href='https://github.com/karanius'>Dev Kavian</a> &nbsp; <span className="footer-year">2020</span>
         </footer>
 
     </div>

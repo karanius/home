@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 20px;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 3rem;
 
@@ -27,5 +27,12 @@
     text-align: center;
     padding: 30px 50px;
     background-color:#f97070 ;
+  }
+
+  .link-port{
+    color: white;
+    &:hover{
+      color: rgb(192, 192, 192);
+    }
   }
 }

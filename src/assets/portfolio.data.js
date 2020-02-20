@@ -38,7 +38,7 @@ const PORTFOLIO_DATA = [
     title: 'employee tracker'
   },{
     id: 7,
-    imageLink: 'https://raw.githubusercontent.com/karanius/portfolioImages/master/appschat.png?token=AFO4PSYDWHV3V32DPOX5WBS6K4DEQ',
+    imageLink: 'https://raw.githubusercontent.com/karanius/portfolioImages/master/NoteTaker.png?token=AFO4PS2H45ZAWL2THCUXFC26K4K3G',
     liveLink: "https://notetakerapps.herokuapp.com/",
     repo:  'https://github.com/karanius/noteTaker',
     title: 'note taker'
@@ -53,7 +53,7 @@ const PORTFOLIO_DATA = [
     imageLink: 'https://raw.githubusercontent.com/karanius/pdfGenerator/master/screenShot.png',
     liveLink: null,
     repo:  'https://github.com/karanius/pdfGenerator',
-    title: 'git account pdf generator'
+    title: 'git pdf generator'
   },{
     id: 4,
     imageLink: 'https://raw.githubusercontent.com/karanius/portfolioImages/master/weather.png?token=AFO4PS24ESLXLKMZY5WSHPK6K4DHS',

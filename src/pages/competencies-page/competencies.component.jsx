@@ -316,13 +316,13 @@ const Competencies = () => {
               <img className="" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
               <img className="" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
               <img className="" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
-              <p className="and-more" >and more</p>
             </div>
+              <p className="and-more" >and more</p>
         </div>
 
 
         <footer className='comp-footer'>
-          <b>Built By</b> &nbsp; Dev Kavian &nbsp; <span className="footer-year">2020</span>
+          <b>Built By</b> &nbsp; <a className='link-footer' href='https://github.com/karanius'>Dev Kavian</a> &nbsp; <span className="footer-year">2020</span>
         </footer>
 
 

@@ -259,10 +259,11 @@
       }
     }
 
-    .and-more{
-      text-shadow: 1px 0 3px white;
-    }
-
+    
+  }
+  .and-more{
+    text-shadow: 1px 0 3px white;
+    font-size: 0.8rem;
   }
 }
 
@@ -279,6 +280,13 @@
 
 .footer-year{
   font-size: 0.8rem;
+
+}
+.link-footer{
+  color: black;
+  &:hover{
+    color: rgb(104, 104, 104);
+  }
 }
 
 @media only screen and (max-width: 434px) {
