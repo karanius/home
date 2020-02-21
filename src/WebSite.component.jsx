@@ -13,16 +13,29 @@ import ContactPage from './pages/contact-page/contact-page.component';
 
 
 class WebSite extends React.Component {
+
+  componentDidMount(){
+    const url = 'https://devkavianbackend.herokuapp.com/';
+    fetch(url)
+    .then(res=>{
+      console.log('server is up')
+    })
+    .catch(err=>{
+      console.log('server is down')
+    })
+  }
+
   render(){
+    console.log(this)
     return (
       <div className="website">
         <NavBar />
         <div id="route-container">
           <Switch>
-            <Route exact path='/home' component={HomePage} />
+            <Route exact path='/' component={HomePage} />
             <Route exact path='/competencies' component={Competencies} />
-            <Route path='/portfolio' component={PortfolioPage} />
-            <Route path='/contact' component={ContactPage} />
+            <Route exact path='/portfolio' component={PortfolioPage} />
+            <Route exact path='/contact' component={ContactPage} />
           </Switch>
         </div>
       </div>

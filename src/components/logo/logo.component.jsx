@@ -26,7 +26,7 @@ class Logo extends React.Component {
 
   render(){
     return (
-      <Link className="nav-logo" to='/home'>
+      <Link className="nav-logo" to='/'>
         <span className='first-letter'>D</span>EV KAVIAN 
       </Link>
     )

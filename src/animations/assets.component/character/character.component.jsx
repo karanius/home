@@ -6,9 +6,11 @@ class Character extends React.Component {
 
   render(){
 
-    const {characterDirection} = this.props;
+    const {characterDirection,scale} = this.props;
     return(
-      <div className="character" >
+      <div className="character" style={{
+        transform: `scale(${scale})`
+      }}>
         <img className='pixelArt shadow' alt="shadow" src={require("../../sprites/shadow.png")} ></img>
         <img className={`pixelArt character-sprite-sheet ${characterDirection}`} alt='charX' src={require("../../sprites/character.png")} />
       </div>

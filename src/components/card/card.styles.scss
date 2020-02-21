@@ -10,13 +10,14 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   margin: 20px 20px;
   background-color: rgb(250, 242, 242);
+  background: linear-gradient(90deg, transparent -10%, #00000032, transparent 107%);
   .card-title{
     margin: 10px 0;
     text-align: center;
     // font-weight: 800;
     font-family: 'Open Sans Condensed', sans-serif;
     letter-spacing: 5px;
-    text-shadow: 1px 1px 1px rgb(172, 142, 142);
+    text-shadow: 2px 2px 2px rgb(250, 247, 247);
     font-size: 1.4rem;
     
   }

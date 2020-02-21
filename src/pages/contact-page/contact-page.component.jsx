@@ -7,6 +7,10 @@ import GithubSVG from '../../animations/svgs/github.svg'
 import ResumeSVG from '../../animations/svgs/resume.svg'
 import resumePDF from '../../assets/kd2020.pdf';
 
+import SpeechBubble from '../../animations/assets.component/speech-bubble/speech-bubble.component';
+import Character from '../../animations/assets.component/character/character.component';
+
+
 class ContactPage extends React.Component {
   constructor(props){
     super(props);
@@ -32,9 +36,14 @@ class ContactPage extends React.Component {
     document.execCommand('copy');
     document.querySelector('.copied').style.top = 210 + 'px';
     document.querySelector('.copied').style.left = (e.x - 50) + 'px';
-    this.setState({copiedToClipboard: "clicked"})
     setTimeout(()=>{
-      this.setState({copiedToClipboard: null})
+      this.setState({copiedToClipboard: "clicked"})
+    },300)
+    setTimeout(()=>{
+      this.setState({copiedToClipboard: null});
+      setTimeout(()=>{
+        document.querySelector('.copied').style.left = (window.innerWidth + 400) + 'px';
+      },200)
     },1000)
   }
 
@@ -49,7 +58,7 @@ class ContactPage extends React.Component {
     const msg = {
       ...this.state,
     }
-    const url = 'http://localhost:3001/msg';
+    const url = 'https://devkavianbackend.herokuapp.com/msg';
     const options = {
       method: 'POST',
       headers:{"content-type":"application/json"},
@@ -59,7 +68,6 @@ class ContactPage extends React.Component {
     .then(res=>{
       if (res.status === 202) {
         this.setState({name: '' , email: '' , msg: '' , msgSubmited: 'submited'});
-        //show thank you msg
       }
     })
     .catch(err=>console.log(err))
@@ -87,6 +95,7 @@ class ContactPage extends React.Component {
   
 
           <div className='msg-wrapper'>
+          
             <div className={`copied ${this.state.copiedToClipboard ? "clicked" : null}`}>
               copied <br/> to <br/> clipboard
             </div>
@@ -121,9 +130,31 @@ class ContactPage extends React.Component {
                   <button  className="submit-button">Submit</button>
                 </div>
               </form>
-              <div className={`thanks ${this.state.msgSubmited}`}>
-                Thanks!
-              </div> 
+              {
+                this.state.msgSubmited === 'submited' ? 
+                (
+                  <div className={`thanks ${this.state.msgSubmited}`}>
+                    <SpeechBubble 
+                      isActive={true} 
+                      fontSize={2.3} 
+                      top={200} 
+                      stage={1} 
+                      steps={['Thanks!', 3000 , "I like you" , 4000  , "A LOT!" , 4000 ]}
+
+                      />
+                    <div className='character-position' style={{
+                      top: `${320}px`,
+                      position:"absolute"
+                    }}>
+                      <Character 
+                      characterDirection={'stand'}
+                      scale={3.5}
+                      />
+                    </div>
+                  </div> 
+                ) :
+                null
+              }
             </div>
           </div>
             
