@@ -8,7 +8,7 @@ import NavBar from './components/nav-bar/nav-bar.component';
 import HomePage from './pages/home-page/home-page.component';
 import Competencies from './pages/competencies-page/competencies.component'
 import PortfolioPage from './pages/portfolio-page/portfolio-page.component';
-// import ContactPage from './pages/contact-page/contact-page.component';
+import ContactPage from './pages/contact-page/contact-page.component';
 
 
 
@@ -22,7 +22,7 @@ class WebSite extends React.Component {
             <Route exact path='/home' component={HomePage} />
             <Route exact path='/competencies' component={Competencies} />
             <Route path='/portfolio' component={PortfolioPage} />
-            {/* <Route path='/contact' component={ContactPage} /> */}
+            <Route path='/contact' component={ContactPage} />
           </Switch>
         </div>
       </div>

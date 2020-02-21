@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "75e7a8b89ff465f266a2b99efca40cd8",
+    "revision": "9bb5b57032141f2f3cc965283542f4d4",
     "url": "/home/index.html"
   },
   {
-    "revision": "cf8284ff9d89f0608bc1",
-    "url": "/home/static/css/main.38dc24b3.chunk.css"
+    "revision": "098c09bb1e2dc278d793",
+    "url": "/home/static/css/main.8d60bc89.chunk.css"
   },
   {
-    "revision": "d79712de9d5d9aa6eebb",
-    "url": "/home/static/js/2.5e94c61a.chunk.js"
+    "revision": "82a8b5987398a178f9e1",
+    "url": "/home/static/js/2.e648ada4.chunk.js"
   },
   {
     "revision": "928d7b5eb39d16fe9a880722c974b51e",
-    "url": "/home/static/js/2.5e94c61a.chunk.js.LICENSE.txt"
+    "url": "/home/static/js/2.e648ada4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cf8284ff9d89f0608bc1",
-    "url": "/home/static/js/main.fd9236d7.chunk.js"
+    "revision": "098c09bb1e2dc278d793",
+    "url": "/home/static/js/main.678cbc83.chunk.js"
   },
   {
     "revision": "7a8579e1e14f235afe91",
@@ -48,6 +48,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/home/static/media/git.98a54548.svg"
   },
   {
+    "revision": "793770168a4556985854b57f9061b285",
+    "url": "/home/static/media/github.79377016.svg"
+  },
+  {
     "revision": "1a202c4f7bbf886b5fe0d0d3f11b6449",
     "url": "/home/static/media/html5.1a202c4f.svg"
   },
@@ -58,6 +62,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c84f592a7d6ab49a59d62f262647d149",
     "url": "/home/static/media/js.c84f592a.svg"
+  },
+  {
+    "revision": "6bda4ee6c85a8e96066e3fccb023efa3",
+    "url": "/home/static/media/kd2020.6bda4ee6.pdf"
+  },
+  {
+    "revision": "44d22273ccf706817985a5cef80c7042",
+    "url": "/home/static/media/linkedin.44d22273.svg"
   },
   {
     "revision": "e2988ed54229e8f4e6353b4ca05a1c50",
@@ -74,6 +86,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c037c57eb0914cbbba15ec1459a0fb17",
     "url": "/home/static/media/react.c037c57e.svg"
+  },
+  {
+    "revision": "01ca5f3c23ebf2d88b9e701e59344245",
+    "url": "/home/static/media/resume.01ca5f3c.svg"
   },
   {
     "revision": "d3e94e5a59f8f8bda97f1d19a64ea8eb",

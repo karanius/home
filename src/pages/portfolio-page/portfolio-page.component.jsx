@@ -28,10 +28,10 @@ const PortfolioPage = () => {
         </div>
 
         <div className="bottom-port">
-        All the projects listed here are built by <a className='link-port' href='https://github.com/karanius'>Kavian Darvish</a> under the open source licenses. you may use the code as you please. Enjoy.
+        All the projects listed here are built by <a className='link-port' href='https://github.com/karanius'>Kavian Darvish</a> under the open source licenses. You may use the code as you please. Enjoy.
         </div>
         <footer className='comp-footer'>
-          <b>Built By</b> &nbsp; <a className='link-footer' href='https://github.com/karanius'>Dev Kavian</a> &nbsp; <span className="footer-year">2020</span>
+          <b>Built By</b> &nbsp; <a className='link-footer' href='https://github.com/karanius'>DEV KAVIAN</a> &nbsp; <span className="footer-year">2020</span>
         </footer>
 
     </div>
