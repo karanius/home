@@ -81,8 +81,8 @@ const X = () => {
             bubbleIsActive ? 
             <SpeachBubble 
               isActive={bubbleIsActive} 
-              top={bubbleTopPos - 50} 
-              left={charLeftPos + 30} 
+              top={bubbleTopPos - 35} 
+              left={charLeftPos + 50} 
               steps={speechMsg}               
             /> : 
             null

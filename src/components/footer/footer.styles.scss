@@ -1,0 +1,22 @@
+.link-footer{
+    color: black;
+    &:hover{
+      color: rgb(104, 104, 104);
+    }
+  }
+
+.comp-footer{
+  text-align: center;
+  color: black;
+  background-color:rgba(255, 248, 236, 0.733);
+  height: 70px;
+  border-top: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-year{
+  font-size: 1rem;
+
+}

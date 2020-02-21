@@ -20,7 +20,7 @@ import mongoSVG from '../../animations/svgs/mongo.svg'
 
 import Character from '../../animations/assets.component/character/character.component';
 import SpeechBubble from '../../animations/assets.component/speech-bubble/speech-bubble.component'
-// import Parallax from '../../components/parallax/parallax.component';
+import BottomMargin from '../../components/bottom-margin/bottom-marign.components';
 
 const Competencies = () => {
 
@@ -30,13 +30,9 @@ const Competencies = () => {
 
   const [charLeftPos,setCharLeftPos] = useState(-50);
   const [charDirection, setCharDirection] = useState('right');
-  // const [charIsActive,setCharIsActive] = useState(true);
+
   const [charSwitchesDirection, setCharSwitchesDirection ] = useState(true);
-
   const [initialScrollHappened , setInitialScrollHappened ] = useState(false);
-
-  // const [secondLoad,setSecondLoad] = useState(0);
-
 
   useEffect(()=>{
     window.scrollTo({
@@ -142,11 +138,10 @@ const Competencies = () => {
 
   const scrollAnimationFunciton = (e) => {
     const distanceFromTop = window.scrollY;
-    // const windowHeight = window.innerHeight;
-    // const windowBottom = distanceFromTop + windowHeight;
-    
+
     const dev_kavian_elem = document.querySelector('.dev-kavian');
     const gear_elem = document.querySelector('.gear-holder');
+    
     //logic section:
     // .dev-kavian - opacity
     dev_kavian_elem.style.opacity =  `${ (1 / ((distanceFromTop - 10 ) + 1) < 0) ? 1 : (1 / ((distanceFromTop - 10 ) + 1)) }`;
@@ -164,67 +159,8 @@ const Competencies = () => {
       gear_elem.style.display = null
     }
 
-    // if (distanceFromTop < 100) {
-    //   //initialise section :
-    //   if (initialScrollHappened === true){
-    //     this.setState({initialScrollExecuted:null});
-        
-    //     setTimeout(()=>{dev_kavian_elem.classList.remove("hide")},500)
-        
-    //     let requestId;
-    //     let listOfFirstElem = document.querySelectorAll('.firstLoad');
-    //     let pos = 0;
-    //     const firstLoad = () => {
-    //       if (pos <= listOfFirstElem.length - 1) {
-    //         listOfFirstElem[pos].classList.remove("hide");
-    //         pos = pos + 1
-    //         setTimeout(()=>{requestAnimationFrame(firstLoad)},200)
-    //       } else {
-    //         this.setState({initialScrollExecuted:"readyForSecond"});
-    //         document.querySelectorAll('.title-logo').forEach(el => {
-    //           setTimeout(()=>{el.classList.remove('hide')},500)
-    //         })
-    //         cancelAnimationFrame(requestId)
-    //       }
-    //     }
-    //     requestId = requestAnimationFrame(firstLoad);
-    //   }
-    // }  
-
   }
 
-
-
-        
-
-
-
-    //   if(this.state.initialScrollExecuted === "readyForSecond"){
-    //     const offsetAdjuster = document.querySelector('.comp-main-container').offsetTop;
-    //     const elemList = document.querySelectorAll('.secondLoad');
-    //     const listLength = elemList.length;
-    //     if ( listLength - 1 >= window.secondLoad){
-    //       elemList.forEach(elem=>{
-    //         const elementHeightAdjuster = (Math.floor(elem.offsetHeight / 3));
-    //         const heightOfElemFromTop = elem.offsetTop + offsetAdjuster + elementHeightAdjuster ;
-    //         if ((windowBottom >= heightOfElemFromTop) && (elem.classList.contains('notLoaded')) ) {
-    //           if (elem.classList.contains('right')){
-    //             elem.classList.remove('notLoaded' , "is-hiding")
-    //             elem.style.animation = "logoIntroRight 0.7s ease-in-out"
-    //           } else if (elem.classList.contains('left')){
-    //             elem.classList.remove('notLoaded' , "is-hiding")
-    //             elem.style.animation = "logoIntroLeft 1s ease-in-out"
-    //           } else {
-    //             elem.classList.remove('notLoaded' , "is-hiding")
-    //             elem.style.animation = "fullStackDeveloperIntro 0.5s ease-in-out"
-    //           }
-    //           window.secondLoad = window.secondLoad + 1
-    //         } 
-    //       })
-    //     } else {
-    //       this.setState({initialScrollExecuted:'done'})
-    //     }
-    //   }
   
   
 
@@ -232,7 +168,11 @@ const Competencies = () => {
 
     return(
       <div className="comp-main-container">
+
+
+
           <div className="top-card">
+
 
             <div className="dev-kavian" >
               <SpeechBubble isActive={bubbleIsActive} fontSize={2.3} top={bubbleTopPos} scale={0.70} left={charLeftPos} stage={1} steps={speechMsg}/>
@@ -261,12 +201,14 @@ const Competencies = () => {
               </div>
             </div>
           </div>
+
           
         <div className="clip-background-color">
           <div className="path-clip-border">
             <div className="path-clip"></div>
           </div>
         </div>
+
 
 
           <div className="firstCard">
@@ -280,26 +222,20 @@ const Competencies = () => {
                     <p className="title-logo">
                       {`</>`}
                     </p>
-                    <h3 className="title-msg" >Front-End</h3> <p className=" title-description">To Make It Look Good And<br/>User Friendly.</p>
+                    <h3 className="title-msg" >Front-End</h3> <p className=" title-description">To make it look Good and<br/>user friendly.</p>
                   </li>
                   <li className="list">
                     <p className="title-logo">
                       { `{ ` } <img width='15' alt='tie' src={tieSVG} /> { ` }`}
                     </p>
-                    <h3 className="title-msg">Back-End</h3> <p className="title-description">To Make It Function With<br/>No Headaches.</p>
+                    <h3 className="title-msg">Back-End</h3> <p className="title-description">To make it function With<br/>no headaches.</p>
                   </li>
                 </ul> 
 
           </div>
 
 
-
-
-        <div className="clip-background-color-two">
-          <div className="path-clip-border-two">
-            <div className="path-clip-two"></div>
-          </div>
-        </div>
+        <BottomMargin/>
 
 
         <div className="second-card">
