@@ -12,7 +12,7 @@ class NavBar extends React.Component {
 
   componentDidMount(){
     
-    if (ResizeObserver) {
+    if (window.ResizeObserver) {
       const navBarElem = document.querySelector('#navHeighAnchor');
       const ro = new ResizeObserver(props => {  
         const navBarWidth = props["0"].contentRect.width;
