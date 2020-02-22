@@ -9,7 +9,7 @@ const PORTFOLIO_DATA = [
   },{
     id: 12,
     imageLink: "https://raw.githubusercontent.com/karanius/portfolioImages/master/smart-i.png?token=AFO4PS37L3YPSK6Q4UHVQC26K4DGW",
-    liveLink: "https://karanius.github.io/smart-i/",
+    liveLink: "https://karanius.github.io/smart-i/pages/faceRecog.html",
     repo:  'https://github.com/karanius/smart-i',
     title: 'smart-i'
   },{

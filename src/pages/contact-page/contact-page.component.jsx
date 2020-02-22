@@ -75,7 +75,7 @@ class ContactPage extends React.Component {
     return (
       <div className="contact-wrapper">
   
-      <TopMargin open={'open'}>
+      <TopMargin open={'open-other'}>
         CONTACT
       </TopMargin>
 
@@ -128,7 +128,7 @@ class ContactPage extends React.Component {
             
 
 
-          <BottomMrgin open={'open'} />
+          <BottomMrgin open={'open-other'} />
   
               <Footer />
   
