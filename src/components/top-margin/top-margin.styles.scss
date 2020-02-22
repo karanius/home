@@ -1,12 +1,15 @@
 @mixin openBorder {
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
-  background: rgba(105, 67, 67, 0.767);
-  height: 2.2rem;
+  clip-path: polygon(100% 0, 100% 0%, 50% 100%, 0 0%, 0 1%);
+  background: linear-gradient(transparent, rgba(105, 67, 67, 0.767))
 }
 
 @mixin openClip {
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
-  height: 2rem;
+  clip-path: polygon(100% 0, 100% 0%, 50% 100%, 0 0%, 0 1%);
+}
+
+@mixin wrpperOpen {
+  clip-path: polygon(50% 0%, 100% 0, 100% 89%, 50% 100%, 0 89%, 0 0);
+
 }
 
 .top-margin-container{
@@ -30,22 +33,31 @@
 
 .clip-background-color{
   .path-clip-border{
-    clip-path: polygon(50% 0, 0 0, 100% 0);
-    height: 0;
+    clip-path: polygon(100% 0, 100% 100%, 46% 100%, 0 100%, 0 1%);
+    height: 2.2rem;
     transition: 1000ms ease all;
-    transition: 2000ms ease height;
     &.open{
       @include openBorder();
     }
   }
   .path-clip{
     background: rgb(249, 112, 112);
-    clip-path: polygon(50% 0, 0 0, 100% 0);
-    height: 0;
+    clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 1%);
+    height: 2rem;
     transition: 1000ms ease all;
-    transition: 2000ms ease height;
     &.open{
       @include openClip();
     }
   }
+}
+
+.top-wrapper{
+  background: rgb(249, 112, 112);
+  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+  transition: 1000ms ease all;
+
+  &.open{
+    @include wrpperOpen();
+  }
+  
 }

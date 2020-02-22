@@ -147,14 +147,16 @@ const Competencies = () => {
     if(initialScrollHappened){
 
       setTimeout(()=>{
-        setTopMarginStatus('open')
-        setBottomMarginStatus('open')
-        setShowSkillWrapper('appear');
         setTopCardStatus('appear')
         setTimeout(()=>{
-          document.querySelector('.firstCard').classList.add('open')
-        },1000)
-      },500)
+          setTopMarginStatus('open')
+          setBottomMarginStatus('open')
+          // setShowSkillWrapper('appear');
+          setTimeout(()=>{
+            document.querySelector('.firstCard').classList.add('open')
+          },655)
+        },300)
+      },655)
 
 
     }
