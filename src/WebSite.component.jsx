@@ -14,16 +14,16 @@ import ContactPage from './pages/contact-page/contact-page.component';
 
 class WebSite extends React.Component {
 
-  // componentDidMount(){
-  //   const url = 'https://devkavianbackend.herokuapp.com/';
-  //   fetch(url)
-  //   .then(res=>{
-  //     console.log('server is up')
-  //   })
-  //   .catch(err=>{
-  //     console.log('server is down')
-  //   })
-  // }
+  componentDidMount(){
+    const url = 'https://devkavianbackend.herokuapp.com/';
+    fetch(url)
+    .then(res=>{
+      console.log('server is up')
+    })
+    .catch(err=>{
+      console.log('server is down')
+    })
+  }
 
   render(){
     return (

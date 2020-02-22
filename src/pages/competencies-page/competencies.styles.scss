@@ -101,12 +101,12 @@
     
     
     .list{
+      width: 210px;
       padding: 50px;
       border: 1px solid rgb(95, 95, 95);
       margin-top: 40px;
       background-color: rgba(255, 210, 210, 0.363);
       box-shadow: 0px 0px 5px 0 rgb(143, 143, 143);
-
       transition: 300ms ease all;
 
       &.appear{
