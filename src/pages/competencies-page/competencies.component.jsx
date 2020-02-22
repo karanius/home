@@ -34,12 +34,17 @@ const Competencies = () => {
 
   const [charSwitchesDirection, setCharSwitchesDirection ] = useState(true);
   const [initialScrollHappened , setInitialScrollHappened ] = useState(false);
+  const [initialAnimationHappend , setInitialAnimationHappend ] = useState(false);
 
   const [topMarginStatus,setTopMarginStatus] = useState(false);
   const [bottomMarginStatus,setBottomMarginStatus] = useState(false);
-  const [showSkillWrapper, setShowSkillWrapper] = useState(false);
   const [topCardStatus, setTopCardStatus] = useState(false);
-  useEffect(()=>{
+  const [msgTitleIsVisible , setMsgTitleIsVisible] = useState(false)
+  const [lTwoIsVisible , setLTwoIsVisible] = useState(false);
+  const [lOneIsVisible, setLOneIsVisible] = useState(false);
+  const [insideCardIsVisible , setInsideCardIsVisible] = useState(false);
+
+  useEffect(()=>{ 
     window.scrollTo({
       top: 65 ,
       behavior:"smooth"
@@ -144,46 +149,81 @@ const Competencies = () => {
 
   
   useEffect(()=>{
-    if(initialScrollHappened){
+    let unmounted = false;
+
+    if(initialScrollHappened && !unmounted){
 
       setTimeout(()=>{
-        setTopCardStatus('appear')
-        setTimeout(()=>{
-          setTopMarginStatus('open')
-          setBottomMarginStatus('open')
-          // setShowSkillWrapper('appear');
+        if(!unmounted){
+          setTopCardStatus('appear')
           setTimeout(()=>{
-            document.querySelector('.firstCard').classList.add('open')
-          },655)
-        },300)
+            if(!unmounted){
+              setTopMarginStatus('open')
+              setBottomMarginStatus('open')
+              setTimeout(()=>{
+                if(!unmounted){
+                  document.querySelector('.firstCard').classList.add('open');
+                  setTimeout(()=>{if(!unmounted) {setMsgTitleIsVisible('appear')}},700)
+                  setTimeout(()=>{if(!unmounted) {setLOneIsVisible('appear')}},800)
+                  setTimeout(()=>{if(!unmounted) {setLTwoIsVisible('appear')}},900)
+                  setTimeout(()=>{if(!unmounted) {setInsideCardIsVisible('appear')} },1000)
+                  setTimeout(()=>{if(!unmounted) {setInitialAnimationHappend(true)} },1000)
+                }
+              },455)
+            }
+          },300)
+        }
       },655)
+    }
 
-
+    return ()=>{
+      unmounted = true;
     }
   },[initialScrollHappened])
+
+  useEffect(()=>{
+    let unmounted = false;
+    const skillsScrollAnimation = () => {
+      if (!unmounted){
+        const distanceFromTop = window.scrollY;
+        const listOfElems = document.querySelectorAll('.second-load');
+        listOfElems.forEach(elem=>{
+          if (distanceFromTop + window.innerHeight >= elem.offsetTop + ( 2 * (elem.offsetHeight / 3))){
+            if (!elem.classList.contains('second-load-loaded')){
+              elem.classList.add('second-load-loaded');
+            }
+          }
+          // console.log(elem)
+        })
+      }
+    }
+
+    if(initialAnimationHappend){
+      window.addEventListener('scroll',skillsScrollAnimation)
+    }
+
+    return ()=>{
+      unmounted = true;
+      window.removeEventListener('scroll',skillsScrollAnimation)
+    }
+  },[initialAnimationHappend])
+
 
 
   const scrollAnimationFunciton = (e) => {
     const distanceFromTop = window.scrollY;
-
-    const dev_kavian_elem = document.querySelector('.dev-kavian');
-    const gear_elem = document.querySelector('.gear-holder');
-    
-    //logic section:
-    // .dev-kavian - opacity
-    dev_kavian_elem.style.opacity =  `${ (1 / ((distanceFromTop - 10 ) + 1) < 0) ? 1 : (1 / ((distanceFromTop - 10 ) + 1)) }`;
-    if (Number(dev_kavian_elem.style.opacity) < 0.03) { 
-      dev_kavian_elem.style.opacity = 0 
-    }
-    //  .gear-holder - opacity
-    gear_elem.style.opacity = (distanceFromTop + 10) / 100 ;
-    // console.log(distanceFromTop)
-    if (distanceFromTop >= 300) {
-      dev_kavian_elem.style.display = 'none'
-      gear_elem.style.display = 'none'
-    } else {
-      dev_kavian_elem.style.display = 'block'
-      gear_elem.style.display = null
+    if(distanceFromTop <= 360){
+      const dev_kavian_elem = document.querySelector('.dev-kavian');
+      const gear_elem = document.querySelector('.gear-holder');
+      
+      //logic section:
+      // .dev-kavian - opacity
+      dev_kavian_elem.style.opacity =  `${ (1 / ((distanceFromTop - 10 ) + 1) < 0) ? 1 : (1 / ((distanceFromTop - 10 ) + 1)) }`;
+      if (Number(dev_kavian_elem.style.opacity) < 0.03) { 
+        dev_kavian_elem.style.opacity = 0 
+      }
+      //  .gear-holder - opacity
+      gear_elem.style.opacity = (distanceFromTop + 10) / 100 ;    
     }
   }
 
@@ -209,22 +249,22 @@ const Competencies = () => {
       </TopMargin>
 
       <div className="firstCard">
-        <h1 className="msg-title">
-          FULLSTACK
+        <h1 className={`msg-title ${msgTitleIsVisible}`}>
+          FULL STACK
         </h1>
-      
+        
         <ul className="list-container">
-          <li className="list">
-            <p className="title-logo">
+          <li className={`list ${lOneIsVisible}`}>
+            <p className={`title-logo ${insideCardIsVisible}`}>
               {`</>`}
             </p>
-            <h3 className="title-msg" >Front-End</h3> <p className=" title-description">To make it look Good and<br/>user friendly.</p>
+            <h3 className={`title-msg ${insideCardIsVisible}`} >Front-End</h3> <p className={`title-description ${insideCardIsVisible}`}>To make it look Good and<br/>user friendly.</p>
           </li>
-          <li className="list">
-            <p className="title-logo">
+          <li className={`list ${lTwoIsVisible}`}>
+            <p className={`title-logo ${insideCardIsVisible}`}>
               { `{ ` } <img width='15' alt='tie' src={tieSVG} /> { ` }`}
             </p>
-            <h3 className="title-msg">Back-End</h3> <p className="title-description">To make it function With<br/>no headaches.</p>
+            <h3 className={`title-msg ${insideCardIsVisible}`}>Back-End</h3> <p className={`title-description ${insideCardIsVisible}`}>To make it function With<br/>no headaches.</p>
           </li>
         </ul> 
       </div>
@@ -234,22 +274,22 @@ const Competencies = () => {
 
 
       <div className="second-card">
-        <div className={`skills-wrapper ${showSkillWrapper}`}>
-          <p className="skill-title">SKILLS</p>
+        <div className="skills-wrapper">
+          <p className="second-load skill-title">SKILLS</p>
           <div className="skill-logos-container">
-            <img className="" alt='HTML: Hyper Text Markup Language Version 5' title='HTML: Hyper Text Markup Language Version 5' src={htmlSVG} />
-            <img className="" alt='CSS: Cascading Style Sheets Version 3' title='CSS: Cascading Style Sheets Version 3' src={cssSVG} />
-            <img className="" alt='Sass: Syntactically Awesome Style Sheets' title='Sass: Syntactically Awesome Style Sheets' src={sassSVG} />
-            <img className="" alt='Bootstrap: a front end library' title='Bootstrap: a front end library' src={bootstrapSVG} />
-            <img className="" alt='JS: Javascript' title='JS: Javascript' src={jsSVG} />
-            <img className="" alt='jQuery: javascript framework' title='jQuery: javascript framework' src={jsuqerySVG} />
-            <img className="" alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
-            <img className="react" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
-            <img className="" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
-            <img className="" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
-            <img className="" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
+            <img className="second-load second-load-left html" alt='HTML: Hyper Text Markup Language Version 5' title='HTML: Hyper Text Markup Language Version 5' src={htmlSVG} />
+            <img className="second-load second-load-right" alt='CSS: Cascading Style Sheets Version 3' title='CSS: Cascading Style Sheets Version 3' src={cssSVG} />
+            <img className="second-load second-load-left" alt='Sass: Syntactically Awesome Style Sheets' title='Sass: Syntactically Awesome Style Sheets' src={sassSVG} />
+            <img className="second-load second-load-right" alt='Bootstrap: a front end library' title='Bootstrap: a front end library' src={bootstrapSVG} />
+            <img className="second-load second-load-left" alt='JS: Javascript' title='JS: Javascript' src={jsSVG} />
+            <img className="second-load second-load-right" alt='jQuery: javascript framework' title='jQuery: javascript framework' src={jsuqerySVG} />
+            <img className="second-load second-load-left" alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
+            <img className="second-load second-load-right react" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
+            <img className="second-load second-load-left" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
+            <img className="second-load second-load-right" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
+            <img className="second-load" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
           </div>
-          <p className="and-more" >and more</p>
+          <p className="second-load and-more" >and more</p>
         </div>
       </div>
 
