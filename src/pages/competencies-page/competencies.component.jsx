@@ -249,49 +249,54 @@ const Competencies = () => {
       </TopMargin>
 
       <div className="firstCard">
-        <h1 className={`msg-title ${msgTitleIsVisible}`}>
+        <h1 tabindex="0" className={`msg-title ${msgTitleIsVisible}`}>
           FULL STACK
         </h1>
         
         <ul className="list-container">
-          <li className={`list ${lOneIsVisible}`}>
+          <li  className={`list ${lOneIsVisible}`}>
             <p className={`title-logo ${insideCardIsVisible}`}>
               {`</>`}
             </p>
-            <h3 className={`title-msg ${insideCardIsVisible}`} >Front-End</h3> <p className={`title-description ${insideCardIsVisible}`}>To make it look Good and<br/>user friendly.</p>
+            <h3 tabindex="0" className={`title-msg ${insideCardIsVisible}`} >Front-End</h3> <p tabindex="0" className={`title-description ${insideCardIsVisible}`}>To make it look Good and<br/>user friendly.</p>
           </li>
           <li className={`list ${lTwoIsVisible}`}>
             <p className={`title-logo ${insideCardIsVisible}`}>
               { `{ ` } <img width='15' alt='tie' src={tieSVG} /> { ` }`}
             </p>
-            <h3 className={`title-msg ${insideCardIsVisible}`}>Back-End</h3> <p className={`title-description ${insideCardIsVisible}`}>To make it function With<br/>no headaches.</p>
+            <h3 tabindex="0" className={`title-msg ${insideCardIsVisible}`}>Back-End</h3> <p tabindex="0" className={`title-description ${insideCardIsVisible}`}>To make it function With<br/>no headaches.</p>
           </li>
         </ul> 
       </div>
 
 
-      <BottomMargin padding={1} height={5} open={bottomMarginStatus}/>
-
-
-      <div className="second-card">
-        <div className="skills-wrapper">
-          <p className="second-load skill-title">SKILLS</p>
-          <div className="skill-logos-container">
-            <img className="second-load second-load-left html" alt='HTML: Hyper Text Markup Language Version 5' title='HTML: Hyper Text Markup Language Version 5' src={htmlSVG} />
-            <img className="second-load second-load-right" alt='CSS: Cascading Style Sheets Version 3' title='CSS: Cascading Style Sheets Version 3' src={cssSVG} />
-            <img className="second-load second-load-left" alt='Sass: Syntactically Awesome Style Sheets' title='Sass: Syntactically Awesome Style Sheets' src={sassSVG} />
-            <img className="second-load second-load-right" alt='Bootstrap: a front end library' title='Bootstrap: a front end library' src={bootstrapSVG} />
-            <img className="second-load second-load-left" alt='JS: Javascript' title='JS: Javascript' src={jsSVG} />
-            <img className="second-load second-load-right" alt='jQuery: javascript framework' title='jQuery: javascript framework' src={jsuqerySVG} />
-            <img className="second-load second-load-left" alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
-            <img className="second-load second-load-right react" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
-            <img className="second-load second-load-left" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
-            <img className="second-load second-load-right" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
-            <img className="second-load" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
+      <BottomMargin 
+        height={850} 
+        open={bottomMarginStatus} 
+        >
+        <div className="second-card">
+          <div className="skills-wrapper">
+            <div tabindex="0" className="second-load skill-title">SKILLS</div>
+            <div className="skill-logos-container">
+              <img tabindex="0" className="second-load second-load-left html" alt='HTML: Hyper Text Markup Language Version 5' title='HTML: Hyper Text Markup Language Version 5' src={htmlSVG} />
+              <img tabindex="0" className="second-load second-load-right" alt='CSS: Cascading Style Sheets Version 3' title='CSS: Cascading Style Sheets Version 3' src={cssSVG} />
+              <img tabindex="0" className="second-load second-load-left" alt='Sass: Syntactically Awesome Style Sheets' title='Sass: Syntactically Awesome Style Sheets' src={sassSVG} />
+              <img tabindex="0" className="second-load second-load-right" alt='Bootstrap: a front end library' title='Bootstrap: a front end library' src={bootstrapSVG} />
+              <img tabindex="0" className="second-load second-load-left" alt='JS: Javascript' title='JS: Javascript' src={jsSVG} />
+              <img tabindex="0" className="second-load second-load-right" alt='jQuery: javascript framework' title='jQuery: javascript framework' src={jsuqerySVG} />
+              <img tabindex="0" className="second-load second-load-left" alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
+              <img tabindex="0" className="second-load second-load-right react" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
+              <img tabindex="0" className="second-load second-load-left" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
+              <img tabindex="0" className="second-load second-load-right" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
+              <img tabindex="0" className="second-load" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
+            </div>
+            <p tabindex="0" className="second-load and-more" >and more</p>
           </div>
-          <p className="second-load and-more" >and more</p>
         </div>
-      </div>
+
+      </BottomMargin>
+
+
 
 
       <Footer/>

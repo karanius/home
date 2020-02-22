@@ -16,7 +16,7 @@ const PortfolioPage = () => {
       <CardGenerator/>
 
       <BottomMargin open={'open-other'}>
-        All the projects listed here are built by <a className='link-port' href='https://github.com/karanius'>Kavian Darvish</a> under the open source licenses. You may use the code as you please. Enjoy.
+        <p>All the projects listed here are built by <a className='link-port' href='https://github.com/karanius'>Kavian Darvish</a> under the open source licenses. You may use the code as you please. Enjoy.</p>
       </BottomMargin>
       
       <Footer />

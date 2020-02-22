@@ -8,7 +8,13 @@
   clip-path: polygon(50% 0%, 100% 79%, 100% 100%, 50% 100%, 0 100%, 0 79%);
 }
 
+@mixin openClipBackgroundBottom{
+  clip-path: polygon(50% 10%, 100% 90%, 100% 100%, 0 100%, 0 90%);
+}
 
+@mixin openClipBackgroundBottomOther {
+  
+}
 
 
 @mixin openClipBottomOther{
@@ -22,11 +28,20 @@
 
 
 
+
+
 .clip-background-color-bottom{
   .path-clip-border-bottom{
     height: 2rem;
     background-color: rgba(105, 67, 67, 0.767);
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 0);
     transition: 400ms ease all;
+    &.open{
+      @include openClipBackgroundBottom();
+    }
+    &.open-other{
+      @include openClipBackgroundBottomOther();
+    }
   }
   .path-clip-bottom{
     clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 0);
@@ -43,7 +58,10 @@
 }
 
 .bottom-margin-two{
-  
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
   text-align: center;
   padding: 30px 50px;
   background-color:#f97070 ;

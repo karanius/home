@@ -61,7 +61,6 @@
       font-size: 5rem;
       text-align: center;
       text-shadow: 3px 2px 1px rgb(99, 97, 97);
-
     }
   }
 }
@@ -155,13 +154,14 @@
 }
 
 .second-card{
-  background: rgb(249, 112, 112);
+  // background: rgb(249, 112, 112);
+  // background: green;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 40px;
-  height: 916px;
+  padding-bottom: 70px;
+  // height: 916px;
 
   .skills-wrapper{
 

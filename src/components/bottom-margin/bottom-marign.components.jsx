@@ -5,7 +5,7 @@ const BottomMargin = ({children,open,height,padding}) => {
   return(
     <>
     <div 
-      className={`bottom-margin-wrapper ${open}`} 
+      className={` ${open === 'open' ? null : "bottom-margin-wrapper " + open }`} 
     >
       <div className="clip-background-color-bottom">
         <div className={`path-clip-border-bottom ${open}`}>
@@ -22,6 +22,6 @@ const BottomMargin = ({children,open,height,padding}) => {
     </div>
     </>
   )
-}
+}   
 
 export default BottomMargin

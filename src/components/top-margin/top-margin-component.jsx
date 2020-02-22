@@ -12,7 +12,7 @@ const TopMargin = ({children,noShine,height,open}) => {
         <div className="top-margin-container" style={{
           height: `${height ? height : 100}px`
         }}>
-          <div className={`${noShine ? null : "top-margin-msg"}`}>
+          <div tabindex="0" className={`${noShine ? null : "top-margin-msg"}`}>
             {children}
           </div>
         </div>
