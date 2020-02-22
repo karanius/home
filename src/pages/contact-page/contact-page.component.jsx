@@ -86,51 +86,47 @@ class ContactPage extends React.Component {
 
       <ContactPageMsg copiedToClipboard={this.state.copiedToClipboard} />
 
+      <BottomMrgin open={'open-other'} >
+        <div className='body-cont'>
+          <div className={`form-wrapper ${this.state.msgSubmited}`}>
+            <form onSubmit={this.handleSubmit} className={`form-itself ${this.state.msgSubmited}`} >
+              <FormInput required label='Your Name' name="name" type="text" value={this.state.name} handleChange={this.inputHandleChange} />
+              <FormInput required label='Your Email' name="email" type="email" value={this.state.email} handleChange={this.inputHandleChange} />
+              <FormInput required label='Your Message' name="msg" type="text" value={this.state.msg} handleChange={this.inputHandleChange} />
+              <div className="button-container">
+                <button  className="submit-button">Submit</button>
+              </div>
+            </form>
+            {
+              this.state.msgSubmited === 'submited' ? 
+              (
+                <div className={`thanks ${this.state.msgSubmited}`}>
+                  <SpeechBubble 
+                    isActive={true} 
+                    fontSize={2.3} 
+                    top={200} 
+                    stage={1} 
+                    steps={['Thanks!', 2000 , "I like you" , 4000  , "A LOT!" , 4000 ]}
 
-          <div className='body-cont'>
-     
-            <div className={`form-wrapper ${this.state.msgSubmited}`}>
-              <form onSubmit={this.handleSubmit} className={`form-itself ${this.state.msgSubmited}`} >
-                <FormInput required label='Your Name' name="name" type="text" value={this.state.name} handleChange={this.inputHandleChange} />
-                <FormInput required label='Your Email' name="email" type="email" value={this.state.email} handleChange={this.inputHandleChange} />
-                <FormInput required label='Your Message' name="msg" type="text" value={this.state.msg} handleChange={this.inputHandleChange} />
-                <div className="button-container">
-                  <button  className="submit-button">Submit</button>
-                </div>
-              </form>
-              {
-                this.state.msgSubmited === 'submited' ? 
-                (
-                  <div className={`thanks ${this.state.msgSubmited}`}>
-                    <SpeechBubble 
-                      isActive={true} 
-                      fontSize={2.3} 
-                      top={200} 
-                      stage={1} 
-                      steps={['Thanks!', 2000 , "I like you" , 4000  , "A LOT!" , 4000 ]}
-
-                      />
-                    <div className='character-position' style={{
-                      top: `${320}px`,
-                      position:"absolute"
-                    }}>
-                      <Character 
-                      characterDirection={'stand'}
-                      scale={3.5}
-                      />
-                    </div>
-                  </div> 
-                ) :
-                null
-              }
-            </div>
+                    />
+                  <div className='character-position' style={{
+                    top: `${320}px`,
+                    position:"absolute"
+                  }}>
+                    <Character 
+                    characterDirection={'stand'}
+                    scale={3.5}
+                    />
+                  </div>
+                </div> 
+              ) :
+              null
+            }
           </div>
-            
+        </div>
+      </BottomMrgin>
 
-
-          <BottomMrgin open={'open-other'} />
-  
-              <Footer />
+      <Footer />
   
       </div>
     )
