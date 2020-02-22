@@ -1,15 +1,33 @@
+@mixin openBorderBottom {
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  height: 2rem;
+  background: rgba(105, 67, 67, 0.767);
+}
+
+@mixin openClipBottom{
+  background: rgb(249, 112, 112);
+  clip-path: polygon(50% 12%, 0 100%, 100% 100%);
+  height: 2rem;
+}
+
 .clip-background-color-bottom{
   .path-clip-border-bottom{
-    clip-path: polygon(50% 0, 0 100%, 100% 100%);
-    height: 2rem;
-    background: rgba(105, 67, 67, 0.767);
-    
+    clip-path: polygon(50% 100%, 0 100%, 100% 100%);
+    height: 0;
+    transition: 1000ms ease all;
+    transition: 2000ms ease height;
+    &.open {
+      @include openBorderBottom();
+    }
   }
   .path-clip-bottom{
-    background: rgb(249, 112, 112);
-    clip-path: polygon(50% 12%, 0 100%, 100% 100%);
-    
-    height: 2rem;
+    clip-path: polygon(50% 100%, 0 100%, 100% 100%);
+    height: 0;
+    transition: 1000ms ease all;
+    transition: 2000ms ease height;
+    &.open {
+      @include openClipBottom();
+    }
   }
 }
 

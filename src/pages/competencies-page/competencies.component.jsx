@@ -3,8 +3,6 @@
 import React, {useState,useEffect} from 'react';
 import './competencies.styles.scss';
 
-import gearSVG from '../../animations/svgs/gear.svg';
-import gear2SVG from '../../animations/svgs/gear2.svg';
 import tieSVG from '../../animations/svgs/tie.svg'
 import htmlSVG from '../../animations/svgs/html5.svg';
 import cssSVG from '../../animations/svgs/css3.svg';
@@ -18,9 +16,12 @@ import gitSVG from '../../animations/svgs/git.svg';
 import mysqlSVG from '../../animations/svgs/mysql.svg'
 import mongoSVG from '../../animations/svgs/mongo.svg'
 
-import Character from '../../animations/assets.component/character/character.component';
-import SpeechBubble from '../../animations/assets.component/speech-bubble/speech-bubble.component'
+import TopMargin from '../../components/top-margin/top-margin-component';
 import BottomMargin from '../../components/bottom-margin/bottom-marign.components';
+import Footer from '../../components/footer/footer.component';
+
+import CharX from '../../components/char-x/char-x.component';
+import Gear from '../../components/gear/gear.component';
 
 const Competencies = () => {
 
@@ -34,6 +35,10 @@ const Competencies = () => {
   const [charSwitchesDirection, setCharSwitchesDirection ] = useState(true);
   const [initialScrollHappened , setInitialScrollHappened ] = useState(false);
 
+  const [topMarginStatus,setTopMarginStatus] = useState(false);
+  const [bottomMarginStatus,setBottomMarginStatus] = useState(false);
+  const [showSkillWrapper, setShowSkillWrapper] = useState(false);
+  const [topCardStatus, setTopCardStatus] = useState(false);
   useEffect(()=>{
     window.scrollTo({
       top: 65 ,
@@ -41,6 +46,8 @@ const Competencies = () => {
     })
     setInitialScrollHappened(true);
     window.addEventListener('scroll', scrollAnimationFunciton);
+
+
     return () => {
         window.removeEventListener('scroll', scrollAnimationFunciton);
     }
@@ -135,6 +142,24 @@ const Competencies = () => {
 
   },[charLeftPos])
 
+  
+  useEffect(()=>{
+    if(initialScrollHappened){
+
+      setTimeout(()=>{
+        setTopMarginStatus('open')
+        setBottomMarginStatus('open')
+        setShowSkillWrapper('appear');
+        setTopCardStatus('appear')
+        setTimeout(()=>{
+          document.querySelector('.firstCard').classList.add('open')
+        },1000)
+      },500)
+
+
+    }
+  },[initialScrollHappened])
+
 
   const scrollAnimationFunciton = (e) => {
     const distanceFromTop = window.scrollY;
@@ -158,112 +183,78 @@ const Competencies = () => {
       dev_kavian_elem.style.display = 'block'
       gear_elem.style.display = null
     }
-
   }
 
-  
-  
+  return(
+    <div className="comp-main-container">
 
-
-
-    return(
-      <div className="comp-main-container">
-
-
-
-          <div className="top-card">
-
-
-            <div className="dev-kavian" >
-              <SpeechBubble isActive={bubbleIsActive} fontSize={2.3} top={bubbleTopPos} scale={0.70} left={charLeftPos} stage={1} steps={speechMsg}/>
-              <div className='character-position' style={{
-                left: `${charLeftPos}px`,
-                position:"absolute"
-              }}>
-                <Character characterDirection={charDirection}/>
-              </div>
-              <p className="dev-kavian-name" >DEV KAVIAN</p>
-            </div>
-
-            <div className="gear-holder">
-              <div className="gear-holder-left">
-                <img className="left-gear" width="50"  alt="gear" src={gear2SVG} />
-              </div>
-              <div className="gear-holder-middle">
-                <div className="middle-gear-wrapper">    
-                  <img className="middle-gear"   alt="gear" src={gearSVG} />
-                  <img className="small-middle-gear" width="50"  alt="gear" src={gear2SVG} />
-                  <img className="smaller-middle-gear" width="50"  alt="gear" src={gear2SVG} />
-                </div>
-              </div>
-              <div className="gear-holder-right">
-                <img className="right-gear" width="50"  alt="gear" src={gear2SVG} />
-              </div>
-            </div>
+      <TopMargin open={topMarginStatus} height={260} noShine={true}>
+        <div className={`top-card ${topCardStatus}`}>
+          <div className="dev-kavian" >
+            <CharX
+              bubbleIsActive={bubbleIsActive} 
+              bubbleFontSize={2.3} 
+              bubblePosTop={bubbleTopPos} 
+              bubbleScale={0.70} 
+              charLeftPos={charLeftPos} 
+              speechMsg={speechMsg}
+              characterDirection={charDirection}
+            />
+            <p className="dev-kavian-name" >DEV KAVIAN</p>
           </div>
-
-          
-        <div className="clip-background-color">
-          <div className="path-clip-border">
-            <div className="path-clip"></div>
-          </div>
+          <Gear />
         </div>
+      </TopMargin>
 
-
-
-          <div className="firstCard">
-
-                <h1 className="msg-title">
-                  FULLSTACK
-                </h1>
-              
-                <ul className="list-container">
-                  <li className="list">
-                    <p className="title-logo">
-                      {`</>`}
-                    </p>
-                    <h3 className="title-msg" >Front-End</h3> <p className=" title-description">To make it look Good and<br/>user friendly.</p>
-                  </li>
-                  <li className="list">
-                    <p className="title-logo">
-                      { `{ ` } <img width='15' alt='tie' src={tieSVG} /> { ` }`}
-                    </p>
-                    <h3 className="title-msg">Back-End</h3> <p className="title-description">To make it function With<br/>no headaches.</p>
-                  </li>
-                </ul> 
-
-          </div>
-
-
-        <BottomMargin/>
-
-
-        <div className="second-card">
-            <p className="skill-title">SKILLS</p>
-            <div className="skill-logos-container">
-              <img className="" alt='HTML: Hyper Text Markup Language Version 5' title='HTML: Hyper Text Markup Language Version 5' src={htmlSVG} />
-              <img className="" alt='CSS: Cascading Style Sheets Version 3' title='CSS: Cascading Style Sheets Version 3' src={cssSVG} />
-              <img className="" alt='Sass: Syntactically Awesome Style Sheets' title='Sass: Syntactically Awesome Style Sheets' src={sassSVG} />
-              <img className="" alt='Bootstrap: a front end library' title='Bootstrap: a front end library' src={bootstrapSVG} />
-              <img className="" alt='JS: Javascript' title='JS: Javascript' src={jsSVG} />
-              <img className="" alt='jQuery: javascript framework' title='jQuery: javascript framework' src={jsuqerySVG} />
-              <img className="" alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
-              <img className="react" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
-              <img className="" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
-              <img className="" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
-              <img className="" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
-            </div>
-              <p className="and-more" >and more</p>
-        </div>
-
-
-        <footer className='comp-footer'>
-          <b>Built By</b> &nbsp; <a className='link-footer' href='https://github.com/karanius'>DEV KAVIAN</a> &nbsp; <span className="footer-year">2020</span>
-        </footer>
-
-
-
+      <div className="firstCard">
+        <h1 className="msg-title">
+          FULLSTACK
+        </h1>
+      
+        <ul className="list-container">
+          <li className="list">
+            <p className="title-logo">
+              {`</>`}
+            </p>
+            <h3 className="title-msg" >Front-End</h3> <p className=" title-description">To make it look Good and<br/>user friendly.</p>
+          </li>
+          <li className="list">
+            <p className="title-logo">
+              { `{ ` } <img width='15' alt='tie' src={tieSVG} /> { ` }`}
+            </p>
+            <h3 className="title-msg">Back-End</h3> <p className="title-description">To make it function With<br/>no headaches.</p>
+          </li>
+        </ul> 
       </div>
-    )
+
+
+      <BottomMargin padding={1} height={5} open={bottomMarginStatus}/>
+
+
+      <div className="second-card">
+        <div className={`skills-wrapper ${showSkillWrapper}`}>
+          <p className="skill-title">SKILLS</p>
+          <div className="skill-logos-container">
+            <img className="" alt='HTML: Hyper Text Markup Language Version 5' title='HTML: Hyper Text Markup Language Version 5' src={htmlSVG} />
+            <img className="" alt='CSS: Cascading Style Sheets Version 3' title='CSS: Cascading Style Sheets Version 3' src={cssSVG} />
+            <img className="" alt='Sass: Syntactically Awesome Style Sheets' title='Sass: Syntactically Awesome Style Sheets' src={sassSVG} />
+            <img className="" alt='Bootstrap: a front end library' title='Bootstrap: a front end library' src={bootstrapSVG} />
+            <img className="" alt='JS: Javascript' title='JS: Javascript' src={jsSVG} />
+            <img className="" alt='jQuery: javascript framework' title='jQuery: javascript framework' src={jsuqerySVG} />
+            <img className="" alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
+            <img className="react" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
+            <img className="" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
+            <img className="" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
+            <img className="" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
+          </div>
+          <p className="and-more" >and more</p>
+        </div>
+      </div>
+
+
+      <Footer/>
+
+    </div>
+  )
 }
 export default (Competencies);

@@ -38,7 +38,7 @@ class ContactPage extends React.Component {
     document.querySelector('.copied').style.left = (e.x - 50) + 'px';
     setTimeout(()=>{
       this.setState({copiedToClipboard: "clicked"})
-    },300)
+    },50)
     setTimeout(()=>{
       this.setState({copiedToClipboard: null})
     },1000)
@@ -75,7 +75,7 @@ class ContactPage extends React.Component {
     return (
       <div className="contact-wrapper">
   
-      <TopMargin>
+      <TopMargin open={'open'}>
         CONTACT
       </TopMargin>
 
@@ -128,7 +128,7 @@ class ContactPage extends React.Component {
             
 
 
-          <BottomMrgin />
+          <BottomMrgin open={'open'} />
   
               <Footer />
   

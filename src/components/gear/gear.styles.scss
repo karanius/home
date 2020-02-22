@@ -1,0 +1,76 @@
+@keyframes rotateForSmaller {
+  from {
+    transform: rotate(360deg);
+    filter: invert(0.5)
+  }
+  to{
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    filter: invert(0.5)
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+
+.gear-holder{
+  width: 190px;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+
+
+  .gear-holder-left{
+    height: 100%;
+    width: 18%;
+    display: flex;
+    align-items: flex-end;
+  
+    .left-gear{
+      animation: rotate 2s infinite;
+    }
+  }
+
+
+  .gear-holder-middle{
+    height: 100%;
+    width: 57%;
+    .middle-gear-wrapper{
+      position: relative;
+      .middle-gear{
+      position: absolute;
+      animation: rotate 2.5s infinite;
+      }
+      .small-middle-gear{
+        position: absolute;
+        filter: invert(0.8);
+        animation: rotateForSmaller 4s infinite;
+      }
+      .smaller-middle-gear{
+        position: absolute;
+        right: 5px;
+        top: 60px;
+        filter: invert(0.8);
+        animation: rotateForSmaller 10s infinite;
+      }
+    }
+  }
+
+  .gear-holder-right{
+    height: 100%;
+    position: relative;
+
+    .right-gear{
+      position: absolute;
+      left: -18px;
+      top: -10px;
+      animation: rotate 3s infinite;
+    }
+  }
+}

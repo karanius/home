@@ -9,13 +9,13 @@ import Footer from '../../components/footer/footer.component';
 const PortfolioPage = () => {
   return(
     <div className="port-container">
-      <TopMargin >
+      <TopMargin open={'open'} >
         PORTFOLIO
       </TopMargin>
 
       <CardGenerator/>
 
-      <BottomMargin>
+      <BottomMargin open={'open'}>
         All the projects listed here are built by <a className='link-port' href='https://github.com/karanius'>Kavian Darvish</a> under the open source licenses. You may use the code as you please. Enjoy.
       </BottomMargin>
       

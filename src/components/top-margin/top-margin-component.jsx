@@ -1,21 +1,24 @@
 import React from 'react';
 import './top-margin.styles.scss';
 
-const TopMargin = ({children}) => {
+const TopMargin = ({children,noShine,height,open}) => {
+
   return (
 
     <>
 
-      <div className="top-margin-container">
-        <p className="top-margin-msg">
+      <div className="top-margin-container" style={{
+        height: `${height ? height : 100}px`
+      }}>
+        <div className={`${noShine ? null : "top-margin-msg"}`}>
           {children}
-        </p>
+        </div>
       </div>
 
 
       <div className="clip-background-color">
-        <div className="path-clip-border">
-          <div className="path-clip"></div>
+        <div className={`path-clip-border ${open}`}>
+          <div className={`path-clip ${open}`}></div>
         </div>
       </div>
 
