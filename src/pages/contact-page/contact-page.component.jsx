@@ -81,19 +81,19 @@ class ContactPage extends React.Component {
 
             
       <div className="image-wrapper">
-        <img tabindex="0" className='kavian-img' alt='kavian' src="https://avatars3.githubusercontent.com/u/22923211?s=460&v=4" />
+        <img tabIndex="-1" className='kavian-img' alt='kavian' src="https://avatars3.githubusercontent.com/u/22923211?s=460&v=4" />
       </div>
 
       <ContactPageMsg copiedToClipboard={this.state.copiedToClipboard} />
 
         <div className='body-cont'>
           <div className={`form-wrapper ${this.state.msgSubmited}`}>
-            <form onSubmit={this.handleSubmit} className={`form-itself ${this.state.msgSubmited}`} >
-              <FormInput required label='Your Name' name="name" type="text" value={this.state.name} handleChange={this.inputHandleChange} />
-              <FormInput required label='Your Email' name="email" type="email" value={this.state.email} handleChange={this.inputHandleChange} />
-              <FormInput required label='Your Message' name="msg" type="text" value={this.state.msg} handleChange={this.inputHandleChange} />
+            <form tabIndex="0" aria-label="send me a message!" onSubmit={this.handleSubmit} className={`form-itself ${this.state.msgSubmited}`} >
+              <FormInput aria-label="enter your name" tabIndex="0" required label='Your Name' name="name" type="text" value={this.state.name} handleChange={this.inputHandleChange} />
+              <FormInput aria-label="enter your email" tabIndex="0" required label='Your Email' name="email" type="email" value={this.state.email} handleChange={this.inputHandleChange} />
+              <FormInput aria-label="enter your message" tabIndex="0" required label='Your Message' name="msg" type="text" value={this.state.msg} handleChange={this.inputHandleChange} />
               <div className="button-container">
-                <button tabindex="0" className="submit-button">Submit</button>
+                <button aria-label="click to submit" tabIndex="0" className="submit-button">Submit</button>
               </div>
             </form>
             {
@@ -123,10 +123,9 @@ class ContactPage extends React.Component {
             }
           </div>
         </div>
-      <BottomMrgin open={'open-other'} >
-      </BottomMrgin>
+      <BottomMrgin open={'open-other'} />
 
-      <Footer />
+        <Footer />
   
       </div>
     )

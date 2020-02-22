@@ -1,45 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=News+Cycle&display=swap');
 
-
-
 .show{
+  user-select: none;
   transition: 200ms ease all;
     min-width: 299px;
     position: absolute;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     z-index: 5;
-
+    &:focus{
+      outline: none;
+    }
   .speech-bubble{
-
+    user-select: none;
     position: absolute;
     max-width: 300px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     border: 0.4rem double black;
     border-radius: 40px;
-
     transition: 200ms ease all;
-    
-  
+    &:focus{
+      outline: none;
+    }
     .msg-itself{
+      user-select: none;
       transition: 200ms ease all;
-
-
       font-family: 'News Cycle', sans-serif;
-
       letter-spacing: 1px;
-
       display: flex;
       justify-content: center;
       align-items: center;
-
       background: rgb(255, 250, 244);
       border-radius: 35px ;
       border: 0.1rem dotted black;
@@ -47,14 +40,12 @@
       padding: 15px;
       word-wrap: break-word;
       overflow-wrap: break-word;
-
       font-size: 1.3rem;
-
       text-align: center;
-
+      &:focus{
+        outline: none;
+      }
     }
-  
   }
-
 }
 

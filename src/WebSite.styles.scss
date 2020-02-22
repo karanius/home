@@ -8,3 +8,10 @@
   }
 
 }
+
+*{
+  user-select: none;
+  &:focus{
+    outline: none;
+  }
+}

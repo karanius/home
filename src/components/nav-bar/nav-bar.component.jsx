@@ -11,21 +11,38 @@ import {connect} from 'react-redux';
 class NavBar extends React.Component {
 
   componentDidMount(){
-    const navBarElem = document.querySelector('#navHeighAnchor');
-    const ro = new ResizeObserver(props => {  
-      const navBarWidth = props["0"].contentRect.width;
-      if (navBarWidth <= 600 ){
-        this.props.setDropNavStatus(true)
-      } else {
-        this.props.setDropNavStatus(false)
-        this.props.openCloseDropNav(false)
-        // close the drop nav
-      }
-    });
+    
+    if (ResizeObserver) {
+      const navBarElem = document.querySelector('#navHeighAnchor');
+      const ro = new ResizeObserver(props => {  
+        const navBarWidth = props["0"].contentRect.width;
+        if (navBarWidth <= 600 ){
+          this.props.setDropNavStatus(true)
+        } else {
+          this.props.setDropNavStatus(false)
+          this.props.openCloseDropNav(false)
+        }
+      });
+      // Only observe the second box
+      ro.observe(navBarElem);
+    } else {
+      this.resizeNav()
+      window.addEventListener('scroll' , this.resizeNav)
+    }
+  }
 
-    // Only observe the second box
-    ro.observe(navBarElem);
+  componentWillUnmount(){
+    window.removeEventListener('scroll' , this.resizeNav)
+  }
 
+  resizeNav = () =>{
+    const windowWidth = window.innerWidth;
+    if (windowWidth <= 600 ){
+      this.props.setDropNavStatus(true)
+    } else {
+      this.props.setDropNavStatus(false)
+      this.props.openCloseDropNav(false)
+    }
   }
 
   render(){

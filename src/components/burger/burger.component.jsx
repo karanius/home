@@ -9,8 +9,10 @@ class Burger extends React.Component {
   dropLinkWillOpenClose = (e) => {
       if (this.props.dropNavIsOpen) {
         this.props.openCloseDropNav(false)
+        document.querySelector('#burger-button').setAttribute('aria-expanded', 'false')
       } else {
         this.props.openCloseDropNav(true)
+        document.querySelector('#burger-button').setAttribute('aria-expanded', 'true')
       }
   }
 
@@ -23,11 +25,11 @@ class Burger extends React.Component {
 
   render(){
     return (
-      <div id="burger-button" className="burger">
-        <div className="burger-line"></div>
-        <div className="burger-line"></div>
-        <div className="burger-line"></div>
-      </div>
+      <button tabIndex='0' aria-label="navigation menu" aria-expanded='false' id="burger-button" className="burger">
+        <div className={`burger-line top-line ${this.props.dropNavIsOpen ? "open" : null}`}></div>
+        <div className={`burger-line mid-line ${this.props.dropNavIsOpen ? "open" : null}`}></div>
+        <div className={`burger-line bottom-line ${this.props.dropNavIsOpen ? "open" : null}`}></div>
+      </button>
     )
   }
 }

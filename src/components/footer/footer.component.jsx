@@ -3,8 +3,8 @@ import './footer.styles.scss';
 
 const Footer = () => {
   return (
-    <footer className='comp-footer'>
-      <b>Built By</b> &nbsp; <a className='link-footer' href='https://github.com/karanius'>DEV KAVIAN</a> &nbsp; <span className="footer-year">2020</span>
+    <footer tabIndex='0' aria-label="created by dev kavian." className='comp-footer'>
+      <b>Built By</b> &nbsp; <a className='link-footer' aria-label="link to my github code repository" href='https://github.com/karanius'>DEV KAVIAN</a> &nbsp; <span className="footer-year">2020</span>
     </footer>
   )
 }

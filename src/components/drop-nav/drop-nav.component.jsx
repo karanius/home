@@ -37,6 +37,9 @@ const DropNav = ({dropNavIsOpen,openCloseDropNav}) => {
           dropNavElem.style.top = ((dropNavElem.offsetTop + 2) + 'px');
           requestAnimationFrame(open)
         } else {
+          document.querySelectorAll('.nav-link').forEach(elem=>{
+            elem.setAttribute("tabIndex","0")
+          })
           cancelAnimationFrame(requestAnimId);
           setEngineIsRunning(false);
         }
@@ -48,6 +51,9 @@ const DropNav = ({dropNavIsOpen,openCloseDropNav}) => {
           dropNavElem.style.top = ((dropNavElem.offsetTop - 2) + 'px');
           requestAnimationFrame(close)
         } else {
+          document.querySelectorAll('.nav-link').forEach(elem=>{
+            elem.setAttribute("tabIndex","-1")
+          })
           cancelAnimationFrame(requestAnimId);
           setEngineIsRunning(false);
         }
@@ -58,11 +64,11 @@ const DropNav = ({dropNavIsOpen,openCloseDropNav}) => {
 
   return(
     <div className="drop-nav" >
-      <Link className="nav-link" to='/competencies'>COMPETENCIES</Link>
+      <Link tabIndex="-1" className="nav-link" to='/competencies'>COMPETENCIES</Link>
       <span>|</span>
-      <Link className="nav-link" to='/portfolio'>PORTFOLIO</Link>
+      <Link tabIndex="-1" className="nav-link" to='/portfolio'>PORTFOLIO</Link>
       <span>|</span>
-      <Link className="nav-link" to='/contact'>CONTACT</Link>
+      <Link tabIndex="-1" className="nav-link" to='/contact'>CONTACT</Link>
     </div>
   )
 

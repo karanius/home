@@ -3,7 +3,7 @@
 $sub-color: grey;
 $main-color: black;
 
-@mixin shrink {
+@mixin shrinky {
   top: -14px;
   font-size: 12px;
   color: $sub-color;
@@ -32,11 +32,10 @@ $main-color: black;
     &:focus{
       outline: none;
       border-bottom: 1px solid rgb(255, 134, 113);
-
     }
     
     &:focus ~ .form-input-label{
-      @include shrink();
+      @include shrinky();
     }
 
     &.shrink{
@@ -55,7 +54,7 @@ $main-color: black;
     transition: 300ms ease all;
     
     &.shrink {
-      @include shrink();
+      @include shrinky();
     }
   }
 }

@@ -34,11 +34,11 @@ const SpeechBubble = (props) => {
 
 
     return (
-        <div className={`${props.isActive ? 'show' : null}`} style={{
+        <div tabIndex="-1" className={`${props.isActive ? 'show' : null}`} style={{
           transform: `scale(${props.scale})`,
         }} >
-          <div className="speech-bubble" >
-            <div className="msg-itself" style={{
+          <div tabIndex="-1" className="speech-bubble" >
+            <div tabIndex="-1" className="msg-itself" style={{
               fontSize: `${ props.fontSize ? props.fontSize : null }rem`
             }}> 
               <Typer steps={props.steps} /> 

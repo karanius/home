@@ -1,20 +1,62 @@
+@mixin openTop {
+  transform: translate( 0 , 12px) rotate(45deg);
+}
+
+@mixin openMid {
+  transform: scale(1.7);
+  opacity: 0;
+}
+
+@mixin openBottom {
+  transform: translate( 0 , -12px) rotate(135deg);
+}
+
 .burger{
+  height: 36px;
+  background: none;
+  border: none;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-right: 30px;
+
+  &:focus{
+    outline: none;
+  }
+
   .burger-line{
-    height: 1px;
+    height: 2px;
     width: 30px;
     background-color: black;
     margin: 5px;
+    transition: 400ms ease all;
+  }
+
+  .top-line{
+    transform: translate( 0 , 0);
+    &.open{
+      @include openTop()
+    }
+  }
+  .mid-line{
+    opacity: 1;
+    &.open{
+      @include openMid()
+    }
+  }
+
+  .bottom-line{
+    transform: translate( 0 , 0);
+    &.open{
+      @include openBottom()
+    }
   }
 
   &:hover .burger-line{
-    height: 3px;
-    border-radius: 100%;
-    background-color: rgb(70, 70, 70);
+    // height: 3px;
+    // border-radius: 100%;
+    // background-color: rgb(70, 70, 70);
   }
 
   &:active .burger-line {

@@ -6,19 +6,19 @@ import gear2SVG from '../../animations/svgs/gear2.svg';
 const Gear = () => {
   return(
     <>
-      <div className="gear-holder">
-        <div className="gear-holder-left">
-          <img className="left-gear" width="50"  alt="gear" src={gear2SVG} />
+      <div tabIndex="-1" className="gear-holder">
+        <div tabIndex="-1" className="gear-holder-left">
+          <img tabIndex="-1" className="left-gear" width="50"  alt="gear" src={gear2SVG} />
         </div>
-        <div className="gear-holder-middle">
-          <div className="middle-gear-wrapper">    
-            <img className="middle-gear"   alt="gear" src={gearSVG} />
-            <img className="small-middle-gear" width="50"  alt="gear" src={gear2SVG} />
-            <img className="smaller-middle-gear" width="50"  alt="gear" src={gear2SVG} />
+        <div  tabIndex="-1"className="gear-holder-middle">
+          <div  tabIndex="-1" className="middle-gear-wrapper">    
+            <img tabIndex="-1" className="middle-gear"   alt="gear" src={gearSVG} />
+            <img tabIndex="-1" className="small-middle-gear" width="50"  alt="gear" src={gear2SVG} />
+            <img tabIndex="-1" className="smaller-middle-gear" width="50"  alt="gear" src={gear2SVG} />
           </div>
         </div>
-        <div className="gear-holder-right">
-          <img className="right-gear" width="50"  alt="gear" src={gear2SVG} />
+        <div tabIndex="-1" className="gear-holder-right">
+          <img tabIndex="-1" className="right-gear" width="50"  alt="gear" src={gear2SVG} />
         </div>
       </div>
     </>

@@ -7,20 +7,20 @@ const TopMargin = ({children,noShine,height,open}) => {
 
     <>
       <div 
-      className={` top-wrapper ${open}`}
+      tabIndex="-1" className={` top-wrapper ${open}`}
       >
-        <div className="top-margin-container" style={{
+        <div tabIndex="-1" className="top-margin-container" style={{
           height: `${height ? height : 100}px`
         }}>
-          <div tabindex="0" className={`${noShine ? null : "top-margin-msg"}`}>
+          <div tabIndex="-1" className={`${noShine ? null : "top-margin-msg"}`}>
             {children}
           </div>
         </div>
 
 
-        <div className="clip-background-color">
-          <div className={`path-clip-border ${open}`}>
-            <div className={`path-clip ${open}`}></div>
+        <div tabIndex="-1" className="clip-background-color">
+          <div tabIndex="-1" className={`path-clip-border ${open}`}>
+            <div tabIndex="-1" className={`path-clip ${open}`}></div>
           </div>
         </div>
     </div>
