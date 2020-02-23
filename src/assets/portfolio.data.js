@@ -20,7 +20,7 @@ const PORTFOLIO_DATA = [
     title: 'Business qards'
   },{
     id: 10,
-    imageLink: "https://github.com/karanius/portfolioImages/blob/master/workoutTracker.png",
+    imageLink: "https://raw.githubusercontent.com/karanius/portfolioImages/master/workoutTracker.png?token=AFO4PS3RQTD3D4C4TLCMOJS6LNHOC",
     liveLink: "https://uoft-workout-tracker.herokuapp.com/",
     repo:  'https://github.com/karanius/workoutTracker',
     title: 'Workout tracker'
