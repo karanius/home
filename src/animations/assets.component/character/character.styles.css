@@ -5,6 +5,7 @@
 }
 
 .character{
+  
   z-index: 10;
   position: relative;
   width: calc(4.79rem * var(--pixel-size));
@@ -13,6 +14,7 @@
 }
 
 .character-sprite-sheet{
+  
   position: absolute;
   width: calc(20rem * var(--pixel-size));
   animation:  moveSpriteSheet steps(4) calc(0.5s * var(--move-time) )   infinite;
