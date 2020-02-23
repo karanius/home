@@ -81,7 +81,7 @@ class ContactPage extends React.Component {
 
             
       <div className="image-wrapper">
-        <img tabIndex="-1" className='kavian-img' alt='kavian' src="https://avatars3.githubusercontent.com/u/22923211?s=460&v=4" />
+        <img tabIndex="-1" className='kavian-img' alt='kavian' src={require("../../assets/devkavian.jpeg")} />
       </div>
 
       <ContactPageMsg copiedToClipboard={this.state.copiedToClipboard} />
