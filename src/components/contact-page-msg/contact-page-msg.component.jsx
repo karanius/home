@@ -5,6 +5,8 @@ import GithubSVG from '../../animations/svgs/github.svg'
 import ResumeSVG from '../../animations/svgs/resume.svg'
 import resumePDF from '../../assets/kd2020.pdf';
 
+import emailSVG from '../../animations/svgs/email.svg'
+
 const ContactPageMsg = ({copiedToClipboard}) => {
   return(
     <div className='msg-wrapper'>
@@ -19,7 +21,7 @@ const ContactPageMsg = ({copiedToClipboard}) => {
       <p tabIndex="0" className="msg-itself">
         I spend the majority of my time learning and building new things, so I am always in need of new projects! Feel free to connect with me by clicking on the channels below!
       </p>
-      <span className='email'><i tabIndex="-1" className="far fa-envelope"></i><input tabIndex="0" aria-label="This is my email adress: kavian1991@gmail.com" className="emailAdress" value="kavian1991@gmail.com" readOnly /></span>
+      <span className='email'> <img src={emailSVG} className="email-img" alt="letter" /> <input tabIndex="0" aria-label="This is my email adress: kavian1991@gmail.com" className="emailAdress" value="kavian1991@gmail.com" readOnly /></span>
       <div className='logos-cont'>
         <span> 
           <a tabIndex="0" aria-label="my linkedin account" href="https://www.linkedin.com/in/kavian-darvish-10ba36181/"><img tabIndex="-1" className='link-svg ' alt='linkedin' src={LinkedInSvg} /></a>

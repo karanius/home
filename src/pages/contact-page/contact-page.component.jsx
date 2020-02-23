@@ -2,7 +2,6 @@ import React from 'react';
 import './contact-page.styles.scss';
 import FormInput from '../../components/form-input/form-input.component';
 
-
 import SpeechBubble from '../../animations/assets.component/speech-bubble/speech-bubble.component';
 import Character from '../../animations/assets.component/character/character.component';
 
@@ -106,7 +105,6 @@ class ContactPage extends React.Component {
                     top={200} 
                     stage={1} 
                     steps={['Thanks!', 2000 , "I like you" , 4000  , "A LOT!" , 4000 ]}
-
                     />
                   <div className='character-position' style={{
                     top: `${320}px`,
