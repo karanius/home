@@ -15,6 +15,7 @@ import reactSVG from '../../animations/svgs/react.svg';
 import gitSVG from '../../animations/svgs/git.svg';
 import mysqlSVG from '../../animations/svgs/mysql.svg'
 import mongoSVG from '../../animations/svgs/mongo.svg'
+import photoshoptSVG from '../../animations/svgs/photoshop.svg'
 
 import TopMargin from '../../components/top-margin/top-margin-component';
 import BottomMargin from '../../components/bottom-margin/bottom-marign.components';
@@ -288,7 +289,8 @@ const Competencies = () => {
               <img tabIndex="0" className="second-load second-load-right react" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
               <img tabIndex="0" className="second-load second-load-left" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
               <img tabIndex="0" className="second-load second-load-right" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
-              <img tabIndex="0" className="second-load" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
+              <img tabIndex="0" className="second-load second-load-left" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
+              <img tabIndex="0" className="second-load second-load-right" alt='Photoshop: Digital manipulation tool' title='Photoshop: Digital manipulation tool' src={photoshoptSVG} />
             </div>
             <p tabIndex="0" className="second-load and-more" >and more</p>
           </div>
