@@ -17,7 +17,7 @@ const WebSite = () => {
   useEffect(()=>{
 
     const measureTop = () =>{
-      if (window.scrollY > 500){
+      if (window.scrollY > 265){
         setTothetopIsAvtive('appear')
       } else {
         setTothetopIsAvtive(null)
