@@ -13,9 +13,9 @@ const SpeechBubble = (props) => {
         const adjust = () => {
           if (document.querySelector('.character-position') && document.querySelector('.show') ){
             document.querySelector('.show').style.top = `${document.querySelector('.character-position').offsetTop - top }px`;
-            document.querySelector('.show').style.left =  `${document.querySelector('.character-position').offsetLeft - 200}px`;
+            document.querySelector('.show').style.left =  `${document.querySelector('.character-position').offsetLeft - 215}px`;
             if (!unmounted){
-              setTimeout(()=>{requestAnimationFrame(adjust)},500)
+              setTimeout(()=>{requestAnimationFrame(adjust)},100)
             }
           } else {
             cancelAnimationFrame(reqI);

@@ -1,10 +1,36 @@
 .website{
-
   display: flex;
   flex-direction: column;
+  
 
   #route-container{
+    position: relative;
+    .to-the-top{
+      background-image: url('./assets/arrow.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgb(252, 178, 178);
+      position: fixed;
+      z-index: 100;
+      width: 300px;
+      height: 48px;
+      right: 50%;
+      top: 0;
+      border-radius: 10px 10px 0px 0px;
+      border: 1px solid rgb(114, 114, 114);
+      transform: translate(50% , -100%) rotate(180deg) scale(0.8);
+      transition: 300ms ease all;
+      pointer-events: none;
+      &:hover{
+        background-color: rgb(255, 157, 122) ;
+      }
 
+      &.appear{
+        pointer-events: visible;
+        transform: translate(50% , -10px) rotate(180deg) scale(0.8);
+      }
+      
+    }
   }
 
 }
