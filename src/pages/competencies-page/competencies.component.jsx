@@ -194,7 +194,6 @@ const Competencies = () => {
               elem.classList.add('second-load-loaded');
             }
           }
-          // console.log(elem)
         })
       }
     }

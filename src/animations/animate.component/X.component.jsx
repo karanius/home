@@ -89,7 +89,7 @@ const X = () => {
           }
         <div className='character-position' style={{
           top: `${pageBottomY}px`,
-          left: `${charLeftPos}px`,
+          left: `${charLeftPos + 50 }px`,
           position: 'absolute'
         }}>
           <Character characterDirection={charDirection} />

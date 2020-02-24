@@ -6,7 +6,7 @@ import Character from '../../animations/assets.component/character/character.com
 
 const CharX = ({bubbleIsActive, bubbleFontSize, bubblePosTop ,bubbleScale,charLeftPos, speechMsg,characterDirection}) =>{
   return(
-    <>
+    <div>
       <SpeechBubble 
         isActive={bubbleIsActive} 
         fontSize={bubbleFontSize} 
@@ -21,7 +21,7 @@ const CharX = ({bubbleIsActive, bubbleFontSize, bubblePosTop ,bubbleScale,charLe
       }}>
         <Character characterDirection={characterDirection}/>
       </div>
-    </>
+    </div>
   )
 }
 
