@@ -7,7 +7,7 @@ class NavLinks extends React.Component {
   render(){
     return (
       <div className="nav-items" >
-        <Link className="nav-link" to='/competencies'>COMPETENCIES</Link>
+        <Link className="nav-link" to='/expertise'>EXPERTIESE</Link>
         <Link className="nav-link" to='/portfolio'>PORTFOLIO</Link>
         <Link className="nav-link" to='/contact'>CONTACT</Link>
       </div>
