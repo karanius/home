@@ -258,7 +258,7 @@ const Competencies = () => {
             <p className={`title-logo ${insideCardIsVisible}`}>
               { `{ ` } <img width='15' alt='tie' src={tieSVG} /> { ` }`}
             </p>
-            <h3 tabIndex="0" aria-label="I can do front end. To make it look good, user and accessible friendly" className={`title-msg ${insideCardIsVisible}`} >Front-End</h3> <p className={`title-description ${insideCardIsVisible}`}>To make it look good and<br/>user and accessible friendly.</p>
+            <h3 tabIndex="0" aria-label="I can do front end. To make it look good, accessible and user friendly" className={`title-msg ${insideCardIsVisible}`} >Front-End</h3> <p className={`title-description ${insideCardIsVisible}`}>To make it look good, accessible and user friendly.</p>
           </li>
           <li className={`list ${lTwoIsVisible}`}>
             <p className={`title-logo ${insideCardIsVisible}`}>
