@@ -3,6 +3,7 @@ import Character from '../assets.component/character/character.component';
 import './X.style.css'
 import SpeachBubble from '../assets.component/speech-bubble/speech-bubble.component';
 
+
 const X = () => {
 
   const [bubbleTopPos] = useState(100);

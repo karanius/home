@@ -15,7 +15,7 @@ const BottomMargin = ({children,open,height,padding}) => {
 
       <div className="bottom-margin-two" style={{
         height: `${height ? height : 100}px`,
-        padding: `${ padding ? padding : null}px`
+        padding: `${ padding ? padding : null }px`
       }}>
         {children}
       </div>

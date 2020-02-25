@@ -78,7 +78,6 @@ class ContactPage extends React.Component {
         CONTACT
       </TopMargin>
 
-            
       <div className="image-wrapper">
         <img tabIndex="-1" className='kavian-img' alt='kavian' src={require("../../assets/devkavian.jpeg")} />
       </div>
@@ -123,7 +122,7 @@ class ContactPage extends React.Component {
         </div>
       <BottomMrgin open={'open-other'} />
 
-        <Footer />
+      <Footer />
   
       </div>
     )
