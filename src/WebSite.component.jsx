@@ -9,6 +9,7 @@ import HomePage from './pages/home-page/home-page.component';
 import Competencies from './pages/competencies-page/competencies.component'
 import PortfolioPage from './pages/portfolio-page/portfolio-page.component';
 import ContactPage from './pages/contact-page/contact-page.component';
+import NotFound from './pages/not-found-page/not-found.component';
 
 const WebSite = () => {
 
@@ -58,6 +59,7 @@ const WebSite = () => {
           <Route exact path='/expertise' component={Competencies} />
           <Route exact path='/portfolio' component={PortfolioPage} />
           <Route exact path='/contact' component={ContactPage} />
+          <Route  component={NotFound} />
         </Switch>
       </div>
     </div>

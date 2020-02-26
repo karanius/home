@@ -1,0 +1,20 @@
+.env{
+  height: 100vh;
+  animation: colorchange 50s infinite;
+}
+
+@keyframes colorchange
+{
+  0%   {background: #ff8686;}
+  9%   {background: #f06b6b;}
+  18%   {background: #eb77d8;}
+  27%   {background: #b86ef0;}
+  36%   {background: #6961d8;}
+  45%   {background: #3ba8dc;}
+  54%   {background: #3bdcbe;}
+  63%   {background: #3bdc6d;}
+  72%   {background: #76da6b;}
+  81%   {background: #a6dc3b;}
+  90%   {background: #dcb93b;}
+  100%   {background: #ff8686;}
+}
