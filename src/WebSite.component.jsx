@@ -55,7 +55,7 @@ const WebSite = () => {
       <div className={`to-the-top ${tothetopIsAvtive}`} onClick={goToTop} ></div>
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route exact path='/competencies' component={Competencies} />
+          <Route exact path='/expertise' component={Competencies} />
           <Route exact path='/portfolio' component={PortfolioPage} />
           <Route exact path='/contact' component={ContactPage} />
         </Switch>
