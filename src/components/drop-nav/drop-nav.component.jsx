@@ -64,7 +64,7 @@ const DropNav = ({dropNavIsOpen,openCloseDropNav}) => {
 
   return(
     <div className="drop-nav" >
-      <Link tabIndex="-1" className="nav-link" to='/expertise'>EXPERTIESE</Link>
+      <Link tabIndex="-1" className="nav-link" to='/expertise'>EXPERTISE</Link>
       <span>|</span>
       <Link tabIndex="-1" className="nav-link" to='/portfolio'>PORTFOLIO</Link>
       <span>|</span>
