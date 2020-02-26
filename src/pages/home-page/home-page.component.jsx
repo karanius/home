@@ -3,8 +3,8 @@ import './home-page.styles.scss';
 import X from '../../animations/animate.component/X.component'
 
 
-const HomePage = (props) => {
-
+const HomePage = () => {
+  
   return(
       <div className="home-page" >
         <X />

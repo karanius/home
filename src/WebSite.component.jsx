@@ -1,7 +1,7 @@
 import React,{useEffect , useState} from 'react'
 import './WebSite.styles.scss'
 
-import {Switch , Route} from 'react-router-dom';
+import {Switch , Route } from 'react-router-dom';
 // import {Transition , CSSTransition} from 'react-transition-group';
 
 import NavBar from './components/nav-bar/nav-bar.component';
