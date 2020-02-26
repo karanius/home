@@ -46,14 +46,8 @@ const Competencies = () => {
   const [insideCardIsVisible , setInsideCardIsVisible] = useState(false);
 
   useEffect(()=>{ 
-    window.scrollTo({
-      top: 65 ,
-      behavior:"smooth"
-    })
     setInitialScrollHappened(true);
     window.addEventListener('scroll', scrollAnimationFunciton);
-
-
     return () => {
         window.removeEventListener('scroll', scrollAnimationFunciton);
     }
@@ -212,6 +206,10 @@ const Competencies = () => {
 
   const scrollAnimationFunciton = (e) => {
     const distanceFromTop = window.scrollY;
+    if (distanceFromTop > 70){
+      document.querySelector('.dev-kavian').style.display= 'block';
+    }
+
     if(distanceFromTop <= 360){
       const dev_kavian_elem = document.querySelector('.dev-kavian');
       const gear_elem = document.querySelector('.gear-holder');
