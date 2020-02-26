@@ -25,6 +25,10 @@
   height: 120px;
   display: flex;
   flex-direction: row;
+  &:focus{
+    user-select: none;
+    outline: none;
+  }
 
 
   .gear-holder-left{
@@ -33,10 +37,19 @@
     width: 18%;
     display: flex;
     align-items: flex-end;
+    &:focus{
+      user-select: none;
+      outline: none;
+    }
   
     .left-gear{
       transition: 200ms ease all;
       animation: rotate 2s infinite;
+
+      &:focus{
+        user-select: none;
+        outline: none;
+      }
     }
   }
 
@@ -45,19 +58,35 @@
     transition: 200ms ease all;
     height: 100%;
     width: 57%;
+    &:focus{
+      user-select: none;
+      outline: none;
+    }
     .middle-gear-wrapper{
       transition: 200ms ease all;
       position: relative;
+      &:focus{
+        user-select: none;
+        outline: none;
+      }
       .middle-gear{
         transition: 200ms ease all;
       position: absolute;
       animation: rotate 2.5s infinite;
+      &:focus{
+        user-select: none;
+        outline: none;
+      }
       }
       .small-middle-gear{
         transition: 200ms ease all;
         position: absolute;
         filter: invert(0.8);
         animation: rotateForSmaller 4s infinite;
+        &:focus{
+          user-select: none;
+          outline: none;
+        }
       }
       .smaller-middle-gear{
         transition: 200ms ease all;
@@ -66,6 +95,10 @@
         top: 60px;
         filter: invert(0.8);
         animation: rotateForSmaller 10s infinite;
+        &:focus{
+          user-select: none;
+          outline: none;
+        }
       }
     }
   }
@@ -74,6 +107,10 @@
     transition: 200ms ease all;
     height: 100%;
     position: relative;
+    &:focus{
+      user-select: none;
+      outline: none;
+    }
 
     .right-gear{
       transition: 200ms ease all;
@@ -81,6 +118,10 @@
       left: -18px;
       top: -10px;
       animation: rotate 3s infinite;
+      &:focus{
+        user-select: none;
+        outline: none;
+      }
     }
   }
 }
