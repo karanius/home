@@ -6,14 +6,11 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
   const [toolTip, setToolTip] = useState('');
 
   useEffect(()=>{
-    if (document.querySelector(`.card-top-back-${id}`).scrollHeight >= 295 ){
-      document.querySelector(`.curtain-${id}`).style.display = 'flex';
-    }
     document.querySelector(`.card-top-back-${id}`).addEventListener('scroll',(e)=>{
       e.target.children[1].children[0].style.opacity = (1 - (e.target.scrollTop / (e.target.parentNode.clientHeight / 5)))
     })
   },[])
-  
+
   const techStackGenerator = (stacks) => {
     if (stacks){
       return stacks.map((stack,index)=>{
@@ -28,9 +25,15 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
     } 
   }
 
+  const pullTheCurtain = () => {
+      ((document.querySelector(`.card-top-back-${id}`).scrollHeight >= 295) ?
+      (document.querySelector(`.curtain-${id}`).style.display = 'block') :
+      (document.querySelector(`.curtain-${id}`).style.display = 'none'))
+  }
+
   return(
     <div className='card'>
-      <div className="card-top">
+      <div onMouseEnter={()=>{pullTheCurtain()}} className="card-top">
         <div className="card-top-front">
           <img alt={`${title}-pic`} src={imageLink} />
         </div>

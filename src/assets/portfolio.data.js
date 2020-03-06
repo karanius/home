@@ -70,12 +70,21 @@ const jquery = {
 const PORTFOLIO_DATA  = {
   PERSONAL: [
     {
+      id: 14,
+      imageLink: require('./portfolioImgs/bob.PNG'),
+      liveLink: "https://battlebox.netlify.com/",
+      repo:  null,
+      title: 'Battle Of Breweries',
+      techStack:[html ,css , sass , js, node, react, photoshop , "In Progress / PWA"],
+      about: 'I am commisioned with building this website for a client. Currently in Progress',
+    },
+    {
       id: 13,
       imageLink: require('./portfolioImgs/appschat.png'),
       liveLink: "https://appschat.herokuapp.com/",
       repo:  'https://github.com/karanius/APPSchat',
       title: 'Appschat',
-      techStack:[html ,css , sass , js, node, react , node ,postgresql , "Express / API / PWA"],
+      techStack:[html ,css , sass , js, node, react ,postgresql , "Express / API / PWA"],
       about: 'A retro looking web chat. The back-end is made with Express and Socket.io. Can be accessed from anywhere with an internet connection. Pretty fun!',
     },
     {
@@ -131,7 +140,7 @@ const PORTFOLIO_DATA  = {
       liveLink: null,
       repo:  'https://github.com/karanius/employeeTracker',
       title: 'Employee Tracker',
-       techStack: [html,css,js,node , "API / Command Line"],
+       techStack: [html,css,js,node , "Command Line"],
       about:"Assignment: Created a Content Management System solution. The capabilities built in are: View All Employees, View All Employees By Department, View All Employees By Manager, View All Departments, View All RolesAdd Employee, Add Role, Add Department, Remove Employee, Update Employee Role"
     },
     {
