@@ -23,6 +23,12 @@ class ContactPage extends React.Component {
   }
 
   componentDidMount(){
+    window.onunload = function(){
+      window.scrollTo({
+        top:0
+      })
+    }
+    
     document.querySelector('.email').addEventListener('click',this.copyToClipboard)
   }
   componentWillUnmount(){

@@ -4,11 +4,12 @@ import './card-generator.styles.scss';
 
 import PORTFOLIO_DATA from '../../assets/portfolio.data';
 
+
 class CardGenerator extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state={
-      cards: PORTFOLIO_DATA
+      cards: this.props.projects === 'personal' ? PORTFOLIO_DATA.PERSONAL : PORTFOLIO_DATA.BOOTCAMP,
     }
   }
   render(){
@@ -17,7 +18,7 @@ class CardGenerator extends React.Component {
         <div className="cards-container">
           {
             this.state.cards.map( ({id, ...restOfTheData}) => {
-              return <Card key={id} {...restOfTheData} />
+              return <Card key={id} id={id} {...restOfTheData} />
             })
           }
         </div>

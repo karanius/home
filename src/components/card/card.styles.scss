@@ -1,62 +1,225 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
 
 
-.card{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgb(192, 190, 190);
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  margin: 20px 20px;
-  .card-title{
-    margin: 10px 0;
-    text-align: center;
-    font-family: 'Open Sans Condensed', sans-serif;
-    letter-spacing: 5px;
-    text-shadow: 2px 2px 2px rgb(250, 247, 247);
-    font-size: 1.4rem;
+.card {
+  width: 270px; 
+  height: 433px;
+
+  margin: 7px 10px;
+  margin-top: 0;
+  perspective: 1000px;
+
+  .card-top{
     
-  }
-  .card-img{
-    width: 270px; 
+    box-shadow: 0px 0px 10px -4px black;
+    position: relative;
+    width: 270px;
     height: 270px;
-    object-fit: cover;
-    object-position: top;
-    border: 1px solid rgb(139, 139, 139);
-    margin-bottom: 10px;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.082);
-  }
-  .card-buttons{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 20px;
-    &>a{
-      &.gray{
-        background-color: gray;
-      }
-      margin: 5px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      border-radius: 5px;
-      background: rgb(76, 118, 235);
-      height: 30px;
-      width: 70%;
-      color: white;
-      font-family: 'Open Sans Condensed', sans-serif;
-      letter-spacing: 2px;
-      font-weight: 800;
-      &:hover{
-        background: rgb(204, 132, 132);
-        color: white;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+
+    &:hover {
+      transform: rotateY(180deg);
+    }
+
+
+
+    
+
+    .card-top-front, .card-top-back{
+      position: absolute;
+      backface-visibility: hidden;
+      width: 100%;
+      height: 100%;
+      background: aqua;
+
+    }
+
+    .card-top-front{
+      &>img{
+        width: 270px;
+        height: 270px;
+        object-fit: cover;
+        object-position: top;
       }
     }
+
+    .card-top-back{
+      transform: rotateY(180deg);
+      overflow-y: scroll;
+      padding: 20px;
+      line-height: 20px;
+      background: white;
+      color: black;
+      display: flex;
+      flex-direction: column;
+
+      .tech-stack{
+        // color: cadetblue;
+      }
+
+      .about{
+        position: relative;
+        .curtain{
+          width: 100%;
+          height: 300px;
+          background: linear-gradient(transparent 30%, white 50%);
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+    
+    }
+  }
+
+  .card-bottom{
+    border: 1px solid #b6b6b6;
+    border-top: none;
+    background: #e4e2e2;
+    height: 158px;
+
+    .bottom-wrapper{
+      position: relative;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .title{
+        width: 300px;
+        margin: 10px 0;
+        text-align: center;
+        font-family: 'Open Sans Condensed', sans-serif;
+        letter-spacing: 5px;
+        text-shadow: 2px 2px 2px rgb(250, 247, 247);
+        font-size: 1.4rem;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50% , 0px);
+      }
+
+      
+      .button1, .button2{
+        width: 220px;
+        left: 50%;
+        transform: translate(-50% , 0);
+        position: absolute;
+        height: 35px;
+        background-color: blue;
+        
+        margin: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 5px;
+        background: rgb(76, 118, 235);
+        height: 30px;
+        width: 70%;
+        color: white;
+        font-family: 'Open Sans Condensed', sans-serif;
+        letter-spacing: 2px;
+        font-weight: 800;
+
+        &:hover{
+          background: rgb(204, 132, 132);
+          color: white;
+        }
+        &.gray{
+          background-color: gray;
+        }
+        
+      }
+      .button2{
+        transform: translate(-50% , 130%);
+
+      }
+
+
+
+      // .card-buttons{
+  //   width: 100%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-around;
+  //   align-items: center;
+  //   padding: 10px 20px;
+  //   &>
+  // }
+
+
+
+
+
+      // .card-button{
+        // height: 100px;
+        // bottom: 0;
+      // }
+      
+      // width: 100%;
+
+      // display: flex;
+        // flex-direction: column;
+        // justify-content: space-around;
+        // align-items: center;
+        // padding: 10px 20px;
+        // &>a{
+        //   &.gray{
+        //     background-color: gray;
+        //   }
+        //   margin: 5px;
+        //   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        //   display: flex;
+        //   align-items: center;
+        //   justify-content: center;
+        //   text-decoration: none;
+        //   border-radius: 5px;
+        //   background: rgb(76, 118, 235);
+        //   height: 30px;
+        //   width: 70%;
+        //   color: white;
+        
+        //   letter-spacing: 2px;
+        //   font-weight: 800;
+        //   &:hover{
+        //     background: rgb(204, 132, 132);
+        //     color: white;
+        //   }
+        // }
+
+
+
+    }
+    
   }
 }
-
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  // border: 1px solid rgb(192, 190, 190);
+  // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  // margin: 20px 20px;
+  // .card-title{
+  //   margin: 10px 0;
+  //   text-align: center;
+  //   font-family: 'Open Sans Condensed', sans-serif;
+  //   letter-spacing: 5px;
+  //   text-shadow: 2px 2px 2px rgb(250, 247, 247);
+  //   font-size: 1.4rem;
+    
+  // }
+  // .card-img{
+  
+  //   height: 270px;
+  //   object-fit: cover;
+  //   object-position: top;
+  //   border: 1px solid rgb(139, 139, 139);
+  //   margin-bottom: 10px;
+  //   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.082);
+  // }
+  

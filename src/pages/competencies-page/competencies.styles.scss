@@ -192,6 +192,7 @@
       
       
       &>img{
+        position: relative;
         padding: 20px;
         background-image: radial-gradient(rgba(255, 255, 255, 0.74) 0%, rgba(0, 0, 255, 0) 43%);
         &.react{
@@ -199,6 +200,10 @@
         }
         &.html{
           background-image: radial-gradient(rgba(255, 255, 255, 0.472) 0%, rgba(0, 0, 255, 0) 59%);
+        }
+
+        &:before{
+          content: "asdsf";
         }
       }      
     }

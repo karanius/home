@@ -16,6 +16,7 @@ import gitSVG from '../../animations/svgs/git.svg';
 import mysqlSVG from '../../animations/svgs/mysql.svg'
 import mongoSVG from '../../animations/svgs/mongo.svg'
 import photoshoptSVG from '../../animations/svgs/photoshop.svg'
+import postgresqlSVG from '../../animations/svgs/postgresql.svg'
 
 import TopMargin from '../../components/top-margin/top-margin-component';
 import BottomMargin from '../../components/bottom-margin/bottom-marign.components';
@@ -45,7 +46,14 @@ const Competencies = () => {
   const [lOneIsVisible, setLOneIsVisible] = useState(false);
   const [insideCardIsVisible , setInsideCardIsVisible] = useState(false);
 
+
   useEffect(()=>{ 
+    window.onunload = function(){
+      window.scrollTo({
+        top:0
+      })
+    }
+
     setInitialScrollHappened(true);
     window.addEventListener('scroll', scrollAnimationFunciton);
     return () => {
@@ -269,7 +277,7 @@ const Competencies = () => {
 
 
       <BottomMargin 
-        height={850} 
+        height={1010} 
         open={bottomMarginStatus} 
         >
         <div className="second-card">
@@ -285,9 +293,10 @@ const Competencies = () => {
               <img tabIndex="0" className="second-load second-load-left" alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
               <img tabIndex="0" className="second-load second-load-right react" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
               <img tabIndex="0" className="second-load second-load-left" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
-              <img tabIndex="0" className="second-load second-load-right" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
-              <img tabIndex="0" className="second-load second-load-left" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
-              <img tabIndex="0" className="second-load second-load-right" alt='Photoshop: Digital manipulation tool' title='Photoshop: Digital manipulation tool' src={photoshoptSVG} />
+              <img tabIndex="0" className="second-load second-load-right" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' width="112" src={postgresqlSVG} />
+              <img tabIndex="0" className="second-load second-load-left" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
+              <img tabIndex="0" className="second-load second-load-right" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
+              <img tabIndex="0" className="second-load second-load-left" alt='Photoshop: Digital manipulation tool' title='Photoshop: Digital manipulation tool' src={photoshoptSVG} />
             </div>
             <p tabIndex="0" className="second-load and-more" >and more</p>
           </div>

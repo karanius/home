@@ -1,0 +1,71 @@
+.portfolio-section{
+  text-align: center;
+  margin: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  height: 600px;
+  
+  
+  .button-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+.portfolio-body{
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+
+.porfolio-body-wrapper{
+  position: absolute;
+  top: 49px;
+  background-color: #ffbaba;
+  border: 1px solid black;
+  width: 330px;
+  height: 550px;
+  box-shadow: 0px 3px 10px -4px black;
+  padding: 10px;
+}
+
+.portfolio-container{
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.personal-portfolio{
+  height: 95%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+@media screen and (min-width: 400px) {
+  .porfolio-body-wrapper{
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 660px) {
+  .porfolio-body-wrapper{
+    width: 660px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .porfolio-body-wrapper{
+    width: 850px;
+  }
+}
