@@ -1,28 +1,29 @@
-import React,{useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 import './card.styles.scss'
+
 const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
 
+  const [toolTip, setToolTip] = useState('');
+
   useEffect(()=>{
-    if (document.querySelector(`.card-top-back-${id}`).scrollHeight < 270 ){
-      document.querySelector(`.curtain-${id}`).style.display = 'none'
+    if (document.querySelector(`.card-top-back-${id}`).scrollHeight >= 295 ){
+      document.querySelector(`.curtain-${id}`).style.display = 'flex';
     }
     document.querySelector(`.card-top-back-${id}`).addEventListener('scroll',(e)=>{
       e.target.children[1].children[0].style.opacity = (1 - (e.target.scrollTop / (e.target.parentNode.clientHeight / 5)))
     })
-  })
+  },[])
   
   const techStackGenerator = (stacks) => {
     if (stacks){
       return stacks.map((stack,index)=>{
-        if ( stack[0] !== '/'){
+        if (typeof stack === 'object'){
+          return <div onClick={()=>{setToolTip(stack.name)}} className="icon-wrapper"><img className='tech-stack-icons' alt={`${stack.name}`} key={index} src={stack.icon} /><span className="tooltip-tip"></span></div>
+        } else if (typeof stack === 'string'){
           return (
-            <div style={{
-              backgroundColor:"red",
-              color:"white"
-            }} key="index" >{stack}</div>
+            <div className='tech-stack-texts' key="index" >{stack}</div>
           )
         }
-        return <img width="26" alt='tech stack' key={index} src={stack} />
       })
     } 
   }
@@ -35,7 +36,10 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
         </div>
         <div className={`card-top-back card-top-back-${id}`}>
           <div className="tech-stack">
-              <p>{techStackGenerator(techStack)}</p>
+              {techStackGenerator(techStack)}
+              <div className="tooltip-body">
+                {toolTip}
+              </div>
           </div>
           <div className="about">
             <div className={`curtain curtain-${id}`} ></div>

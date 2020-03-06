@@ -22,10 +22,6 @@
       transform: rotateY(180deg);
     }
 
-
-
-    
-
     .card-top-front, .card-top-back{
       position: absolute;
       backface-visibility: hidden;
@@ -44,6 +40,7 @@
       }
     }
 
+
     .card-top-back{
       transform: rotateY(180deg);
       overflow-y: scroll;
@@ -55,18 +52,69 @@
       flex-direction: column;
 
       .tech-stack{
-        // color: cadetblue;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 15px;
+        .tech-stack-texts{
+          background-color: red;
+          color: white;
+          width: 90%;
+        }
+        .tech-stack-icons{
+          position: relative;
+          width: 26px;
+        }
+        .icon-wrapper{
+          position: relative;
+          .tooltip-tip{
+            position: absolute;
+            opacity: 0;
+            transition: 300ms ease opacity;
+            z-index: 10;
+            pointer-events: none;
+          }
+        }
+        .icon-wrapper:hover > .tooltip-tip{
+          $border-thickness: 20px;
+          opacity: 1;
+          top:8px;
+          left: -2px;
+          width: 0px;
+          height: 0px;
+          border: $border-thickness solid rgb(96, 30, 163);
+          border-top: $border-thickness solid transparent;
+          border-right: $border-thickness - 5 solid transparent;
+          border-left: $border-thickness - 5 solid transparent;
+        }
+        .tooltip-body{
+          transition: 300ms ease opacity;
+          opacity: 0;
+          pointer-events: none;
+          position: absolute;
+          width: 240px;
+          background-color: rgb(96, 30, 163);
+          top: 68px;
+          padding: 15px;
+          z-index: 100;
+          color: white;
+          border-radius: 7px;
+        }
+        .icon-wrapper:hover ~ .tooltip-body {
+          opacity: 1;
+        }
       }
 
       .about{
         position: relative;
         .curtain{
+          display: none;
           width: 100%;
-          height: 300px;
-          background: linear-gradient(transparent 30%, white 50%);
+          height: 200px;
+          background: linear-gradient(transparent 50%, white 80%);
           position: absolute;
-          left: 0;
           top: 0;
+          left: 0;
         }
       }
     
@@ -139,87 +187,7 @@
 
       }
 
-
-
-      // .card-buttons{
-  //   width: 100%;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: space-around;
-  //   align-items: center;
-  //   padding: 10px 20px;
-  //   &>
-  // }
-
-
-
-
-
-      // .card-button{
-        // height: 100px;
-        // bottom: 0;
-      // }
-      
-      // width: 100%;
-
-      // display: flex;
-        // flex-direction: column;
-        // justify-content: space-around;
-        // align-items: center;
-        // padding: 10px 20px;
-        // &>a{
-        //   &.gray{
-        //     background-color: gray;
-        //   }
-        //   margin: 5px;
-        //   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        //   display: flex;
-        //   align-items: center;
-        //   justify-content: center;
-        //   text-decoration: none;
-        //   border-radius: 5px;
-        //   background: rgb(76, 118, 235);
-        //   height: 30px;
-        //   width: 70%;
-        //   color: white;
-        
-        //   letter-spacing: 2px;
-        //   font-weight: 800;
-        //   &:hover{
-        //     background: rgb(204, 132, 132);
-        //     color: white;
-        //   }
-        // }
-
-
-
     }
     
   }
 }
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // border: 1px solid rgb(192, 190, 190);
-  // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  // margin: 20px 20px;
-  // .card-title{
-  //   margin: 10px 0;
-  //   text-align: center;
-  //   font-family: 'Open Sans Condensed', sans-serif;
-  //   letter-spacing: 5px;
-  //   text-shadow: 2px 2px 2px rgb(250, 247, 247);
-  //   font-size: 1.4rem;
-    
-  // }
-  // .card-img{
-  
-  //   height: 270px;
-  //   object-fit: cover;
-  //   object-position: top;
-  //   border: 1px solid rgb(139, 139, 139);
-  //   margin-bottom: 10px;
-  //   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.082);
-  // }
-  

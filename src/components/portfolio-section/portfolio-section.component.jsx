@@ -1,10 +1,28 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './portfolio-section.styles.scss'
 import Button from '../button/button.component'
 
 import CardGenerator from '../card-generator/card-generator.component';
 
-const PortfolioSection = ({children}) => {
+const PortfolioSection = () => {
+
+
+  useEffect(()=>{
+    const scrollTo = () => {
+      document.querySelector('.portfolio-container').scrollTop = 0;
+      window.scrollTo({top:210, behavior:"smooth"})
+    }
+
+    document.querySelectorAll('.button').forEach(elem=>{
+      elem.addEventListener('click',scrollTo)
+    })
+
+    return ()=>{
+      document.querySelectorAll('.button').forEach(elem=>{
+        elem.removeEventListener('click',scrollTo)
+      })
+    }
+  },[])
 
   const handleClick = (e) => {
     document.querySelectorAll('.button').forEach(elem=>{

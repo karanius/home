@@ -293,7 +293,7 @@ const Competencies = () => {
               <img tabIndex="0" className="second-load second-load-left" alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
               <img tabIndex="0" className="second-load second-load-right react" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
               <img tabIndex="0" className="second-load second-load-left" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
-              <img tabIndex="0" className="second-load second-load-right" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' width="112" src={postgresqlSVG} />
+              <img tabIndex="0" className="second-load second-load-right" alt='PostgreSQL: One of the early Structured Query Language' title='PostgreSQL: One of the early Structured Query Language' width="112" src={postgresqlSVG} />
               <img tabIndex="0" className="second-load second-load-left" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
               <img tabIndex="0" className="second-load second-load-right" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
               <img tabIndex="0" className="second-load second-load-left" alt='Photoshop: Digital manipulation tool' title='Photoshop: Digital manipulation tool' src={photoshoptSVG} />
