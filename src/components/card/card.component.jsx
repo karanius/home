@@ -18,7 +18,7 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
     if (stacks){
       return stacks.map((stack,index)=>{
         if (typeof stack === 'object'){
-          return <div onClick={()=>{setToolTip(stack.name)}} className="icon-wrapper"><img className='tech-stack-icons' alt={`${stack.name}`} key={index} src={stack.icon} /><span className="tooltip-tip"></span></div>
+          return <div key={index} onMouseEnter={()=>{setToolTip(stack.name)}} className="icon-wrapper"><img className='tech-stack-icons' alt={`${stack.name}`} src={stack.icon} /><span className="tooltip-tip"></span></div>
         } else if (typeof stack === 'string'){
           return (
             <div className='tech-stack-texts' key="index" >{stack}</div>

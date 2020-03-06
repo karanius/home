@@ -14,7 +14,7 @@ const X = () => {
   const [charLeftPos,setCharLeftPos] = useState(-50);
   const [charIsActive,setCharIsActive] = useState(true)
   
-  const [pageCenterX,setPageCenterX] = useState(window.innerWidth/2);
+  const [pageCenterX,setPageCenterX] = useState(Number(`${window.innerWidth >= 800 ? 400 : (window.innerWidth / 2)}`));
   const [pageBottomY,setPageBottomY] = useState(window.innerHeight-250);
 
   const [halfWayReached , setHalfWayReached] = useState(false);
@@ -22,7 +22,7 @@ const X = () => {
 
   useEffect(()=>{
     const adjustCharPos = () =>{
-      setPageCenterX(window.innerWidth/2)
+      setPageCenterX(Number(`${window.innerWidth >= 800 ? 400 : (window.innerWidth / 2)}`))
       setPageBottomY(window.innerHeight-250)
     }
 
@@ -71,6 +71,7 @@ const X = () => {
     }
 
   },[charLeftPos])
+
 
   return(
       <div className="x-container">
