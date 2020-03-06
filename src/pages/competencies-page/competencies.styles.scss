@@ -189,23 +189,48 @@
       justify-content: center;
       width: 230px;
 
+
+      &>div{
+        position: relative;
+        &:hover::after{
+          position: absolute;
+          content: attr(data-title);
+          color: white;
+          background-color: rgb(55, 55, 55);
+          left: -30px;
+          top: -27px;
+          border-radius: 10px;
+          padding: 10px;
+          width: 150px;
+        }
+        &:hover::before{
+          position: absolute;
+          content: "";
+          border: 10px solid rgb(55, 55, 55);
+          border-bottom: 10px solid transparent;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          top: 8px;
+          left: 46px
+          
+        }
+      }
       
       
-      &>img{
+      &>div>img{
         position: relative;
         padding: 20px;
         background-image: radial-gradient(rgba(255, 255, 255, 0.74) 0%, rgba(0, 0, 255, 0) 43%);
+      }     
+      
+      &>div>img{
         &.react{
-          background-image: radial-gradient(rgba(179, 179, 179, 0.719) 0%, rgba(0, 0, 255, 0) 53%);
+          background-image: radial-gradient(rgba(142, 138, 138, 0.541) 10%, rgba(243, 247, 245, 0) 50%);
         }
         &.html{
           background-image: radial-gradient(rgba(255, 255, 255, 0.472) 0%, rgba(0, 0, 255, 0) 59%);
         }
-
-        &:before{
-          content: "asdsf";
-        }
-      }      
+      }
     }
     .and-more{
       text-shadow: 1px 0 3px white;

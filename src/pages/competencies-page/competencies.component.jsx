@@ -284,19 +284,19 @@ const Competencies = () => {
           <div className="skills-wrapper">
             <div tabIndex="0" aria-label="my skills are as follows" className="second-load skill-title">SKILLS</div>
             <div className="skill-logos-container">
-              <img tabIndex="0" className="second-load second-load-left html" alt='HTML: Hyper Text Markup Language Version 5' title='HTML: Hyper Text Markup Language Version 5' src={htmlSVG} />
-              <img tabIndex="0" className="second-load second-load-right" alt='CSS: Cascading Style Sheets Version 3' title='CSS: Cascading Style Sheets Version 3' src={cssSVG} />
-              <img tabIndex="0" className="second-load second-load-left" alt='Sass: Syntactically Awesome Style Sheets' title='Sass: Syntactically Awesome Style Sheets' src={sassSVG} />
-              <img tabIndex="0" className="second-load second-load-right" alt='Bootstrap: a front end library' title='Bootstrap: a front end library' src={bootstrapSVG} />
-              <img tabIndex="0" className="second-load second-load-left" alt='JS: Javascript' title='JS: Javascript' src={jsSVG} />
-              <img tabIndex="0" className="second-load second-load-right" alt='jQuery: javascript framework' title='jQuery: javascript framework' src={jsuqerySVG} />
-              <img tabIndex="0" className="second-load second-load-left" alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} />
-              <img tabIndex="0" className="second-load second-load-right react" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} />
-              <img tabIndex="0" className="second-load second-load-left" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} />
-              <img tabIndex="0" className="second-load second-load-right" alt='PostgreSQL: One of the early Structured Query Language' title='PostgreSQL: One of the early Structured Query Language' width="112" src={postgresqlSVG} />
-              <img tabIndex="0" className="second-load second-load-left" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} />
-              <img tabIndex="0" className="second-load second-load-right" alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} />
-              <img tabIndex="0" className="second-load second-load-left" alt='Photoshop: Digital manipulation tool' title='Photoshop: Digital manipulation tool' src={photoshoptSVG} />
+              <div data-title='HTML'  className="second-load second-load-left"><img className="html" tabIndex="0"  alt='HTML: Hyper Text Markup Language Version 5' title='HTML: Hyper Text Markup Language Version 5' src={htmlSVG} /></div>
+              <div data-title='CSS'  className="second-load second-load-right"><img tabIndex="0"  alt='CSS: Cascading Style Sheets Version 3' title='CSS: Cascading Style Sheets Version 3' src={cssSVG} /></div>
+              <div data-title='Sass'  className="second-load second-load-left" ><img tabIndex="0" alt='Sass: Syntactically Awesome Style Sheets' title='Sass: Syntactically Awesome Style Sheets' src={sassSVG} /></div>
+              <div data-title='Bootstrap'  className="second-load second-load-right"><img tabIndex="0"  alt='Bootstrap: a front end library' title='Bootstrap: a front end library' src={bootstrapSVG} /></div>
+              <div data-title='Javascript'  className="second-load second-load-left" ><img tabIndex="0" alt='JS: Javascript' title='JS: Javascript' src={jsSVG} /></div>
+              <div data-title='jQuery'  className="second-load second-load-right"><img tabIndex="0"  alt='jQuery: javascript framework' title='jQuery: javascript framework' src={jsuqerySVG} /></div>
+              <div data-title='Node.js'  className="second-load second-load-left" ><img tabIndex="0" alt='Node.js: JavaScript run-time environment that executes code outside a browser.' title='Node.js a JavaScript run-time environment that executes code outside a browser.' src={nodeSVG} /></div>
+              <div data-title='React.js'  className="second-load second-load-right"><img className="react" tabIndex="0" alt='React.js: Front End javascript Framework' title='React.js Front End javascript Framework' src={reactSVG} /></div>
+              <div data-title='Git'  className="second-load second-load-left" ><img tabIndex="0" alt='Git: version-control system' title='Git: version-control system' src={gitSVG} /></div>
+              <div data-title='PostgreSQL' className="second-load second-load-right"><img tabIndex="0"  alt='PostgreSQL: One of the early Structured Query Language' title='PostgreSQL: One of the early Structured Query Language' width="112" src={postgresqlSVG} /></div>
+              <div data-title='MySQL'  className="second-load second-load-left" ><img tabIndex="0" alt='MySQL: Structured Query Language' title='MySQL: Structured Query Language' src={mysqlSVG} /></div>
+              <div data-title='MongoDB'  className="second-load second-load-right"><img tabIndex="0"  alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} /></div>
+              <div data-title='Photoshop'  className="second-load second-load-left" ><img tabIndex="0" alt='Photoshop: Digital manipulation tool' title='Photoshop: Digital manipulation tool' src={photoshoptSVG} /></div>
             </div>
             <p tabIndex="0" className="second-load and-more" >and more</p>
           </div>
