@@ -18,10 +18,14 @@ const WebSite = () => {
   useEffect(()=>{
 
     const measureTop = () =>{
-      if (window.scrollY > 265){
-        setTothetopIsAvtive('appear')
-      } else {
-        setTothetopIsAvtive(null)
+      if((document.querySelector('#route-container').offsetHeight) > 1000){
+        if ( (document.querySelector('#route-container').offsetHeight) <= (window.scrollY + window.innerHeight - 20) ){
+          setTothetopIsAvtive('appear')
+        } else if ((document.querySelector('#route-container').offsetHeight - 200) >= (window.scrollY + window.innerHeight - 20)) {
+          setTothetopIsAvtive(null)
+        } else if ((window.scrollY === 0)){
+          setTothetopIsAvtive(null)
+        }
       }
     }
 

@@ -53,6 +53,12 @@
   flex-wrap: wrap;
 }
 
+@media screen and (max-width: 400px) {
+  .porfolio-body-wrapper{
+    width: 355px;
+  }
+}
+
 
 @media screen and (min-width: 400px) {
   .porfolio-body-wrapper{
