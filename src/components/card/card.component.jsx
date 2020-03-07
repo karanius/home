@@ -35,7 +35,7 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
     <div className='card'>
       <div onMouseEnter={()=>{pullTheCurtain()}} className="card-top">
         <div className="card-top-front">
-          <div className="click-info">click for info</div>
+          <span className="ribbon">c<br/>l<br/>i<br/>c<br/>k</span>
           <img alt={`${title}-pic`} src={imageLink} />
         </div>
         <div className={`card-top-back card-top-back-${id}`}>

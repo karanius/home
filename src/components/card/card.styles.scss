@@ -4,9 +4,7 @@
 .card {
   width: 270px; 
   height: 433px;
-
   margin: 7px 10px;
-  margin-top: 0;
   perspective: 1000px;
 
   .card-top{
@@ -21,7 +19,7 @@
     &:hover {
       transform: rotateY(180deg);
     }
-    &:hover > .card-top-front > .click-info{
+    &:hover > .card-top-front > .ribbon{
       opacity: 0;
     }
 
@@ -33,30 +31,49 @@
     }
 
     .card-top-front{
-      overflow: hidden;
       &>img{
         width: 270px;
         height: 270px;
         object-fit: cover;
         object-position: top;
       }
-      .click-info{
-        width: 160px;
-        pointer-events: none;
-        font-family: 'Open Sans Condensed', sans-serif;
-        letter-spacing: 2px;
-        font-weight: 800;
-        position: absolute;
-        background: rgb(79, 121, 211);
-        padding: 7px;
-        // border: 1px solid rgb(133, 133, 133);
-        border-radius: 15px;
-        color: white;
-        text-shadow: 0 0px 2px rgb(2, 0, 0);
-        box-shadow: 0 0 1px 0 black;
-        bottom: 7px;
-        right: -20px;
+      .ribbon{
+        $ribbonColor: rgb(36, 131, 209);
+
         transition: 0.3s ease all;
+        position: absolute;
+        padding: 10px 0;
+        border-top-left-radius: 3px;
+        background: $ribbonColor;
+        text-align: center;
+        top: -6px;
+        left: 25px;
+        width: 30px;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 800;
+        // font-size: 1.2rem;
+        color: white;
+        text-shadow: 1px 1px 2px rgb(133, 97, 66);
+        pointer-events: none;
+
+        &::before{
+          content: '';
+          position: absolute;
+          border-right: 10px solid transparent;
+          border-bottom: 6px solid rgb(40, 84, 120);
+          top: 0;
+          right: -10px;
+        }
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: -15px;
+          left: 0;
+          border-left: 15px solid $ribbonColor;
+          border-right: 15px solid $ribbonColor;
+          border-bottom: 15px solid transparent;
+
+        }
       }
 
     }
