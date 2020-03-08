@@ -54,10 +54,10 @@
 
       .form-itself{
         top: 50px;
-        position: absolute;
         left: 50%;
-        transform: translate(-50%, 0);
+        position: absolute;
         width: 350px;
+        transform: translate(-50%, 0);
         transition: 300ms ease all;
         &.submited{
           @include submit();
@@ -96,5 +96,13 @@
         }
       }
     }
+  }
+}
+
+
+
+@media screen and (min-width: 310px) {
+  .contact-wrapper .body-cont .form-wrapper .form-itself{
+    width: 295px;
   }
 }
