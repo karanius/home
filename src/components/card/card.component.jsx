@@ -6,9 +6,22 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
   const [toolTip, setToolTip] = useState('');
 
   useEffect(()=>{
-    document.querySelector(`.card-top-back-${id}`).addEventListener('scroll',(e)=>{
+
+    const opacityAdjust = (e) => {
       e.target.children[1].children[0].style.opacity = (1 - (e.target.scrollTop / (e.target.parentNode.clientHeight / 5)))
-    })
+    }
+
+    const scrollAdjuster = (e) => {
+      // document.querySelector(`.card-top-back-${id}`).style.pointerEvents = "all";
+    }
+
+    document.querySelector(`.card-top-front-${id}`).addEventListener("mouseover", scrollAdjuster);
+
+    document.querySelector(`.card-top-back-${id}`).addEventListener('scroll', opacityAdjust)
+
+    return ()=>{
+      document.querySelector(`.card-top-back-${id}`).removeEventListener('scroll', opacityAdjust)
+    }
   },[])
 
   const techStackGenerator = (stacks) => {
@@ -34,7 +47,7 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
   return(
     <div className='card'>
       <div onMouseEnter={()=>{pullTheCurtain()}} className="card-top">
-        <div className="card-top-front">
+        <div className={`card-top-front card-top-front-${id}`}>
           <span className="ribbon">c<br/>l<br/>i<br/>c<br/>k</span>
           <img alt={`${title}-pic`} src={imageLink} />
         </div>
