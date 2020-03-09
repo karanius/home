@@ -6,19 +6,20 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
   const [toolTip, setToolTip] = useState('');
 
   useEffect(()=>{
-
+    
     const opacityAdjust = (e) => {
       e.target.children[1].children[0].style.opacity = (1 - (e.target.scrollTop / (e.target.parentNode.clientHeight / 5)))
     }
-
+    
     const scrollAdjuster = (e) => {
-      document.querySelector(`.card-top-front-${id}`).style.pointerEvents = "auto";
-      document.querySelector(`.card-top-back-${id}`).style.pointerEvents = "auto";
+      document.querySelector(`.about-${id}`).style.pointerEvents = 'auto';
     }
-
-    document.querySelector(`.card-top-front-${id}`).addEventListener("mouseover", scrollAdjuster);
-    document.querySelector(`.card-top-front-${id}`).addEventListener("click", scrollAdjuster);
-    document.querySelector(`.card-top-back-${id}`).addEventListener('scroll', opacityAdjust)
+    
+    document.querySelector(`.card-top-front-${id}`).addEventListener('click',scrollAdjuster);
+    
+    document.querySelector(`.about-${id}`).style.pointerEvents = 'none';
+    
+    document.querySelector(`.card-top-back-${id}`).addEventListener('scroll', opacityAdjust);
 
     return ()=>{
       document.querySelector(`.card-top-back-${id}`).removeEventListener('scroll', opacityAdjust)
@@ -59,7 +60,7 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
                 {toolTip}
               </div>
           </div>
-          <div className="about">
+          <div className={`about about-${id}`}>
             <div className={`curtain curtain-${id}`} ></div>
             {about}
           </div>
