@@ -46,8 +46,8 @@ const PortfolioSection = () => {
   return (
     <div className="portfolio-section">
         <div className="button-wrapper">
-          <Button className="button active" hadnleFunc={handleClick} id="personal" name="Personal Projects" />
-          <Button className="button" hadnleFunc={handleClick} id="bootcamp" name="BootCamp Projects" />
+          <Button className="button active" hadnleFunc={handleClick} id="personal" name="PERSONAL PROJECTS" />
+          <Button className="button" hadnleFunc={handleClick} id="bootcamp" name="BOOTCAMP PROJECTS" />
         </div>
         <div className="porfolio-body-wrapper">
           <div className="portfolio-container">

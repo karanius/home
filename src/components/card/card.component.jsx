@@ -59,7 +59,7 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
     <div className='card'>
       <div onMouseEnter={()=>{pullTheCurtain()}} className="card-top">
         <div className={`card-top-front card-top-front-${id}`}>
-          <span className="ribbon">c<br/>l<br/>i<br/>c<br/>k</span>
+          <span className={`ribbon ribbon-${id}`}> <img alt='arrow' src={require('../../assets/arrow.png')} /> </span>
           <img alt={`${title}-pic`} src={imageLink} />
         </div>
         <div className={`card-top-back card-top-back-${id}`}>
@@ -77,7 +77,7 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
       </div>
       <div className="card-bottom">
         <div className="bottom-wrapper">
-          <p className="title">{title}</p>
+          <p className="title">{title.toUpperCase()}</p>
           <a tabIndex="0" className={`button1 ${liveLink ? null : "gray"}`}  rel="noopener noreferrer" target="_blank" href={liveLink ? liveLink : null}>{liveLink ? "Live Link" : "CLI Program"}</a>
           <a tabIndex="0" className="button2" rel="noopener noreferrer" target="_blank" href={repo}>Repo</a>
         </div>
