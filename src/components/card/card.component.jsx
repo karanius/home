@@ -12,12 +12,13 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
     }
     
     const scrollAdjuster = (e) => {
-      document.querySelector(`.about-${id}`).style.pointerEvents = 'auto';
+      document.querySelector(`.about-${id}`).style.display = 'inline';
     }
     
     document.querySelector(`.card-top-front-${id}`).addEventListener('click',scrollAdjuster);
+    document.querySelector(`.card-top-front-${id}`).addEventListener('mouseover',scrollAdjuster);
+    document.querySelector(`.about-${id}`).style.display = 'none';
     
-    document.querySelector(`.about-${id}`).style.pointerEvents = 'none';
     
     document.querySelector(`.card-top-back-${id}`).addEventListener('scroll', opacityAdjust);
 
