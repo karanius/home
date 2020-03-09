@@ -12,8 +12,8 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
     }
 
     const scrollAdjuster = (e) => {
-      document.querySelector(`.card-top-front-${id}`).style.pointerEvents = "all";
-      document.querySelector(`.card-top-back-${id}`).style.pointerEvents = "all";
+      document.querySelector(`.card-top-front-${id}`).style.pointerEvents = "auto";
+      document.querySelector(`.card-top-back-${id}`).style.pointerEvents = "auto";
     }
 
     document.querySelector(`.card-top-front-${id}`).addEventListener("mouseover", scrollAdjuster);
