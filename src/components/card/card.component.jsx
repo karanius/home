@@ -17,7 +17,7 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
     }
 
     document.querySelector(`.card-top-front-${id}`).addEventListener("mouseover", scrollAdjuster);
-
+    document.querySelector(`.card-top-front-${id}`).addEventListener("click", scrollAdjuster);
     document.querySelector(`.card-top-back-${id}`).addEventListener('scroll', opacityAdjust)
 
     return ()=>{
