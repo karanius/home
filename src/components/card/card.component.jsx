@@ -11,12 +11,20 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
       e.target.children[1].children[0].style.opacity = (1 - (e.target.scrollTop / (e.target.parentNode.clientHeight / 5)))
     }
     
-    const scrollAdjuster = (e) => {
-      document.querySelector(`.about-${id}`).style.display = 'inline';
+    const scrollAdjuster = (x) => {
+      if (x === 'in'){
+        clearInterval(window.about_id);
+        document.querySelector(`.about-${id}`).style.display = 'inline';
+      } if (x === 'out') {
+        window.about_id = setTimeout(()=>{
+          document.querySelector(`.about-${id}`).style.display = 'none';
+        },100);
+      }
     }
     
     document.querySelector(`.card-top-front-${id}`).addEventListener('click',scrollAdjuster);
-    document.querySelector(`.card-top-front-${id}`).addEventListener('mouseover',scrollAdjuster);
+    document.querySelector(`.card-top-front-${id}`).addEventListener('mouseenter',()=>{scrollAdjuster('in')});
+    document.querySelector(`.card-top-back-${id}`).addEventListener('mouseleave',()=>{scrollAdjuster('out')});
     document.querySelector(`.about-${id}`).style.display = 'none';
     
     
