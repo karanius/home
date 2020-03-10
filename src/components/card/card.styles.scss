@@ -93,6 +93,13 @@
         .tech-stack-icons{
           position: relative;
           width: 26px;
+          transition: 0.2s ease all;
+          opacity: 0;
+          mix-blend-mode: color-dodge;
+          &.active{
+            mix-blend-mode: multiply;
+            opacity: 1;
+          }
         }
         .icon-wrapper{
           position: relative;
