@@ -59,7 +59,7 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
     <div className='card'>
       <div onMouseEnter={()=>{pullTheCurtain()}} className="card-top">
         <div className={`card-top-front card-top-front-${id}`}>
-          <span className={`ribbon ribbon-${id}`}> <img alt='arrow' src={require('../../assets/arrow.png')} /> </span>
+          <div className="arrow" ><img alt='arrow' src={require('../../assets/arrow.png')} /></div>
           <img alt={`${title}-pic`} src={imageLink} />
         </div>
         <div className={`card-top-back card-top-back-${id}`}>
