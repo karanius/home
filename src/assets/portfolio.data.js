@@ -87,6 +87,7 @@ const PORTFOLIO_DATA  = {
       techStack:[html ,css , sass , js, node, react ,postgresql , "Express / API / PWA"],
       about: 'A retro looking web chat. The back-end is made with Express and Socket.io. Can be accessed from anywhere with an internet connection. Pretty fun!',
     },
+    
     {
       id: 12,
       imageLink: require('./portfolioImgs/smart-i.gif'),
