@@ -95,7 +95,7 @@ const PORTFOLIO_DATA  = {
       repo:  'https://github.com/karanius/smart-i',
       title: 'Smart-i',
       techStack:[html,css,js,node,"Express / CLARIFAI API / PWA / AI"],
-      about: "This app can recognize faces. It uses the newest PWA tech. Is able to connect to any device with a camera, renders the image into binary and sends it to an AI API. "
+      about: "This app can recognize faces. It uses the newest PWA tech. Is able to connect to any device with a camera. Rapidly takes photos, converts images into binary, and chain-transmits them to API."
     },
     {
       id: 11,
