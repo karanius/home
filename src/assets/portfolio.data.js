@@ -89,11 +89,11 @@ const PORTFOLIO_DATA  = {
     },
     {
       id: 12,
-      imageLink: require('./portfolioImgs/smart-i.png'),
+      imageLink: require('./portfolioImgs/smart-i.gif'),
       liveLink: "https://karanius.github.io/smart-i/pages/faceRecog.html",
       repo:  'https://github.com/karanius/smart-i',
       title: 'Smart-i',
-      techStack:[html,css,js,node,"Express / API / PWA / AI"],
+      techStack:[html,css,js,node,"Express / CLARIFAI API / PWA / AI"],
       about: "This app can recognize faces. It uses the newest PWA tech. Is able to connect to any device with a camera, renders the image into binary and sends it to an AI API. "
     },
     {
@@ -103,95 +103,113 @@ const PORTFOLIO_DATA  = {
       repo:  'https://github.com/jondam1985/business-QaRd',
       title: 'Business qards',
       techStack: [html,css,js,mysql,node,"Express / API / Express-Handlebars "],
-      about: "Business cards for a digital world. Build your QaRd, and share it with anyone, specially at networking events!"
+      about: "Business cards for a digital world. Build your QaRd, and share it with anyone, specially at networking events! I mainly focused on the back-end"
     }
   ],
   BOOTCAMP: [
     {
+      id: 16,
+      imageLink: require('./portfolioImgs/budgetTracker.gif'),
+      liveLink: 'https://uoft-budget-tracker.herokuapp.com/',
+      repo:  'https://github.com/karanius/UofT_budget_Tracker_PWA',
+      title: 'Budget Tracker',
+      techStack: [html,sass,js," PWA / Works offline and online /"],
+      about: "Assignment: Use this app to track your budget! This is a PWA, so feel free to install it on your desktop/cellphone and use it offline as well."
+    },
+    {
+      id: 15,
+      imageLink: require('./portfolioImgs/employeeDirectory.gif'),
+      liveLink: 'https://karanius.github.io/UofT_employee-dashboard_REACT/',
+      repo:  'https://github.com/karanius/UofT_employee-dashboard_REACT',
+      title: 'Employee Directory',
+      techStack: [html,sass,js,react,"Api"],
+      about: "Assignment: An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It is able to filter employees by name."
+    },
+    {
       id: 3,
-      imageLink: require('./portfolioImgs/workDaySchedule.png'),
-      liveLink: 'https://karanius.github.io/Day-Planner/',
-      repo:  'https://github.com/karanius/Day-Planner',
+      imageLink: require('./portfolioImgs/workDaySchedule.gif'),
+      liveLink: 'https://karanius.github.io/UofT_Day-Planner/',
+      repo:  'https://github.com/karanius/UofT_Day-Planner',
       title: 'Day Planner',
-      techStack: [html,css,js , "API"],
-      about: "Assignment: created a local storage area that stores time events for the day using jQuery and using moment.js to check weather the time for those events has past or not."
+      techStack: [html,css,js,jquery, "Moment.js"],
+      about: "Assignment: On device local storage of time events of the day using jQuery, and moment.js to check weather the time for those events has past or not."
     },
     {
       id: 10,
-      imageLink: require('./portfolioImgs/workoutTracker.png'),
+      imageLink: require('./portfolioImgs/workoutTracker.gif'),
       liveLink: "https://uoft-workout-tracker.herokuapp.com/",
-      repo:  'https://github.com/karanius/workoutTracker',
+      repo:  'https://github.com/karanius/UofT_Workout_Tracker',
       title: 'Workout tracker',
       techStack: [html,css,js,node,mongo, "Express / API / PWA / MongooseDB"],
       about: "Assignment: I handled creating the backend for a workout tracker. I was provided the front end code and created a Mongo database with a provided Mongoose schema to handle the routes with Express."
     },
     {
       id: 9,
-      imageLink: require('./portfolioImgs/eatDaBurger.png'),
-      liveLink: "http://afternoon-savannah-01200.herokuapp.com/",
-      repo:  'https://github.com/karanius/EatDaBurger',
+      imageLink: require('./portfolioImgs/eatDaBurger.gif'),
+      liveLink: "https://eat-the-burger-mvc.herokuapp.com/",
+      repo:  'https://github.com/karanius/UofT_Eat_Da_Burger_MCV',
       title: 'Eat Da Burger',
       techStack: [html,css,js,mysql,node, "Express / API"],
       about:`Assignment: CRUD: Create: Using the form. Read: Diplay the data in the view. Update: With devour button. Delete: With the reset orders button.`
     },
     {
       id: 8,
-      imageLink: require('./portfolioImgs/employeeTracker.png'),
+      imageLink: require('./portfolioImgs/employeeTracker.gif'),
       liveLink: null,
-      repo:  'https://github.com/karanius/employeeTracker',
+      repo:  'https://github.com/karanius/UofT_EmployeeTracker_CLI',
       title: 'Employee Tracker',
-       techStack: [html,css,js,node , "Command Line"],
-      about:"Assignment: Created a Content Management System solution. The capabilities built in are: View All Employees, View All Employees By Department, View All Employees By Manager, View All Departments, View All RolesAdd Employee, Add Role, Add Department, Remove Employee, Update Employee Role"
+       techStack: [html,css,js,mysql,node , "Command Line / Inquirer"],
+      about:"Assignment: A CLI application for managing a company's employees using node, inquirer, and MySQL."
     },
     {
       id: 7,
-      imageLink:require('./portfolioImgs/NoteTaker.png'),
+      imageLink:require('./portfolioImgs/NoteTaker.gif'),
       liveLink: "https://notetakerapps.herokuapp.com/",
-      repo:  'https://github.com/karanius/noteTaker',
+      repo:  'https://github.com/karanius/UofT_Note_Taker',
       title: 'Note Taker',
       techStack: [html,css,js,node , "Express / API"],
       about: "Assignment: A backend to handle get, post and delete calls using express and a .json file for persistency"
     },
     {
       id: 6,
-      imageLink: require('./portfolioImgs/Teamgenerator.png'),
+      imageLink: require('./portfolioImgs/Teamgenerator.gif'),
       liveLink: null,
-      repo:  'https://github.com/karanius/TeamGenerator',
+      repo:  'https://github.com/karanius/UofT_Team_Generator_CLI',
       title: 'Team Generator',
       techStack: [html,css,js,node, "Command Line"],
       about: "Assignment: Dynamically creates a HTML team page. The team can be comprised of a manager, any number of engineers, interns, etc"
     },
     {
       id: 5,
-      imageLink: require('./portfolioImgs/pdfGenerator.png'),
+      imageLink: require('./portfolioImgs/pdfGenerator.gif'),
       liveLink: null,
-      repo:  'https://github.com/karanius/pdfGenerator',
+      repo: 'https://github.com/karanius/UofT_PDF_Generator',
       title: 'git pdf generator',
-      techStack: [html,css,js, node, "Command LIne"],
+      techStack: [html,css,js, node, "Command Line / Inquirer / Axios / Puppeteer"],
       about: "Assignment: Focused on creating a command-line application that dynamically generates a PDF profile from a GitHub username."
     },
     {
       id: 4,
-      imageLink: require('./portfolioImgs/weather.png'),
-      liveLink: 'https://karanius.github.io/weatherDashboard/',
-      repo:  'https://github.com/karanius/weatherDashboard',
+      imageLink: require('./portfolioImgs/weather.gif'),
+      liveLink: 'https://karanius.github.io/UofT_Weather_Dashboard/',
+      repo:  'httphttps://github.com/karanius/UofT_Weather_Dashboard',
       title: 'Weather Dashboard',
        techStack: [html,css,js,jquery, "API / AJAX"],
       about:"Assignment: Focused on using API data from openweathermap, the data was received and handled by jQuery and AJAX."
     },
     {
       id: 2,
-      imageLink: require('./portfolioImgs/webAPI.png'),
-      liveLink: 'hhttps://karanius.github.io/WebApi/',
-      repo:  'https://github.com/karanius/WebApi',
+      imageLink: require('./portfolioImgs/quiz.gif'),
+      liveLink: 'https://karanius.github.io/UofT_Api_Code_Quiz/',
+      repo:  'https://github.com/karanius/UofT_Api_Code_Quiz',
       title: 'Quize Challenge',
       techStack: [html,css,js , "API / AJAX"],
       about: "Assignment: Used the templating pattern to save on the amount of code being used"
     },
     {
       id: 1,
-      imageLink: require('./portfolioImgs/passwordGenerator.png'),
-      liveLink: 'https://karanius.github.io/passwordGenerator/',
+      imageLink: require('./portfolioImgs/passwordGenerator.gif'),
+      liveLink: 'https://karanius.github.io/UofT_Password_Generator/',
       repo:  'https://github.com/karanius/passwordGenerator',
       title: 'Password Generator',
       techStack: [html,css,js],
