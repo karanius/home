@@ -21,11 +21,24 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
     }
   }
 
+  const cardFliper = (x) => {
+    const invisibleClickShield_element = document.querySelector(`.invisibleClickShield-${id}`);
+    const invisibleClickShield_function = () => {
+      invisibleClickShield_element.style.pointerEvents = "none";
+      invisibleClickShield_element.removeEventListener('click',invisibleClickShield_function);
+    }
+    invisibleClickShield_element.style.pointerEvents = "all"
+    invisibleClickShield_element.addEventListener('click',invisibleClickShield_function);
+  }
+
   useEffect(()=>{
     document.querySelector(`.card-top-${id}`).addEventListener('click',()=>{mobile_mouseOnCards({position: "top" , action: "click"})})
     document.querySelector(`.card-top-${id}`).addEventListener('mouseleave',()=>{mobile_mouseOnCards({position: "top" , action: "leave"})})
     document.querySelector(`.card-top-back-${id}`).addEventListener('mouseenter',()=>{laptop_mouseOnCards({position: "back" , action: "enter"})})
     document.querySelector(`.card-top-back-${id}`).addEventListener('mouseleave',()=>{laptop_mouseOnCards({position: "back" , action: "leave"})})
+
+    document.querySelector(`.card-top-front-${id}`).addEventListener('click', cardFliper );
+    
     
     const opacityAdjust = (e) => {
       e.target.children[1].children[0].style.opacity = (1 - (e.target.scrollTop / (e.target.parentNode.clientHeight / 5)))
@@ -93,33 +106,38 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
   }
 
   return(
-    <div className='card'>
-      <div onMouseEnter={()=>{pullTheCurtain()}} className={`card-top card-top-${id}`}>
-        <div className={`card-top-front card-top-front-${id}`}>
-          <div className="arrow" ><img alt='arrow' src={require('../../assets/arrow.png')} /></div>
-          <img alt={`${title}-pic`} src={imageLink} />
-        </div>
-        <div className={`card-top-back card-top-back-${id}`}>
-          <div className="tech-stack">
-              {techStackGenerator(techStack)}
-              <div className="tooltip-body">
-                {toolTip}
-              </div>
+    <>
+    <div className="card-wrapper">
+      <div className={`invisibleClickShield invisibleClickShield-${id}`} ></div>
+      <div className='card'>
+        <div onMouseEnter={()=>{pullTheCurtain()}} className={`card-top card-top-${id}`}>
+          <div className={`card-top-front card-top-front-${id}`}>
+            <div className="arrow" ><img alt='arrow' src={require('../../assets/arrow.png')} /></div>
+            <img alt={`${title}-pic`} src={imageLink} />
           </div>
-          <div className={`about about-${id}`}>
-            <div className={`curtain curtain-${id}`} ></div>
-            {about}
+          <div className={`card-top-back card-top-back-${id}`}>
+            <div className="tech-stack">
+                {techStackGenerator(techStack)}
+                <div className="tooltip-body">
+                  {toolTip}
+                </div>
+            </div>
+            <div className={`about about-${id}`}>
+              <div className={`curtain curtain-${id}`} ></div>
+              {about}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="card-bottom">
-        <div className="bottom-wrapper">
-          <p className="title">{title.toUpperCase()}</p>
-          <a tabIndex="0" className={`button1 ${liveLink ? null : "gray"}`}  rel="noopener noreferrer" target="_blank" href={liveLink ? liveLink : null}>{liveLink ? "Live Link" : "CLI Program"}</a>
-          <a tabIndex="0" className={`button2 ${repo ? null : "gray"}`} rel="noopener noreferrer" target="_blank" href={repo}>{repo ? "Repo Link" : "Private Repo"}</a>
+        <div className="card-bottom">
+          <div className="bottom-wrapper">
+            <p className="title">{title.toUpperCase()}</p>
+            <a tabIndex="0" className={`button1 ${liveLink ? null : "gray"}`}  rel="noopener noreferrer" target="_blank" href={liveLink ? liveLink : null}>{liveLink ? "Live Link" : "CLI Program"}</a>
+            <a tabIndex="0" className={`button2 ${repo ? null : "gray"}`} rel="noopener noreferrer" target="_blank" href={repo}>{repo ? "Repo Link" : "Private Repo"}</a>
+          </div>
         </div>
       </div>
     </div>
+    </>
   )
 }
 

@@ -70,6 +70,15 @@ const jquery = {
 const PORTFOLIO_DATA  = {
   PERSONAL: [
     {
+      id: 12,
+      imageLink: require('./portfolioImgs/smart-i.gif'),
+      liveLink: "https://karanius.github.io/smart-i/pages/faceRecog.html",
+      repo:  'https://github.com/karanius/smart-i',
+      title: 'Smart-i',
+      techStack:[html,css,js,node,"Express / CLARIFAI API / PWA / AI"],
+      about: "This app can recognize faces. It uses the newest PWA tech. Is able to connect to any device with a camera. Rapidly takes photos, converts images into binary, and chain-transmits them to API."
+    },
+    {
       id: 14,
       imageLink: require('./portfolioImgs/bob.PNG'),
       liveLink: "https://battlebox.netlify.com/",
@@ -88,15 +97,6 @@ const PORTFOLIO_DATA  = {
       about: 'A retro looking web chat. The back-end is made with Express and Socket.io. Can be accessed from anywhere with an internet connection. Pretty fun!',
     },
     
-    {
-      id: 12,
-      imageLink: require('./portfolioImgs/smart-i.gif'),
-      liveLink: "https://karanius.github.io/smart-i/pages/faceRecog.html",
-      repo:  'https://github.com/karanius/smart-i',
-      title: 'Smart-i',
-      techStack:[html,css,js,node,"Express / CLARIFAI API / PWA / AI"],
-      about: "This app can recognize faces. It uses the newest PWA tech. Is able to connect to any device with a camera. Rapidly takes photos, converts images into binary, and chain-transmits them to API."
-    },
     {
       id: 11,
       imageLink: require('./portfolioImgs/businessQard.png'),
