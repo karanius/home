@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import swConfig from './swConfig'
 import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter } from 'react-router-dom';
@@ -19,4 +20,4 @@ ReactDOM.render(
   </Provider>
 , document.getElementById('root'));
 
-serviceWorker.register();
+serviceWorker.register(swConfig);
