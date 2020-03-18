@@ -6,6 +6,7 @@
   #route-container{
     position: relative;
     .to-the-top{
+      cursor: pointer;
       opacity: 0;
       border: 2px solid rgb(0, 0, 0);
       background-image: url('./assets/arrow.png');
@@ -32,8 +33,26 @@
 
 }
 
+img{
+  -webkit-user-select: none;  
+  -moz-user-select: none;     
+  -ms-user-select: none;      
+  user-select: none;
+}
+
 *{
   box-sizing: border-box;
+}
+
+*::selection{
+  color: white;
+  background: rgb(175, 18, 128);
+
+}
+
+*::-mox-selection{
+  color: white;
+  background: rgb(175, 18, 128);
 }
 
 
