@@ -64,10 +64,12 @@ const DropNav = ({dropNavIsOpen,openCloseDropNav}) => {
 
   return(
     <div className="drop-nav" >
+      <Link tabIndex="-1" className="nav-link" to='/about'>ABOUT</Link>
+      <span className="separating-line" >|</span>
       <Link tabIndex="-1" className="nav-link" to='/expertise'>EXPERTISE</Link>
-      <span>|</span>
+      <span className="separating-line" >|</span>
       <Link tabIndex="-1" className="nav-link" to='/portfolio'>PORTFOLIO</Link>
-      <span>|</span>
+      <span className="separating-line" >|</span>
       <Link tabIndex="-1" className="nav-link" to='/contact'>CONTACT</Link>
     </div>
   )

@@ -2,13 +2,13 @@ import React,{useEffect , useState} from 'react'
 import './WebSite.styles.scss'
 
 import {Switch , Route } from 'react-router-dom';
-// import {Transition , CSSTransition} from 'react-transition-group';
 
 import NavBar from './components/nav-bar/nav-bar.component';
 import HomePage from './pages/home-page/home-page.component';
 import Competencies from './pages/competencies-page/competencies.component'
 import PortfolioPage from './pages/portfolio-page/portfolio-page.component';
 import ContactPage from './pages/contact-page/contact-page.component';
+import AboutPage from './pages/about-page/about-page.component';
 import NotFound from './pages/not-found-page/not-found.component';
 
 const WebSite = () => {
@@ -31,10 +31,10 @@ const WebSite = () => {
 
     const url = 'https://devkavianbackend.herokuapp.com/';
     fetch(url)
-    .then(res=>{
+    .then(()=>{
       console.log('server is up')
     })
-    .catch(err=>{
+    .catch(()=>{
       console.log('server is down')
     })
 
@@ -60,6 +60,7 @@ const WebSite = () => {
       <div className={`to-the-top ${tothetopIsAvtive}`} onClick={goToTop} ></div>
         <Switch>
           <Route exact path='/' component={HomePage} />
+          <Route exact path='/about' component={AboutPage} />
           <Route exact path='/expertise' component={Competencies} />
           <Route exact path='/portfolio' component={PortfolioPage} />
           <Route exact path='/contact' component={ContactPage} />

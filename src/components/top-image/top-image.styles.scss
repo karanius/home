@@ -1,0 +1,16 @@
+.img-wrapper{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .picture-frame{
+    
+    margin: 40px 0;
+    
+    .img{
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px -5px black;
+    }
+  }
+}

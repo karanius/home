@@ -7,8 +7,14 @@ import Character from '../../animations/assets.component/character/character.com
 
 import TopMargin from '../../components/top-margin/top-margin-component';
 import ContactPageMsg from '../../components//contact-page-msg/contact-page-msg.component'
-import BottomMrgin from '../../components/bottom-margin/bottom-marign.components'
+import BottomMargin from '../../components/bottom-margin/bottom-marign.components'
 import Footer from '../../components/footer/footer.component';
+
+
+
+import TopImage from '../../components/top-image/top-image.component.jsx'
+
+
 
 class ContactPage extends React.Component {
   constructor(props){
@@ -84,9 +90,7 @@ class ContactPage extends React.Component {
         CONTACT
       </TopMargin>
 
-      <div className="image-wrapper">
-        <img tabIndex="-1" className='kavian-img' alt='kavian' src={require("../../assets/devkavian.jpeg")} />
-      </div>
+      <TopImage/>
 
       <ContactPageMsg copiedToClipboard={this.state.copiedToClipboard} />
 
@@ -126,7 +130,8 @@ class ContactPage extends React.Component {
             }
           </div>
         </div>
-      <BottomMrgin open={'open-other'} />
+
+      <BottomMargin open={'open-other'} />
 
       <Footer />
   
