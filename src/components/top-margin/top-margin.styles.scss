@@ -88,6 +88,8 @@
   }
 }
 
+
+
 .top-wrapper{
   background: rgb(249, 112, 112);
   clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
@@ -101,4 +103,8 @@
     @include wrpperOpenOther()
   }
   
+}
+
+.top{
+  position: relative;
 }

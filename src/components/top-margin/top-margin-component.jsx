@@ -6,8 +6,9 @@ const TopMargin = ({children,noShine,height,open}) => {
   return (
 
     <>
+    <div className='top'>
       <div 
-      tabIndex="-1" className={` top-wrapper ${open}`}
+        tabIndex="-1" className={` top-wrapper ${open}`}
       >
         <div tabIndex="-1" className="top-margin-container" style={{
           height: `${height ? height : 100}px`
@@ -23,6 +24,7 @@ const TopMargin = ({children,noShine,height,open}) => {
             <div tabIndex="-1" className={`path-clip ${open}`}></div>
           </div>
         </div>
+      </div>
     </div>
   </>
 

@@ -24,11 +24,11 @@
       box-shadow: 0 0px 15px -7px rgb(52, 0, 0);
       margin-top: 20px;
       margin-bottom: 20px;
-      clip-path: circle(0% at 50% 50%);
-      transition: 2000ms ease all;
-      &.open{
-        clip-path: circle(100.0% at 50% 50%);
-      }
+      // clip-path: circle(0% at 50% 50%);
+      // transition: 2000ms ease all;
+      // &.open{
+      //   clip-path: circle(100.0% at 50% 50%);
+      // }
 
     }
   }
@@ -47,45 +47,39 @@
     max-width: 500px;
     background: rgb(255, 183, 183);
     border-radius: 5px;
-    clip-path: inset(0 0 100% 0);
-    transition: 3000ms ease all;
+    // clip-path: inset(0 0 100% 0);
+    // transition: 3000ms ease all;
 
-    &.open{
-      clip-path: inset(0 0 0 0);
-    }
+    // &.open{
+    //   clip-path: inset(0 0 0 0);
+    // }
 
     .msg-title{
       border-radius: 5px 5px 0 0 ;
       font-size: 2em;
       font-weight: 600;
-      border: 1px solid #c5c3c3;
+      border: 1px solid #f9000029;
       width:100%;
       padding: 10px 0px;
 
     }
     .msg-body{
-      border: 1px solid #c5c3c3;
+      border: 1px solid #f9000029;
       border-top: none;
       border-radius: 0 0 5px 5px;
       font-size: 1.4em;
       padding: 25px 25px;
       background: rgb(255, 205, 205);
 
-      & p{
-        opacity: 0;
-        transition: 2000ms ease all;
-      }
-      & p.open {
-        opacity: 1;
-      }
 
       & p:nth-child(odd) {
         background: rgb(255, 183, 183);
         padding: 7px 10px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.103);
       }
-      & p:nth-child(even) {
-        
-      }
+      // & p:nth-child(even) {
+      // }
 
     }
   }

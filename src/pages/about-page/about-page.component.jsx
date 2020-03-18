@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import './about-page.styles.scss'
 
 import TopMargin from '../../components/top-margin/top-margin-component';
@@ -8,21 +8,12 @@ import Footer from '../../components/footer/footer.component';
 
 const AboutPage = () => {
 
-  useEffect(()=>{
-    document.querySelector('.kavian-img').classList.add('open');
-    setTimeout(()=>{
-      document.querySelector('.msg-wrapper').classList.add('open')
-      setTimeout(()=>{
-        document.querySelectorAll('.p-of-msgs').forEach(el=>{
-          el.classList.add('open')
-        })
-      },300)
-    },300)
-  },[])
-
   return(
     <div>
-      <TopMargin open={'open-other'}>
+      <TopMargin 
+      open={'open-other'} 
+      intro="about-me"
+      >
         ABOUT ME
       </TopMargin>
 
@@ -42,7 +33,7 @@ const AboutPage = () => {
           <div className="msg-body">
           
             <p className="p-of-msgs" >
-              In Toronto - Working as a freelance web developer.
+              Currently in Toronto - Working as a freelance web developer and looking to work with highly experienced Full-Stack, Front-End or Back-End enginners. 
             </p>
 
             <p className="p-of-msgs" >
@@ -59,9 +50,9 @@ const AboutPage = () => {
               Arts and science. A combo I can not get enough of. I have a Digital Film degree from Center for Arts and Technology (da Vinci School). Years of experience in digital arts, specially photo manipulation and coding has given me the creative skill present in my work.
             </p>
 
-            <p className="p-of-msgs" >
+            {/* <p className="p-of-msgs" >
               Currently looking to work with highly experienced Full-Stack, Front-End or Back-End enginners. 
-            </p>
+            </p> */}
 
           </div>
 

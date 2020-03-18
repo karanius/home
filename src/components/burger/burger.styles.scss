@@ -1,5 +1,8 @@
+
+
 @mixin openTop {
-  transform: translate( 0 , 12px) rotate(45deg);
+  transform: translate( 0 , 12px);
+  //  rotate(45deg);
 }
 
 @mixin openMid {
@@ -8,7 +11,8 @@
 }
 
 @mixin openBottom {
-  transform: translate( 0 , -12px) rotate(135deg);
+  transform: translate( 0 , -12px);
+  //  rotate(135deg);
 }
 
 .burger{
