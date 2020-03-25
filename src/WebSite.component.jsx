@@ -62,7 +62,7 @@ const WebSite = () => {
           <Route exact path='/' component={HomePage} />
           <Route exact path='/about' component={AboutPage} />
           <Route exact path='/expertise' component={Competencies} />
-          <Route exact path='/portfolio' component={PortfolioPage} />
+          {/* <Route exact path='/portfolio' component={PortfolioPage} /> */}
           <Route exact path='/contact' component={ContactPage} />
           <Route  component={NotFound} />
         </Switch>
