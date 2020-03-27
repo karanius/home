@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import swConfig from './swConfig'
-// import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter } from 'react-router-dom';
 import {Provider} from 'react-redux';
@@ -20,4 +20,4 @@ ReactDOM.render(
   </Provider>
 , document.getElementById('root'));
 
-// serviceWorker.register(swConfig);
+serviceWorker.register();
