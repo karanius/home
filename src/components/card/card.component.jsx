@@ -114,7 +114,7 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
         <div onMouseEnter={()=>{pullTheCurtain()}} className={`card-top card-top-${id}`}>
           <div className={`card-top-front card-top-front-${id}`}>
             <div className="arrow" ><img alt='arrow' src={require('../../assets/arrow.png')} /></div>
-            {/* <DaImg alt={`${title}-pic`} src={imageLink} /> */}
+            <DaImg alt={`${title}-pic`} src={imageLink} />
             {/* <img alt={`${title}-pic`} src={imageLink} /> */}
           </div>
           <div className={`card-top-back card-top-back-${id}`}>
