@@ -123,7 +123,6 @@ const Card = ({viewPort,id,techStack, about, title,imageLink,liveLink,repo}) => 
           <div className={`card-top-front card-top-front-${id}`}>
             <div className="arrow" ><img alt='arrow' src={require('../../assets/arrow.png')} /></div>
             <DaImg cardTopPosition={cardTopPosition} viewPort={viewPort} alt={`${title}-pic`} src={imageLink} />
-            {/* <img alt={`${title}-pic`} src={imageLink} /> */}
           </div>
           <div className={`card-top-back card-top-back-${id}`}>
             <div className="tech-stack">

@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useEffect} from 'react';
 import './portfolio-section.styles.scss'
 import Button from '../button/button.component'
 
@@ -6,25 +6,8 @@ import CardGenerator from '../card-generator/card-generator.component';
 
 const PortfolioSection = () => {
   
-  
-  
-  // const [viewPort , setViewPort ] = useState()
-
   useEffect(()=>{
     
-    // document.querySelector('.portfolio-container').addEventListener('scroll',(e)=>{
-    //   setViewPort(
-    //    e.target.offsetHeight 
-    //   + 
-    //   e.target.scrollTop
-    //   )
-    // })
-    
-   
-
-
-
-
     const scrollTo = () => {
       document.querySelector('.portfolio-container').scrollTop = 0;
       window.scrollTo({top:210, behavior:"smooth"})
@@ -41,7 +24,16 @@ const PortfolioSection = () => {
     }
   },[])
 
+
   const handleClick = (e) => {
+    const elem = document.querySelector('.portfolio-container');
+    setTimeout(()=>{
+      elem.scroll(0,2)
+    },100)
+    setTimeout(()=>{
+      elem.scroll(0,0)
+    },200)
+
     document.querySelectorAll('.button').forEach(elem=>{
       if (elem.classList.contains('active')) {
         elem.classList.remove('active')
@@ -57,6 +49,7 @@ const PortfolioSection = () => {
         elem.classList.add('active')
       }
     })
+
   }
 
 

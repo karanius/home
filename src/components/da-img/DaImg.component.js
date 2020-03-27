@@ -5,13 +5,19 @@ import React from 'react';
 function DaImg({alt, src, viewPort, cardTopPosition}) {
   
 
+  console.log(viewPort,cardTopPosition)
   
-  
+
+  // const elem = document.querySelector('.portfolio-container');
+  // this.setState({viewPort: elem.offsetHeight + elem.scrollTop })
+
+
+
 
   return (
     <>
     {
-      (viewPort >= (cardTopPosition - 50) )  ?
+      ( cardTopPosition !== 0 && (viewPort >= ( cardTopPosition - 50) ))  ?
         <img alt={alt} src={ src } />   : 
         null
     }
