@@ -1,13 +1,30 @@
-import React,{useEffect} from 'react';
+import React,{useState,useEffect} from 'react';
 import './portfolio-section.styles.scss'
 import Button from '../button/button.component'
 
 import CardGenerator from '../card-generator/card-generator.component';
 
 const PortfolioSection = () => {
-
+  
+  
+  
+  // const [viewPort , setViewPort ] = useState()
 
   useEffect(()=>{
+    
+    // document.querySelector('.portfolio-container').addEventListener('scroll',(e)=>{
+    //   setViewPort(
+    //    e.target.offsetHeight 
+    //   + 
+    //   e.target.scrollTop
+    //   )
+    // })
+    
+   
+
+
+
+
     const scrollTo = () => {
       document.querySelector('.portfolio-container').scrollTop = 0;
       window.scrollTo({top:210, behavior:"smooth"})
@@ -52,10 +69,10 @@ const PortfolioSection = () => {
         <div className="porfolio-body-wrapper">
           <div className="portfolio-container">
             <div className="portfolio-body personal active">
-              <CardGenerator projects="personal" />
+              <CardGenerator   projects="personal" />
             </div>
             <div className="portfolio-body bootcamp">
-              <CardGenerator projects="bootcamp" />
+              <CardGenerator   projects="bootcamp" />
             </div>
           </div>
       </div>

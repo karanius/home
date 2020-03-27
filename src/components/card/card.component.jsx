@@ -2,9 +2,10 @@ import React,{useEffect,useState} from 'react';
 import './card.styles.scss'
 import DaImg from '../da-img/DaImg.component';
 
-const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
+const Card = ({viewPort,id,techStack, about, title,imageLink,liveLink,repo}) => {
 
   const [toolTip, setToolTip] = useState('');
+  const [cardTopPosition, setCardTopPosition] = useState()
 
   const mobile_mouseOnCards = (x) => {
     if (x.position === "top" && x.action === "click"){
@@ -33,6 +34,13 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
   }
 
   useEffect(()=>{
+    setCardTopPosition(
+      document.querySelector(`.card-wrapper-${id}`).offsetTop
+    )
+  },[viewPort])
+
+  useEffect(()=>{
+
     document.querySelector(`.card-top-${id}`).addEventListener('click',()=>{mobile_mouseOnCards({position: "top" , action: "click"})})
     document.querySelector(`.card-top-${id}`).addEventListener('mouseleave',()=>{mobile_mouseOnCards({position: "top" , action: "leave"})})
     document.querySelector(`.card-top-back-${id}`).addEventListener('mouseenter',()=>{laptop_mouseOnCards({position: "back" , action: "enter"})})
@@ -108,13 +116,13 @@ const Card = ({id,techStack, about, title,imageLink,liveLink,repo}) => {
 
   return(
     <>
-    <div className="card-wrapper">
+    <div className={`card-wrapper card-wrapper-${id}`}>
       <div className={`invisibleClickShield invisibleClickShield-${id}`} ></div>
       <div className='card'>
         <div onMouseEnter={()=>{pullTheCurtain()}} className={`card-top card-top-${id}`}>
           <div className={`card-top-front card-top-front-${id}`}>
             <div className="arrow" ><img alt='arrow' src={require('../../assets/arrow.png')} /></div>
-            <DaImg alt={`${title}-pic`} src={imageLink} />
+            <DaImg cardTopPosition={cardTopPosition} viewPort={viewPort} alt={`${title}-pic`} src={imageLink} />
             {/* <img alt={`${title}-pic`} src={imageLink} /> */}
           </div>
           <div className={`card-top-back card-top-back-${id}`}>
