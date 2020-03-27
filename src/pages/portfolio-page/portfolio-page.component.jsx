@@ -4,7 +4,6 @@ import './portfolio-page.styles.scss'
 import TopMargin from '../../components/top-margin/top-margin-component';
 import BottomMargin from '../../components/bottom-margin/bottom-marign.components';
 import Footer from '../../components/footer/footer.component';
-// import CardGenerator from '../../components/card-generator/card-generator.component';
 import PortfolioSection from '../../components/portfolio-section/portfolio-section.component';
 
 const PortfolioPage = () => {

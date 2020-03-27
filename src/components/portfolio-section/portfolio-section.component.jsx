@@ -26,13 +26,13 @@ const PortfolioSection = () => {
 
 
   const handleClick = (e) => {
-    const elem = document.querySelector('.portfolio-container');
-    setTimeout(()=>{
-      elem.scroll(0,2)
-    },100)
-    setTimeout(()=>{
-      elem.scroll(0,0)
-    },200)
+    // const elem = document.querySelector('.portfolio-container');
+    // setTimeout(()=>{
+    //   elem.scroll(0,2)
+    // },100)
+    // setTimeout(()=>{
+    //   elem.scroll(0,0)
+    // },200)
 
     document.querySelectorAll('.button').forEach(elem=>{
       if (elem.classList.contains('active')) {
