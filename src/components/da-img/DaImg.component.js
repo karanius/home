@@ -5,7 +5,7 @@ import React from 'react';
 function DaImg({alt, src, viewPort, cardTopPosition}) {
   
 
-  console.log(viewPort,cardTopPosition)
+  // console.log(viewPort,cardTopPosition)
   
 
   // const elem = document.querySelector('.portfolio-container');
