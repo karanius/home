@@ -4,7 +4,7 @@ import './WebSite.styles.scss'
 
 import {Switch , Route } from 'react-router-dom';
 
-// import NavBar from './components/nav-bar/nav-bar.component';
+import NavBar from './components/nav-bar/nav-bar.component';
 // import HomePage from './pages/home-page/home-page.component';
 import Competencies from './pages/competencies-page/competencies.component'
 // import PortfolioPage from './pages/portfolio-page/portfolio-page.component';
@@ -13,7 +13,7 @@ import Competencies from './pages/competencies-page/competencies.component'
 // import NotFound from './pages/not-found-page/not-found.component';
 
 
-const NavBar = React.lazy(() => import('./components/nav-bar/nav-bar.component'));
+// const NavBar = React.lazy(() => import('./components/nav-bar/nav-bar.component'));
 const HomePage = React.lazy(() => import('./pages/home-page/home-page.component'));
 // const Competencies = React.lazy(() => import('./pages/competencies-page/competencies.component'));
 const PortfolioPage = React.lazy(() => import('./pages/portfolio-page/portfolio-page.component'));
@@ -66,9 +66,9 @@ const WebSite = () => {
 
   return (
     <div className="website">
-      <Suspense fallback={<div>Loading...</div>} >
+      {/* <Suspense fallback={<div>Loading...</div>} > */}
        <NavBar />
-      </Suspense>
+      {/* </Suspense> */}
       <div id="route-container">
       <div className={`to-the-top ${tothetopIsAvtive}`} onClick={goToTop} ></div>
         <Suspense fallback={<div>Loading...</div>} >
