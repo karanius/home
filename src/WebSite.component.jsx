@@ -1,7 +1,6 @@
 import React,{useEffect , useState, Suspense} from 'react'
 import './WebSite.styles.scss'
 
-
 import {Switch , Route } from 'react-router-dom';
 
 import NavBar from './components/nav-bar/nav-bar.component';
@@ -11,7 +10,6 @@ import Competencies from './pages/competencies-page/competencies.component'
 // import ContactPage from './pages/contact-page/contact-page.component';
 // import AboutPage from './pages/about-page/about-page.component';
 // import NotFound from './pages/not-found-page/not-found.component';
-
 
 // const NavBar = React.lazy(() => import('./components/nav-bar/nav-bar.component'));
 const HomePage = React.lazy(() => import('./pages/home-page/home-page.component'));
@@ -71,7 +69,12 @@ const WebSite = () => {
       {/* </Suspense> */}
       <div id="route-container">
       <div className={`to-the-top ${tothetopIsAvtive}`} onClick={goToTop} ></div>
-        <Suspense fallback={<div>Loading...</div>} >
+        <Suspense fallback={
+          <div className="loader-bg">
+            <p>Loading</p>
+            <div className="loader"></div>
+          </div>
+        } >
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route exact path='/about' component={AboutPage} />
