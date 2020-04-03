@@ -2,6 +2,7 @@ import React from 'react';
 import './nav-links.styles.scss'
 import {Link } from 'react-router-dom';
 
+
 class NavLinks extends React.Component {
 
   render(){

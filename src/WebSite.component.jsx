@@ -1,8 +1,10 @@
 import React,{lazy,useEffect , useState, Suspense} from 'react'
 import './WebSite.styles.scss'
 
+import {BrowserRouter , Switch , Route } from 'react-router-dom';
+
 // import loadable from '@loadable/component'
-import {Switch , Route } from 'react-router-dom';
+import Loadable from 'react-loadable';
 
 
 // *** Non-Lazy section:
@@ -21,21 +23,28 @@ import NavBar from './components/nav-bar/nav-bar.component';
 // const NavBar = lazy(() => import('./components/nav-bar/nav-bar.component'));
 const HomePage = lazy(() => import('./pages/home-page/home-page.component'));
 const Competencies = lazy(() => import('./pages/competencies-page/competencies.component'));
-const PortfolioPage = lazy(() => import('./pages/portfolio-page/portfolio-page.component'));
+// const PortfolioPage = lazy(() => import('./pages/portfolio-page/portfolio-page.component'));
 const ContactPage = lazy(() => import('./pages/contact-page/contact-page.component'));
 const AboutPage = lazy(() => import('./pages/about-page/about-page.component'));
 const NotFound = lazy(() => import('./pages/not-found-page/not-found.component'));
 
+const Loading = () => {
+  return (
+    <div className="loader-bg">
+      <p className="loader-txt" >Downloading and loading assets</p>
+      <div className="loader"></div>
+    </div>
+  )
+}
 
-// ********* this is the lodable section
 
-// const NavBar = loadable(() => import('./components/nav-bar/nav-bar.component'));
-// const HomePage = loadable(() => import('./pages/home-page/home-page.component'));
-// const Competencies = loadable(() => import('./pages/competencies-page/competencies.component'));
-// const PortfolioPage = loadable(() => import('./pages/portfolio-page/portfolio-page.component'));
-// const ContactPage = loadable(() => import('./pages/contact-page/contact-page.component'));
-// const AboutPage = loadable(() => import('./pages/about-page/about-page.component'));
-// const NotFound = loadable(() => import('./pages/not-found-page/not-found.component'));
+// ********* this is the Lodable section
+  const PortfolioPage = Loadable({
+    loader: () => import('./pages/portfolio-page/portfolio-page.component'),
+    loading: Loading,
+  });
+
+
 
 
 const WebSite = () => {
@@ -82,25 +91,27 @@ const WebSite = () => {
 
   return (
     <div className="website">
-       <NavBar />
-      <div id="route-container">
-      <div className={`to-the-top ${tothetopIsAvtive}`} onClick={goToTop} ></div>
-        <Suspense fallback={
-          <div className="loader-bg">
-            <p className="loader-txt" >Downloading and loading assets</p>
-            <div className="loader"></div>
-          </div>
-        } >
-          <Switch>
-            <Route exact path='/' component={HomePage} />
-            <Route exact path='/about' component={AboutPage} />
-            <Route exact path='/expertise' component={Competencies} />
-            <Route exact path='/portfolio' component={PortfolioPage} />
-            <Route exact path='/contact' component={ContactPage} />
-            <Route  component={NotFound} />
-          </Switch>
-        </Suspense>
-      </div>
+      <BrowserRouter  >
+        <NavBar />
+        <div id="route-container">
+        <div className={`to-the-top ${tothetopIsAvtive}`} onClick={goToTop} ></div>
+            <Suspense fallback={
+              <div className="loader-bg">
+                <p className="loader-txt" >Downloading and loading assets</p>
+                <div className="loader"></div>
+              </div>
+            } >
+              <Switch>
+                <Route exact path='/' component={HomePage} />
+                <Route exact path='/about' component={AboutPage} />
+                <Route exact path='/expertise' component={Competencies} />
+                <Route exact path='/portfolio' component={PortfolioPage} />
+                <Route exact path='/contact' component={ContactPage} />
+                <Route  component={NotFound} />
+              </Switch>
+            </Suspense>
+        </div>
+      </BrowserRouter>
     </div>
   )
 }
