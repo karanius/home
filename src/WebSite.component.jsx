@@ -10,39 +10,23 @@ import Loadable from 'react-loadable';
 // *** Non-Lazy section:
 
 import NavBar from './components/nav-bar/nav-bar.component';
-// import HomePage from './pages/home-page/home-page.component';
+import HomePage from './pages/home-page/home-page.component';
 // import Competencies from './pages/competencies-page/competencies.component'
 // import PortfolioPage from './pages/portfolio-page/portfolio-page.component';
 // import ContactPage from './pages/contact-page/contact-page.component';
 // import AboutPage from './pages/about-page/about-page.component';
-// import NotFound from './pages/not-found-page/not-found.component';
+import NotFound from './pages/not-found-page/not-found.component';
 
 
 // *****this is the lazy section
 
 // const NavBar = lazy(() => import('./components/nav-bar/nav-bar.component'));
-const HomePage = lazy(() => import('./pages/home-page/home-page.component'));
+// const HomePage = lazy(() => import('./pages/home-page/home-page.component'));
 const Competencies = lazy(() => import('./pages/competencies-page/competencies.component'));
 const PortfolioPage = lazy(() => import('./pages/portfolio-page/portfolio-page.component'));
 const ContactPage = lazy(() => import('./pages/contact-page/contact-page.component'));
 const AboutPage = lazy(() => import('./pages/about-page/about-page.component'));
-const NotFound = lazy(() => import('./pages/not-found-page/not-found.component'));
-
-// const Loading = () => {
-//   return (
-//     <div className="loader-bg">
-//       <p className="loader-txt" >Downloading and loading assets</p>
-//       <div className="loader"></div>
-//     </div>
-//   )
-// }
-
-
-// // ********* this is the Lodable section
-//   const PortfolioPage = Loadable({
-//     loader: () => import('./pages/portfolio-page/portfolio-page.component'),
-//     loading: Loading,
-//   });
+// const NotFound = lazy(() => import('./pages/not-found-page/not-found.component'));
 
 
 
