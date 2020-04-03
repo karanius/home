@@ -1,13 +1,26 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 
 function DaImg({alt, src, viewPort, cardTopPosition}) {
 
+  const [srcImg, setSrcImg] = useState(null)
+  const [done, setDone] = useState(false);
+
+  useEffect(()=>{
+    if( (!done) && ( cardTopPosition !== 0 && (viewPort >= ( cardTopPosition - 50) ))){
+        setSrcImg(src)
+        setDone(true)
+      }
+  },[viewPort, cardTopPosition])
+
+  if(!done){
+    console.log(src)
+  }
 
   return (
     <>
       {
         ( cardTopPosition !== 0 && (viewPort >= ( cardTopPosition - 50) ))  ?
-        <img alt={alt} src={ src } />   : 
+        <img alt={alt} src={ srcImg } />   : 
         null
       }
     </>
