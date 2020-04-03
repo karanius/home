@@ -2,8 +2,8 @@ import React,{lazy,useState, useEffect} from 'react';
 import Card from '../card/card.component';
 import './card-generator.styles.scss';
 
-import PORTFOLIO_DATA from '../../assets/portfolio.data';
-// const PORTFOLIO_DATA = lazy(() => import('../../assets/portfolio.data'));
+// import PORTFOLIO_DATA from '../../assets/portfolio.data';
+const PORTFOLIO_DATA = lazy(() => import('../../assets/portfolio.data'));
 
 
 function CardGenerator (props) {
