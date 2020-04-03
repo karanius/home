@@ -75,7 +75,7 @@ const WebSite = () => {
       <div className={`to-the-top ${tothetopIsAvtive}`} onClick={goToTop} ></div>
         <Suspense fallback={
           <div className="loader-bg">
-            <p>Loading</p>
+            <p className="loader-txt" >Loading</p>
             <div className="loader"></div>
           </div>
         } >

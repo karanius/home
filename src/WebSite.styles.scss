@@ -114,6 +114,10 @@ img{
   flex-direction: column;
   height: 100vh;
 
+  .loader-txt{
+    color: rgb(111, 111, 111);
+  }
+
   .loader {
     border: 16px solid #ffdfdf; /* Light grey */
     border-top: 16px solid #f20000; /* Blue */
