@@ -64,11 +64,14 @@ const Card = ({viewPort,id,techStack, about, title,imageLink,liveLink,repo}) => 
 
   const tech_icon_fadein = () => {
     document.querySelector(`.about-${id}`).style.display = 'inline';
+
     const setDelay = (el,x) => {
       setTimeout(()=>{
         el.classList.add('active')
       },x)
     }
+
+    
     const tech_stack_img_elem_list = document.querySelectorAll(`.tech-stack-icons-${id}`);
     let time_offset = 300
     for (let el of tech_stack_img_elem_list){
@@ -94,7 +97,7 @@ const Card = ({viewPort,id,techStack, about, title,imageLink,liveLink,repo}) => 
 
 
 
-  const techStackGenerator = (stacks) => {
+  const techStackGenerator =      (stacks) => {
     if (stacks){
       return stacks.map((stack,index)=>{
         if (typeof stack === 'object'){
