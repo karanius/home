@@ -25,6 +25,7 @@ import Footer from '../../components/footer/footer.component';
 import CharX from '../../components/char-x/char-x.component';
 import Gear from '../../components/gear/gear.component';
 
+
 const Competencies = () => {
 
   const [bubbleIsActive] = useState(true);

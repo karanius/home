@@ -89,7 +89,7 @@ class ContactPage extends React.Component {
       <TopMargin open={'open-other'}>
         CONTACT
       </TopMargin>
-
+      
       <TopImage/>
 
       <ContactPageMsg copiedToClipboard={this.state.copiedToClipboard} />

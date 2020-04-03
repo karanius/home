@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './about-page.styles.scss'
 
 import TopMargin from '../../components/top-margin/top-margin-component';
@@ -7,6 +7,17 @@ import Footer from '../../components/footer/footer.component';
 
 
 const AboutPage = () => {
+
+  useEffect(()=>{
+    const img = document.createElement("img");
+    img.src = require("../../assets/devkavian.jpeg");
+    img.alt = 'Kavian'
+    img.className = "kavian-img"
+    img.tabIndex = "-1"
+    document.querySelector('.image-wrapper-abt').appendChild(
+      img
+    ) 
+  },[])
 
   return(
     <div>
@@ -20,8 +31,8 @@ const AboutPage = () => {
 
       <div className="mid-body" >
         
-        <div className="image-wrapper">
-          <img tabIndex="-1" className='kavian-img' alt='kavian' src={require("../../assets/devkavian.jpeg")} />
+        <div className="image-wrapper image-wrapper-abt">
+          
         </div>
 
  
