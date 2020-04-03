@@ -7,10 +7,6 @@ import Footer from '../../components/footer/footer.component';
 // import PortfolioSection from '../../components/portfolio-section/portfolio-section.component';
 
 
-
-
-
-
 const PortfolioPage = () => {
 
   useEffect(()=>{
