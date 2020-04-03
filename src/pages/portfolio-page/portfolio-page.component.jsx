@@ -6,26 +6,6 @@ import BottomMargin from '../../components/bottom-margin/bottom-marign.component
 import Footer from '../../components/footer/footer.component';
 // import PortfolioSection from '../../components/portfolio-section/portfolio-section.component';
 
-import Loadable from 'react-loadable';
-
-
-
-
-const Loading = () => {
-  return (
-    <div className="loader-bg">
-      <p className="loader-txt" >Downloading and loading assets</p>
-      <div className="loader"></div>
-    </div>
-  )
-}
-
-
-// ********* this is the Lodable section
-  const PortfolioSection = Loadable({
-    loader: () => import('../../components/portfolio-section/portfolio-section.component'),
-    loading: Loading,
-  });
 
 
 
@@ -48,7 +28,7 @@ const PortfolioPage = () => {
         PORTFOLIO
       </TopMargin>
 
-      <PortfolioSection/> 
+      {/* <PortfolioSection/>  */}
 
       <BottomMargin open={'open-other'}>
         <p>All the projects listed here are built by <a className='link-port' href='https://github.com/karanius'>Kavian Darvish</a> under the open source licenses. You may use the code as you please. Enjoy.</p>
