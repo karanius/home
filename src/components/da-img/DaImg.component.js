@@ -12,9 +12,6 @@ function DaImg({alt, src, viewPort, cardTopPosition}) {
       }
   },[viewPort, cardTopPosition])
 
-  if(!done){
-    console.log(src)
-  }
 
   return (
     <>
