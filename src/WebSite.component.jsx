@@ -7,13 +7,13 @@ import loadable from '@loadable/component'
 
 // *** Non-Lazy section:
 
-// import NavBar from './components/nav-bar/nav-bar.component';
-// import HomePage from './pages/home-page/home-page.component';
+import NavBar from './components/nav-bar/nav-bar.component';
+import HomePage from './pages/home-page/home-page.component';
 // import Competencies from './pages/competencies-page/competencies.component'
 // import PortfolioPage from './pages/portfolio-page/portfolio-page.component';
 // import ContactPage from './pages/contact-page/contact-page.component';
 // import AboutPage from './pages/about-page/about-page.component';
-// import NotFound from './pages/not-found-page/not-found.component';
+import NotFound from './pages/not-found-page/not-found.component';
 
 
 // *****this is the lazy section:
@@ -29,13 +29,13 @@ import loadable from '@loadable/component'
 
 // ********* this is the lodable section
 
-const NavBar = loadable(() => import('./components/nav-bar/nav-bar.component'));
-const HomePage = loadable(() => import('./pages/home-page/home-page.component'));
+// const NavBar = loadable(() => import('./components/nav-bar/nav-bar.component'));
+// const HomePage = loadable(() => import('./pages/home-page/home-page.component'));
 const Competencies = loadable(() => import('./pages/competencies-page/competencies.component'));
 const PortfolioPage = loadable(() => import('./pages/portfolio-page/portfolio-page.component'));
 const ContactPage = loadable(() => import('./pages/contact-page/contact-page.component'));
 const AboutPage = loadable(() => import('./pages/about-page/about-page.component'));
-const NotFound = loadable(() => import('./pages/not-found-page/not-found.component'));
+// const NotFound = loadable(() => import('./pages/not-found-page/not-found.component'));
 
 
 const WebSite = () => {
