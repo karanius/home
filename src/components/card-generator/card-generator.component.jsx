@@ -33,7 +33,7 @@ class CardGenerator extends React.Component {
         <div className="cards-container">
           {
             this.state.cards.map( ({id, ...restOfTheData}) => {
-              return <Card viewPort={this.state.viewPort} key={id} id={id} {...restOfTheData} />
+              return //<Card viewPort={this.state.viewPort} key={id} id={id} {...restOfTheData} />
             })
           }
         </div>

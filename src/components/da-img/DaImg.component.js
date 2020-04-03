@@ -16,7 +16,7 @@ function DaImg({alt, src, viewPort, cardTopPosition}) {
   return (
     <>
 
-      {/* <img alt={alt} src={ srcImg } /> */}
+      <img alt={alt} src={ srcImg } />
 
       {/* {
         ( cardTopPosition !== 0 && (viewPort >= ( cardTopPosition - 50) ))  ?
