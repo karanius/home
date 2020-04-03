@@ -16,7 +16,7 @@ import NavBar from './components/nav-bar/nav-bar.component';
 // import NotFound from './pages/not-found-page/not-found.component';
 
 
-// *****this is the lazy section:
+// *****this is the lazy section
 
 // const NavBar = lazy(() => import('./components/nav-bar/nav-bar.component'));
 const HomePage = lazy(() => import('./pages/home-page/home-page.component'));
