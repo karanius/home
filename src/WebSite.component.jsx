@@ -1,4 +1,4 @@
-import React,{useEffect , useState, Suspense} from 'react'
+import React,{lazy,useEffect , useState, Suspense} from 'react'
 import './WebSite.styles.scss'
 
 // import loadable from '@loadable/component'
@@ -8,23 +8,23 @@ import {Switch , Route } from 'react-router-dom';
 // *** Non-Lazy section:
 
 import NavBar from './components/nav-bar/nav-bar.component';
-import HomePage from './pages/home-page/home-page.component';
-import Competencies from './pages/competencies-page/competencies.component'
-import PortfolioPage from './pages/portfolio-page/portfolio-page.component';
-import ContactPage from './pages/contact-page/contact-page.component';
-import AboutPage from './pages/about-page/about-page.component';
-import NotFound from './pages/not-found-page/not-found.component';
+// import HomePage from './pages/home-page/home-page.component';
+// import Competencies from './pages/competencies-page/competencies.component'
+// import PortfolioPage from './pages/portfolio-page/portfolio-page.component';
+// import ContactPage from './pages/contact-page/contact-page.component';
+// import AboutPage from './pages/about-page/about-page.component';
+// import NotFound from './pages/not-found-page/not-found.component';
 
 
 // *****this is the lazy section:
 
-// const NavBar = React.lazy(() => import('./components/nav-bar/nav-bar.component'));
-// const HomePage = React.lazy(() => import('./pages/home-page/home-page.component'));
-// const Competencies = React.lazy(() => import('./pages/competencies-page/competencies.component'));
-// const PortfolioPage = React.lazy(() => import('./pages/portfolio-page/portfolio-page.component'));
-// const ContactPage = React.lazy(() => import('./pages/contact-page/contact-page.component'));
-// const AboutPage = React.lazy(() => import('./pages/about-page/about-page.component'));
-// const NotFound = React.lazy(() => import('./pages/not-found-page/not-found.component'));
+// const NavBar = lazy(() => import('./components/nav-bar/nav-bar.component'));
+const HomePage = lazy(() => import('./pages/home-page/home-page.component'));
+const Competencies = lazy(() => import('./pages/competencies-page/competencies.component'));
+const PortfolioPage = lazy(() => import('./pages/portfolio-page/portfolio-page.component'));
+const ContactPage = lazy(() => import('./pages/contact-page/contact-page.component'));
+const AboutPage = lazy(() => import('./pages/about-page/about-page.component'));
+const NotFound = lazy(() => import('./pages/not-found-page/not-found.component'));
 
 
 // ********* this is the lodable section
