@@ -3,39 +3,42 @@ import Card from '../card/card.component';
 import './card-generator.styles.scss';
 
 // import PORTFOLIO_DATA from '../../assets/portfolio.data';
-const PORTFOLIO_DATA = lazy(() => import('../../assets/portfolio.data'));
+// const PORTFOLIO_DATA = lazy(() => import('../../assets/portfolio.data'));
 
 
 function CardGenerator (props) {
 
-  // const [cards, setCards] = useState(PORTFOLIO_DATA);
-  // const [viewPort, setViewPort] = useState(0);
+  const [cards, setCards] = useState(null);
+  const [viewPort, setViewPort] = useState(0);
 
+  useEffect(() => {
+    import('../../assets/portfolio.data').then(
+      res=>{
+        setCards(props.projects === 'personal' ? res.default.PERSONAL : res.default.BOOTCAMP);
 
-  // useEffect(() => {
+        const elem = document.querySelector('.portfolio-container');
+        setViewPort(elem.offsetHeight + elem.scrollTop)
     
-  //   setCards(props.projects === 'personal' ? [PORTFOLIO_DATA.PERSONAL] : [PORTFOLIO_DATA.BOOTCAMP])
+        elem.addEventListener('scroll',(e)=>{
+          setViewPort(elem.offsetHeight + elem.scrollTop)
+        })
 
-  //   const elem = document.querySelector('.portfolio-container');
-  //   setViewPort(elem.offsetHeight + elem.scrollTop)
-    
-  //   elem.addEventListener('scroll',(e)=>{
-  //     setViewPort(elem.offsetHeight + elem.scrollTop)
-  //   })
-  // }, []);
-  
-  // console.log(PORTFOLIO_DATA)
+        console.log('@')
+      }
+    )
+    console.log('!')
+  }, []);
 
   return(
     <div className="cards-container-warapper">
       <div className="cards-container">
-        {/* {
+        {
           cards ? 
           cards.map( ({id, ...restOfTheData}) => {
             return <Card viewPort={viewPort} key={id} id={id} {...restOfTheData} />
           }) 
           : null
-        } */}
+        }
       </div>
     </div>
   )
