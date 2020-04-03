@@ -1,5 +1,5 @@
 import React from 'react';
-import './character.styles.css'
+import './character.styles.css';
 
 class Character extends React.Component {
 
