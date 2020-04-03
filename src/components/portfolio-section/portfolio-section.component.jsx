@@ -2,7 +2,7 @@ import React,{useEffect} from 'react';
 import './portfolio-section.styles.scss'
 import Button from '../button/button.component'
 
-// import CardGenerator from '../card-generator/card-generator.component';
+import CardGenerator from '../card-generator/card-generator.component';
 
 const PortfolioSection = () => {
   
@@ -62,10 +62,10 @@ const PortfolioSection = () => {
         <div className="porfolio-body-wrapper">
           <div className="portfolio-container">
             <div className="portfolio-body personal active">
-              {/* <CardGenerator   projects="personal" /> */}
+              <CardGenerator   projects="personal" />
             </div>
             <div className="portfolio-body bootcamp">
-              {/* <CardGenerator   projects="bootcamp" /> */}
+              <CardGenerator   projects="bootcamp" />
             </div>
           </div>
       </div>
