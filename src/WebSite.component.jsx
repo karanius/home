@@ -3,10 +3,6 @@ import './WebSite.styles.scss'
 
 import {BrowserRouter , Switch , Route } from 'react-router-dom';
 
-// import loadable from '@loadable/component'
-import Loadable from 'react-loadable';
-
-
 // *** Non-Lazy section:
 
 import NavBar from './components/nav-bar/nav-bar.component';
