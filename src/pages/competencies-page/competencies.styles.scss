@@ -74,6 +74,8 @@
   align-items: center;
 
   .msg-title{
+    user-select: none;
+    outline: none;
     opacity: 0;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 100;
@@ -114,6 +116,7 @@
       }
       
       .title-logo{
+        user-select: none;
         margin: 0;
         padding: 0;
         font-size: 3rem;
@@ -154,14 +157,13 @@
 }
 
 .second-card{
-  // background: rgb(249, 112, 112);
-  // background: green;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-bottom: 70px;
-  // height: 916px;
+
 
   .skills-wrapper{
 
@@ -224,19 +226,20 @@
       &>div>img{
         position: relative;
         padding: 20px;
-        background-image: radial-gradient(rgba(255, 255, 255, 0.74) 0%, rgba(0, 0, 255, 0) 43%);
+        background-image: radial-gradient(rgba(255, 255, 255, 0.74) 0%, rgba(255, 255, 255, 0) 43%);
       }     
       
       &>div>img{
         &.react{
-          background-image: radial-gradient(rgba(142, 138, 138, 0.541) 10%, rgba(243, 247, 245, 0) 50%);
+          background-image: radial-gradient(rgba(142, 138, 138, 0.541) 10%, rgba(255, 255, 255, 0) 50%);
         }
         &.html{
-          background-image: radial-gradient(rgba(255, 255, 255, 0.472) 0%, rgba(0, 0, 255, 0) 59%);
+          background-image: radial-gradient(rgba(255, 255, 255, 0.472) 0%, rgba(255, 255, 255, 0) 59%);
         }
       }
     }
     .and-more{
+
       text-shadow: 1px 0 3px white;
       font-size: 0.8rem;
     }

@@ -11,7 +11,7 @@ import Loadable from 'react-loadable';
 
 import NavBar from './components/nav-bar/nav-bar.component';
 import HomePage from './pages/home-page/home-page.component';
-// import Competencies from './pages/competencies-page/competencies.component'
+import Competencies from './pages/competencies-page/competencies.component'
 // import PortfolioPage from './pages/portfolio-page/portfolio-page.component';
 // import ContactPage from './pages/contact-page/contact-page.component';
 // import AboutPage from './pages/about-page/about-page.component';
@@ -22,7 +22,7 @@ import NotFound from './pages/not-found-page/not-found.component';
 
 // const NavBar = lazy(() => import('./components/nav-bar/nav-bar.component'));
 // const HomePage = lazy(() => import('./pages/home-page/home-page.component'));
-const Competencies = lazy(() => import('./pages/competencies-page/competencies.component'));
+// const Competencies = lazy(() => import('./pages/competencies-page/competencies.component'));
 const PortfolioPage = lazy(() => import('./pages/portfolio-page/portfolio-page.component'));
 const ContactPage = lazy(() => import('./pages/contact-page/contact-page.component'));
 const AboutPage = lazy(() => import('./pages/about-page/about-page.component'));

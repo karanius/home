@@ -299,7 +299,7 @@ const Competencies = () => {
               <div data-title='MongoDB'  className="second-load second-load-right"><img tabIndex="0"  alt='MongoDB: noSQL database technology' title='MongoDB: noSQL database technology' src={mongoSVG} /></div>
               <div data-title='Photoshop'  className="second-load second-load-left" ><img tabIndex="0" alt='Photoshop: Digital manipulation tool' title='Photoshop: Digital manipulation tool' src={photoshoptSVG} /></div>
             </div>
-            <p tabIndex="0" className="second-load and-more" >and more</p>
+            <p tabIndex="0" className=" and-more" >and more</p>
           </div>
         </div>
 
