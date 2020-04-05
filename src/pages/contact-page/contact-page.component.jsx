@@ -11,9 +11,7 @@ import BottomMargin from '../../components/bottom-margin/bottom-marign.component
 import Footer from '../../components/footer/footer.component';
 
 
-
 import TopImage from '../../components/top-image/top-image.component.jsx'
-
 
 
 class ContactPage extends React.Component {
