@@ -42,19 +42,23 @@ const AboutPage = () => {
           <div className="msg-title">My Journey</div>
 
           <div className="msg-body">
+            
+            <p className="p-of-msgs" >
+              I love to challenge myself, and to learn new things. No matter how much knowledge I may have.. I just love to learn more.
+            </p>
           
             <p className="p-of-msgs" >
-              Currently in Toronto - Working as a freelance web developer and looking to work with highly experienced Full-Stack, Front-End or Back-End enginners. 
+              Currently in Toronto - Working as a freelance web developer. Can't wait to work with other Full-Stack, Front-End or Back-End enginners. 
             </p>
 
             <p className="p-of-msgs" >
               I was 5 years old when I started using a PC at home: Windows 95. I was obsessed. At the same time in our classes in middle school, they were teaching us "Logo" (<a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">programming language</a>). And this is how I formed a special bond with electronics, computer programs and internet. 
             </p>
             <p className="p-of-msgs" >
-              My real first attempt at coding was in 2015. I tought myself python and wrote a program to recieve and responsd to mass amounts of sms messages using a LTE SIM Dongle. 
+              For my real first attempt at coding: I tought myself python and wrote a program to recieve and auto-responsd to mass amounts of sms messages using a LTE SIM Dongle. 
             </p>
             <p className="p-of-msgs" >
-              I have been teaching myself how to code ever sense. Finally, in order to fill my knowledge gap, I decided to take the Full-Stack Web Development Bootcamp course at Uinversity of Toronto. 
+              I've been teaching myself how to code ever sense. Finally, in order to fill my knowledge gap, I decided to take the Full-Stack Web Development Bootcamp course at Uinversity of Toronto. 
             </p>
 
             <p className="p-of-msgs" >
