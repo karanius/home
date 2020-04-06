@@ -55,7 +55,7 @@ const AboutPage = () => {
               I was 5 years old when I started using a PC at home: Windows 95. I was obsessed. At the same time in our classes in middle school, they were teaching us "Logo" (<a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">programming language</a>). And this is how I formed a special bond with electronics, computer programs and internet. 
             </p>
             <p className="p-of-msgs" >
-              For my real first attempt at coding: I tought myself python and wrote a program to recieve and auto-responsd to mass amounts of sms messages using a LTE SIM Dongle. 
+              For my real first attempt at coding: I tought myself python and wrote a program to receive and auto-respond to mass amounts of sms messages using a LTE SIM Dongle.
             </p>
             <p className="p-of-msgs" >
               I've been teaching myself how to code ever sense. Finally, in order to fill my knowledge gap, I decided to take the Full-Stack Web Development Bootcamp course at Uinversity of Toronto. 
