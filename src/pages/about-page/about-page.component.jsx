@@ -48,7 +48,7 @@ const AboutPage = () => {
             </p>
           
             <p className="p-of-msgs" >
-              Currently in Toronto - Working as a freelance web developer. Can't wait to work with other Full-Stack, Front-End or Back-End enginners. 
+              Currently in Toronto - Working as a freelance web developer. Can't wait to work with other Full-Stack, Front-End or Back-End engineers. 
             </p>
 
             <p className="p-of-msgs" >
