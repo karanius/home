@@ -55,14 +55,14 @@ const AboutPage = () => {
               I was 5 years old when I started using a PC at home: Windows 95. I was obsessed. At the same time in our classes in middle school, they were teaching us "Logo" (<a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">programming language</a>). And this is how I formed a special bond with electronics, computer programs and internet. 
             </p>
             <p className="p-of-msgs" >
-              For my real first attempt at coding: I tought myself python and wrote a program to receive and auto-respond to mass amounts of sms messages using a LTE SIM Dongle.
+              For my real first attempt at coding: I taught myself python and wrote a program to receive and auto-respond to mass amounts of sms messages using a LTE SIM Dongle.
             </p>
             <p className="p-of-msgs" >
-              I've been teaching myself how to code ever sense. Finally, in order to fill my knowledge gap, I decided to take the Full-Stack Web Development Bootcamp course at Uinversity of Toronto. 
+              I've been teaching myself how to code ever since. Finally, in order to fill my knowledge gap, I decided to take the Full-Stack Web Development Bootcamp course at University of Toronto. 
             </p>
 
             <p className="p-of-msgs" >
-              Arts and science. A combo I can not get enough of. I have a Digital Film degree from Center for Arts and Technology (da Vinci School). Years of experience in digital arts, specially photo manipulation and coding has given me the creative skill set needed for this industry.
+              Arts and science. A combo I cannot get enough of. I have a Digital Film degree from Center for Arts and Technology (da Vinci School). Years of experience in digital arts, especially photo manipulation and coding has given me the creative skill set needed for this industry.
             </p>
 
           </div>
