@@ -4,16 +4,16 @@ import Typer from '../Typer/Typer.component';
 
 
 const SpeechBubble = (props) => {
-
+ 
   useEffect(()=>{
     let unmounted = false;
     let reqI;
-      const {isActive , top} = props;
+      const {isActive , top, leftt} = props;
       if (isActive){
         const adjust = () => {
           if (document.querySelector('.character-position') && document.querySelector('.show') ){
             document.querySelector('.show').style.top = `${document.querySelector('.character-position').offsetTop - top }px`;
-            document.querySelector('.show').style.left =  `${document.querySelector('.character-position').offsetLeft - 215}px`;
+            document.querySelector('.show').style.left =  `${document.querySelector('.character-position').offsetLeft - (leftt ? leftt : 218)  }px`;
             if (!unmounted){
               setTimeout(()=>{requestAnimationFrame(adjust)},100)
             }

@@ -271,7 +271,7 @@ const Competencies = () => {
             <p className={`title-logo ${insideCardIsVisible}`}>
               {`</>`}
             </p>
-            <h3 tabIndex="0" aria-label="I can do back end. To make it function With no headaches." className={`title-msg ${insideCardIsVisible}`}>Back-End</h3> <p className={`title-description ${insideCardIsVisible}`}>To make it function With<br/>no headaches.</p>
+            <h3 tabIndex="0" aria-label="I can do back end. To make it function with no headaches." className={`title-msg ${insideCardIsVisible}`}>Back-End</h3> <p className={`title-description ${insideCardIsVisible}`}>To make it function with<br/>no headaches.</p>
           </li>
         </ul> 
       </div>

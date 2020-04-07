@@ -18,22 +18,38 @@ const ContactPageMsg = ({copiedToClipboard}) => {
 
       <div className='msg-container'>
 
-        <h3 tabIndex="0" className='msg-title'>
+        <div tabIndex="0" className='msg-title'>
           Connect with me
-        </h3>
+        </div>
 
-        <p tabIndex="0" className="msg-itself">
+        <div tabIndex="0" className="msg-itself">
           I spend the majority of my time learning and building new things, so I am always in need of new projects! Feel free to connect with me by clicking on the channels below!
-        </p>
+        </div>
 
         <div className="contact-links" >
 
-          <div className="left-side" >
-            <span className="click-on-text" >CLICK ON</span> <span className='bracket' >{`{`}</span>
-          </div>
+          {window.innerWidth <= 325 ? null :
+          (
+            <div className="left-side" >
+              <span className="click-on-text" >CLICK ON</span> <span className='bracket' >{`{`}</span>
+            </div>
+          )
+           }
 
           <div className="right-side">
-            <span className='items email'> <img src={emailSVG} className="side-img" alt="letter" /><input className="emailAdress" tabIndex="0" aria-label="This is my email adress: kavian1991@gmail.com" value="kavian1991@gmail.com" readOnly /></span>
+
+          { 
+          window.innerWidth <= 325 ? 
+          <span className="click-on-text" >CLICK ON:</span> 
+          : null 
+           }
+
+
+
+            <span className='items email'> 
+              <img src={emailSVG} className="side-img" alt="letter" />
+              <input className="emailAdress" tabIndex="0" aria-label="This is my email adress: kavian1991@gmail.com" value="kavian1991@gmail.com" readOnly />
+            </span>
             
             <span className="items">
               <a className="links" tabIndex="0" aria-label="my linkedin account" href="https://www.linkedin.com/in/kavian-darvish">
