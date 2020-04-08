@@ -40,7 +40,7 @@ const ContactPageMsg = ({copiedToClipboard}) => {
 
           { 
           window.innerWidth <= 325 ? 
-          <span className="click-on-text" >CLICK ON:</span> 
+            <span className="click-on-text" >CLICK ON:</span> 
           : null 
            }
 
