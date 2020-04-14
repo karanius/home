@@ -59,7 +59,7 @@ const X = () => {
           }
         }
       } else {
-        setSpeechMsg(['Hi! 👋' , 2000 , 'My name is Kavian 😊' , 4000 ,  ' and I do the "dev" thing! ❤️' , 4000 , "Welcome to my website! 🙌" , 3000 , 'Hope you 👍 it!' , 3000 , "I built it using React" , 3000 , "I love coding from the ground up..." , 4000 ,"Please check out the rest of my website." , 5000 ])
+        setSpeechMsg(['Hi! 👋' , 2000 , 'My name is Kavian 😊' , 2000 ,  ' and I do the "dev" thing! ❤️' , 3000 , "Welcome to my website! 🙌" , 2000 , 'Hope you 👍 it!' , 2000 , "I built it using React" , 3000 , "I love coding from the ground up..." , 2200 ,"Please check out the rest of my website." , 3000 ])
         setCharIsActive(false);
         setCharDirection('stand')
         setBubbleIsActive(true);
