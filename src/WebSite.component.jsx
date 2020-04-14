@@ -11,7 +11,7 @@ import Competencies from './pages/competencies-page/competencies.component'
 // import ContactPage from './pages/contact-page/contact-page.component';
 // import AboutPage from './pages/about-page/about-page.component';
 import NotFound from './pages/not-found-page/not-found.component';
-import FireWorks from './components/fire-works/fire-works.component';
+// import FireWorks from './components/fire-works/fire-works.component';
 
 // *****this is the lazy section
 
@@ -70,7 +70,7 @@ const WebSite = () => {
 
   return (
     <div className="website">
-      <FireWorks />
+      {/* <FireWorks /> */}
       <BrowserRouter  >
         <NavBar />
         <div id="route-container">

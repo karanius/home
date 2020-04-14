@@ -3,7 +3,6 @@ import './fire-works.styles.scss'
 
 const FireWorks = () => {
 
-  
   useEffect(()=>{
 
     const anime = window.anime;
@@ -83,7 +82,7 @@ const FireWorks = () => {
     }
 
     function animateParticules(x, y) {
-      var circle = createCircle(x, y);
+      // var circle = createCircle(x, y);
       var particules = [];
       for (var i = 0; i < numberOfParticules; i++) {
         particules.push(createParticule(x, y));
