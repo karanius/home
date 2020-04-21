@@ -5,10 +5,13 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {openCloseDropNav} from '../../redux/nav-bar/nav-bar.actions'
 
+// import FireWorks from '../fire-works/fire-works.component';
 
 class Logo extends React.Component {
 
   componentDidMount(){
+    // document.querySelector('.nav-logo').addEventListener('click',this.fireWorks)
+
     document.querySelectorAll('.nav-logo').forEach(elem=>{
       elem.addEventListener('click', this.close)
     })
@@ -18,11 +21,18 @@ class Logo extends React.Component {
     document.querySelectorAll('.nav-logo').forEach(elem=>{
       elem.removeEventListener('click', this.close)
     })
+    // document.querySelector('.nav-logo').removeEventListener('click',this.fireWorks)
   }
 
   close = () => {
     this.props.openCloseDropNav(false);
   }
+
+  // fireWorks = (e)=>{
+  //   const {clientX, clientY} = (e);
+  //   console.log(clientX,clientY)
+
+  // }
 
   render(){
     return (

@@ -3,8 +3,11 @@
   text-decoration: none;
   font-weight: bolder;
   font-size: 1.3rem;
+  ::before{
+    content: "√";
+  }
   .first-letter{
-    // text-emphasis: '√' rgb(0, 0, 0);
+    // text-emphasis: 'ƒ' rgb(0, 0, 0);
   }
 }
 
